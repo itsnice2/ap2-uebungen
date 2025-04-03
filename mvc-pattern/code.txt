@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +46,6 @@
     ?>
     </table>
 
-<br><br>
 <hr>
 
     <h2>Daten über Controller holen:</h2>
@@ -83,37 +83,6 @@
         ?>
     </table>
 
-<br><br>
-<hr>
-
-<h2>Code vom View</h2>
-
-<pre>
-    <?php 
-        $code = file_get_contents("code.txt");
-        echo htmlentities($code);
-    ?>
-</pre>
-
-<h2>Code vom Model</h2>
-
-<pre>
-    <?php 
-        $model = file_get_contents("adressenmodel.php");
-        echo htmlentities($model);
-    ?>
-</pre>
-
-<h2>Code vom Controller</h2>
-
-<pre>
-    <?php 
-        $controller = file_get_contents("adressencontroller.php");
-        echo htmlentities($controller);
-    ?>
-</pre>
-
-
 <style>
     body{
         font-family: Arial, Helvetica, sans-serif;
@@ -132,3 +101,4 @@
 
 </body>
 </html>
+
