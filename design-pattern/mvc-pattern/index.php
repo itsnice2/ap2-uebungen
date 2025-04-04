@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MVC: Adressen</title>
+    <title>MVC | Design Pattern</title>
+    <link href="../../assets/ap2.css" rel="stylesheet">
 </head>
 <body>
-    
-    <h1>Model-View-Controller: Adressen</h1>
+    <h1>MVC: Model-View-Controller</h1>
+<img src="mvc.png">
+<p>Ein MVC macht vor allem bei größeren Projekten Sinn. Bei (kleineren) Seiten die nur eine handvoll statischer Informationan zeigen, wäre das Overkill.</p>
+<hr>
+
+    <h1>Model-View-Controller für eine Adressen-Datenbank</h1>
 
 <hr>
 
@@ -85,49 +90,44 @@
 
 <br><br>
 <hr>
-
+<div.code>
 <h2>Code vom View</h2>
 
+<div class="code">
 <pre>
     <?php 
         $code = file_get_contents("code.txt");
         echo htmlentities($code);
     ?>
 </pre>
+</div>
 
 <h2>Code vom Model</h2>
 
+<div class="code">
 <pre>
     <?php 
         $model = file_get_contents("adressenmodel.php");
         echo htmlentities($model);
     ?>
 </pre>
+</div>
 
 <h2>Code vom Controller</h2>
 
+<div class="code">
 <pre>
     <?php 
         $controller = file_get_contents("adressencontroller.php");
         echo htmlentities($controller);
     ?>
 </pre>
-
+</div>
 
 <style>
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-    }
-
-    table, tr, th, td{
-        border: solid 1px lightgrey;
-        border-collapse: collapse;
-        padding: 5px 10px;
-    }
-
-    tr:hover{
-        background-color:#f0f0f0;
-    }
+    table{
+        width: 1000px !important;
+    }    
 </style>
 
 </body>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WISO | EPK</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+</head>
+<body>
+    <h1>EPK - Ereignisgesteuerte Prozesskette</h1>
+
+    <div class="inhalt">
+        <div class="links">
+            <p>Eine <a href="https://www.google.com/search?q=Ereignisgesteuerte+Prozesskette&sourceid=chrome&ie=UTF-8" target="_blank">Ereignisgesteuerte  Prozesskette</a> (EPK) ist eine grafische Darstellung von Geschäftsprozessen. Sie wird eingesetzt, um Abläufe und Arbeitsschritte zu visualisieren, zu analysieren und zu optimieren.</p>
+            <ul>
+                <li>Eine grafische Darstellung von Geschäftsprozessen</li>
+                <li>Visualisiert den zeitlichen und sachlogischen Ablauf von Ereignissen und Funktionen</li>
+                <li>Wird zur Analyse und Optimierung von Vorgängen verwendet</li>
+                <li>Wurde 1992 von einer Arbeitsgruppe unter Leitung von Wilhelm Scheer an der Universität des Saarlandes entwickelt</li>
+                <li>Ist vor allem im deutschsprachigen Raum verbreitet</li>
+            </ul>
+            <h3><a href="https://www.lucidchart.com/pages/de/epk-ereignisgesteuerte-prozesskette" target="_blank">Übersicht</a></h3>
+            <table>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Beschreibung</th>
+                </tr>
+                <tr>
+                    <td class="mittig"><img src="epk-ereignis.png" class="bild"></td>
+                    <td>Ereignis</td>
+                    <td>Ereignisse sind eingetretene Zustände, wie zum Beispiel: “Auftrag erhalten”.</td>
+                </tr>
+                <tr>
+                    <td class="mittig"><img src="epk-funktion.png" class="bild"></td>
+                    <td>Funktion</td>
+                    <td>Die Funktion beschreibt einen Arbeitsschritt, der auf ein Ereignis folgt, wie zum Beispiel: “Auftrag bearbeiten”.</td>
+                </tr>
+                <tr>
+                    <td class="mittig"><img src="epk-und.png" class="bild"></td>
+                    <td>UND Operator</td>
+                    <td>Alle dem “Und” Operator folgenden bzw. ausgehenden Elemente treten ein.</td>
+                </tr>
+                <tr>
+                    <td class="mittig"><img src="epk-oder.png" class="bild"></td>
+                    <td>ODER Operator</td>
+                    <td>Mindestens ein, dem “Oder” Operator folgendes bzw. ausgehendes Element, tritt ein. Es können mehr Elemente eintreten.</td>
+                </tr>
+                <tr>
+                    <td class="mittig"><img src="epk-xor.png" class="bild"></td>
+                    <td>Exklusives-ODER Operator</td>
+                    <td>Nur ein Element der folgenden bzw. ausgehenden tritt ein.</td>
+                </tr>
+                <tr>
+                    <td class="mittig"><img src="epk-pw.png" class="bild"></td>
+                    <td>Prozesswegweiser</td>
+                    <td>Der Prozesswegweiser verweist auf weitere Prozesse.</td>
+                </tr>
+                <tr>
+                    <td class="mittig"><img src="epk-ou.png" class="bild"></td>
+                    <td>Organisationseinheit</td>
+                    <td>Beschreibt die Rolle der zuständigen Person/Abteilung z.B. Qualitätsmanager.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="mitte">
+            <p><a href="https://de.wikipedia.org/wiki/Ereignisgesteuerte_Prozesskette" target="_blank">Einfache EPK</a></p>
+            <a href="Beispiel_ereignisorientierte_Prozesskette_(EPK).png"><img src="Beispiel_ereignisorientierte_Prozesskette_(EPK).png" width="150px"></a>
+        </div>
+        <div class="rechts">
+            <p><a href="https://de.wikipedia.org/wiki/Ereignisgesteuerte_Prozesskette" target="_blank">Erweiterte EPK</a></p>
+            <a href="EPK_komplex.png"><img src="EPK_komplex.png" width="200px"></a>
+        </div>
+    </div>
+        
+    <style>
+        .inhalt{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .links{
+            width: 500px;
+            text-align: left;
+        }
+
+        .mitte{
+            width: 160px;
+        }
+
+        .rechts{
+            width: 210px;
+        }
+
+        .bild{
+            height: 60px;            
+        }
+
+        .mittig{
+            text-align: center;
+        }
+    </style>
+</body>
+</html>
