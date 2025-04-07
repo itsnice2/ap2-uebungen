@@ -5,24 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grundlagen | Datenbanken</title>
     <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
 </head>
 <body>
 
     <h2>Was sind Datenbanken?</h2>
-    <p>...</p>
+    <p class="text">Datenbanken und ihre Tabellen kann man sich wie Listen oder Excel-Tabellen vorstellen.</p>
     
     <h2>Wozu braucht man Datenbanken?</h2>
-    <p>...</p>
+    <p class="text">Wenn du nur eine Adressliste mit 10 Leuten hast, brauchts du sie wahrscheinlich nicht. Aber eine Firma mit tausenden von Kunden, und millionen von Bestellungen wird froh sein, wenn diese Daten in einer Datenbank stehen.</p>
+    <p class="text">Datenbanken können Daten aus verschiedenen Tabellen verknüpfen. Zum Beispiel die Namen aus einer Tabelle mit Orten aus einer anderen Tabelle.</p>
 
     <h2>Phasen der Datenbankentwicklung</h2>
-    <h4>Externe Phase (Informationsbeschaffung)</h4>
-    <p>Beschreibung der Daten</p>
-    <h4>Konzeptionelle Phase (Semantisches Modell)</h4>
-    <p>...</p>
-    <h4>Logische Phase (Logisches Datenmodell)</h4>
-    <p>...</p>
-    <h4>Physische Phase (Datenbankschema)</h4>
-    <p>...</p>
+
+        <h4>Externe Phase (Informationsbeschaffung)</h4>
+        <p class="text">Ermittlung der Informationsstruktur: Die Datenbank soll einen Ausschnitt aus der realen Welt (auch als „Miniwelt“ bezeichnet) im Rechner abbilden. Diese Abbildung erfolgt durch die Beschreibung der Daten. Dazu ist der Informationsbedarf der Benutzer zu ermitteln und zu strukturieren. Das Ergebnis dieses ersten Schrittes – auch als Spezifikations- und Anforderungsanalyse bezeichnet – ist eine informelle Beschreibung des Fachproblems.</p>
+
+        <h4>Konzeptionelle Phase (Semantisches Modell)</h4>
+        <p class="text">Aufstellung des semantischen Modells: Ziel des konzeptionellen Entwurfs ist die formalisierte Beschreibung des betrachteten Sachverhalts. Es existieren verschiedene Ansätze zur Erzeugung einer solchen Gesamtsicht. Das bekannteste Modell ist das so genannte Entity Relationship Model (ER-Modell). Eine Erläuterung dieses ER-Modells folgt später. Das Ergebnis dieses Schrittes ist das Fachkonzept der Datenbank.</p>
+
+        <h4>Logische Phase (Logisches Datenmodell)</h4>
+        <p class="text">Erstellung des logischen Datenmodells: Ziel ist die Übertragung des semantischen Datenmodells in ein logisches Datenmodell, z. B. in ein relationales Datenmodell (Tabellenform). Diese Phase umfasst zwei Schritte: Im ersten Schritt muss eine Transformation des konzeptionellen Schemas (ER-Modell) in das Datenbankschema erfolgen. Dieser Schritt ist mithilfe von Software automatisierbar. Im zweiten Schritt erfolgt eine Optimierung des relationalen Schemas, z. B. die Durchführung einer Normalisierung der Tabellenstruktur (Abschnitt: „Optimierung: Normalisierung des Datenmodells“).</p>
+
+        <h4>Physische Phase (Datenbankschema)</h4>
+        <p class="text">Implementierung der Datenbank: Am Ende dieser Phase sollte die leere Datenbank existieren. Dazu sollte das logische Modell unter Verwendung einer Datendefinitionssprache (z. B. SQL) in ein konkretes Datenbankschema übersetzt werden. Es müssen Datentypen, Wertebereiche, Relationen und Sichten festgelegt werden.</p>
+
+    <h2><a href="https://www.arksolutions.de/gs/sharepoint/blog/gs-datenbank#:~:text=Das%20Datenbanksystem%20ist%20das%20ausgef%C3%BChrte,Manipulation%20und%20Verwaltung%20dieser%20Daten." target="_blank">DBMS, DBS, und DB</a></h2>
+
+        <table>
+            <tr>
+                <th class="spalte"> </th>
+                <th>Definition</th>
+                <th>Funktion</th>
+            </tr>
+            <tr>
+                <td class="spalte">DBS<br><small>Datenbank-system</small></td>
+                <td>System zur elektronischen Datenverwaltung</td>
+                <td>
+                    große Datenmengen effizient, widerspruchsfrei und dauerhaft speichern, benötigte Teilmengen in unterschiedlichen, bedarfsgerechten Darstellungsformen, für Benutzer und Anwendungsprogramme bereitstellen
+                </td>
+            </tr>
+            <tr>
+                <td class="spalte">DBMS<br><small>Datenbank-management-system</small></td>
+                <td>Software, die Daten in der DB verwaltet</td>
+                <td>Speichert, verwaltet und nutzt Daten in der DB</td>
+            </tr>
+            <tr>
+                <td class="spalte">DB<br><small>Datenbank</small></td>
+                <td>Strukturierte Sammlung von Daten</td>
+                <td>Speichert Daten</td>
+            </tr>
+        </table>
+        <br>
+        <img src="dbms-dbs-db.png">
+
+    <h2>Beziehungen</h2>
+
+        <h4>1:1-Beziehung</h4>
+        <p class="text">Eine 1:1-Beziehung weist meist darauf hin, dass man diese Daten in einer Tabelle zusammenführen kann. Warum macht man das dann nicht? Gründe können Sicherheit oder Performance sein. Eine Tabelle ist leichter zu sichern als eine Spalte.</p>
+        <img src="1-1.png">
+
+        <h4>1:n-Beziehung</h4>
+        <p class="text">Ein Ort aus der Tabelle Orte kann in mehreren Adress-Einträgen in der Tabelle Adresse vorkommen.</p>
+        <img src="1-n.png">
+
+        <h4>n:m-Beziehung</h4>
+        <p class="text">Kommt z.B. bei Bestellvorgängen oder Buchungen von Räumen vor. Diese Beziehung wird meist mit einer Zwischentabelle aufgelöst.</p>
+        <img src="m-n_1.png">
+        <p class="text">Die Beziehung oben kann man wie folgt auflösen:</p>
+        <img src="m-n_2.png">
+
+    <style>
+        table{
+            width: 600px;
+        }
+
+        .spalte{
+            max-width: 100px !important;
+            word-wrap: break-word;
+        }
+    </style>
 
 </body>
 </html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOIN | SQL</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    
+    <h1>Die JOIN-Anweisungen</h1>
+    <div class="text">
+        <p>Mit Join kann man Datensätze aus mehreren Tabellen verknüpfen. Zum Beispiel alle Rechnungen von Person X anzeigen lassen. Dabei gibt es verschiedene Joins:</p>
+        <p>
+            <table>
+                <tr>
+                    <th>Typ</th>
+                    <th>Erklärung</th>
+                    <th><a href="join.png"><img src="join.png" height="80px"></a></th>
+                </tr>
+                <tr>
+                    <td>INNER JOIN</td>
+                    <td>Alle Datensätze, die sich in Tabelle 1 UND Tabelle 2 befinden</td>
+                    <td><a href="inner_join.png"><img src="inner_join.png" height="80px"></a></td>
+                </tr>
+                <tr>
+                    <td>LEFT JOIN</td>
+                    <td>Alle Datensätze aus Tabelle 1, die sich mit Tabelle 2 überschneiden</td>
+                    <td><a href="left_join.png"><img src="left_join.png" height="80px"></a></td>
+                </tr>
+                <tr>
+                    <td>RIGHT JOIN</td>
+                    <td>Alle Datensätze aus Tabelle 2, die sich mit Tabelle 1 überschneiden</td>
+                    <td><a href="right_join.png"><img src="right_join.png" height="80px"></a></td>
+                </tr>
+                <tr>
+                    <td>FULL OUTER JOIN</td>
+                    <td>Alle Datensätze aus Tabelle 1 und 2, wenn es eine Überschneidung gibt</td>
+                    <td><a href="full_outer_join.png"><img src="full_outer_join.png" height="80px"></a></td>
+                </tr>
+            </table>
+        </p>
+        <h2>INNER JOIN</h2>
+        
+<pre>
+    SELECT [TABELLE1].[SPALTE2], [TABELLE1].[SPALTE3]
+    FROM [TABELLE1]
+    INNER JOIN [TABELLE2] 
+    ON [TABELLE1].[SPALTE1]=[TABELLE2].[SPALTE1];
+</pre>
+        <h2>LEFT JOIN</h2>
+<pre>
+    SELECT [TABELLE1].[SPALTE2], [TABELLE1].[SPALTE3]
+    FROM [TABELLE1]
+    LEFT JOIN [TABELLE2] 
+    ON [TABELLE1].[SPALTE1]=[TABELLE2].[SPALTE1];
+</pre>
+        <h2>RIGHT JOIN</h2>
+<pre>
+    SELECT [TABELLE1].[SPALTE2], [TABELLE1].[SPALTE3]
+    FROM [TABELLE1]
+    RIGHT JOIN [TABELLE2] 
+    ON [TABELLE1].[SPALTE1]=[TABELLE2].[SPALTE1];
+</pre>
+        <h2>FULL OUTER JOIN</h2>
+<pre>
+    SELECT [TABELLE1].[SPALTE2], [TABELLE1].[SPALTE3]
+    FROM [TABELLE1]
+    FULL OUTER JOIN [TABELLE2] 
+    ON [TABELLE1].[SPALTE1]=[TABELLE2].[SPALTE1];
+</pre>
+
+    </div>
+
+    <style>
+        table{
+            width: 600px
+        }
+    </style>
+    
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referenzielle Integrität | Datenbanken</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    <h1><a href="https://de.wikipedia.org/wiki/Referentielle_Integrit%C3%A4t" target="_blank">Referenzielle Integrität</a></h1>
+    <p class="text">Die referentielle Integrität (auch Beziehungsintegrität) besagt, dass Attributwerte eines Fremdschlüssels auch als Attributwert des Primärschlüssels vorhanden sein müssen.</p>
+    <p class="text">Über die referentielle Integrität werden in einem DBMS die Beziehungen zwischen Datenobjekten kontrolliert.</p>
+    <ol class="text">
+        <li>Ein neuer Datensatz mit einem Fremdschlüssel kann nur dann in einer Tabelle eingefügt werden, wenn in der referenzierten Tabelle ein Datensatz mit entsprechendem Wert im Primärschlüssel oder einem eindeutigen Alternativschlüssel existiert.</li>
+        <li>Eine Datensatzlöschung oder Änderung des Schlüssels in einem Primär-Datensatz ist nur möglich, wenn zu diesem Datensatz keine abhängigen Datensätze in Beziehung stehen.</li>
+    </ol>
+    <p class="text">Viele Datenbanksysteme bieten Zusatzfunktionen an, z.B.:</p>
+    <h4>Änderungsweitergabe</h4>
+    <p class="text">Wird der Primärschlüssel eines Datensatzes geändert, werden die Fremdschlüssel in allen abgängigen Datensätzen angepasst.</p>
+    <h4>Löschweitergabe </h4>
+    <p class="text">Abhängige Datensätze werden automatisch mitgelöscht. Beispiel: Kundendatensatz wird gelöscht, und die verknüpften Bestellungen automatisch auch.</p>
+    <h4>Kaskadierung</h4>
+    <p class="text">Beispiel: Kundendatensatz wird gelöscht,verknüpften Bestellungen und dazu verknüpfte Bestellpositionen auch.</p>
+    
+</body>
+</html>
+

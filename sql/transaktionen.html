@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaktionen | SQL</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    
+    <h1>Was ist eine Transaktion?</h1>
+    <p class="text">Eine Transaktion ist ein Vorgang der entweder ganz, oder garnicht durchgeführt wird. In einer Transaktion können mehrere SQL-Anweisungen enthalten sein. Wenn alle  erfolgreich durchgeführt wurden, dann ist die Transaktion erfolgreich gewesen.</p>
+
+    <h2><a href="https://dev.mysql.com/doc/refman/8.4/en/sql-transactional-statements.html" target="_blank">TRANSACTION</a></h2>
+    <p class="text">Eine Transaktion beginnt mit <code>START TRANSACTION;</code>, und endet mit einem <code>COMMIT;</code>.</p>
+    <p class="text"><b>COMMIT:</b> Starte eine Transaktion, und schließe sie am Ende auch ab:</p>
+    <p class="text">
+<pre class="text">
+START TRANSACTION;
+    INSERT INTO users (name, email) VALUES ('John Doe', 'johndoe@example.com');
+    UPDATE accounts SET balance = SUM(balance) WHERE name = 'John Doe';
+COMMIT;
+</pre>
+    </p>
+
+    <p class="text"><b>ROOLBACK:</b> Wenn es einen Fehler gibt, dann spiel alles wieder zurück, so wie es war.</p>
+    <p class="text">
+<pre class="text">
+START TRANSACTION;
+    INSERT INTO users (name, email) VALUES ('John Doe', 'johndoe@example.com');
+    UPDATE accounts SET balance = SUM(balance) WHERE name = 'John Doe';
+ROLLBACK;
+</pre>
+    </p>
+
+    <h2>Beispiel: Geldüberweisung</h2>
+    <p class="text">Wenn ich eine Überweisung tätige, will ich ja nicht dass sie nur zum Teil ausgeführt wird. Sie soll nur dann gültig sein, wenn alles durchgelaufen ist:</p>
+    <p class="text">
+        <ol class="text">
+            <li>Das Geld wird von meinem Konto abgebucht.</li>
+            <li>Mein Kontostand ist jetzt um diese Summe geringer.</li>
+            <li>Das Geld wird dem Zielkonto gutgeschrieben.</li>
+            <li>Der Kontostand des Zielkontos ist jetzt um diese Summe höher.</li>
+        </ol>
+    </p>
+    <p class="text">Erst wenn alles passiert ist, ist die Transaktion erfolgreich. Und erst dann werden die Zustände permanent. Sobald es in einem der Schritte Fehler gibt, wird alles Rückgangig gemacht, und wir sind wieder auf dem Startzustand.</p>
+    
+    
+</body>
+</html>

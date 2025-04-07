@@ -58,3 +58,7 @@ tr:hover{
     position: relative;
     left: calc(50% - 250px);
 }
+
+.kommentar{
+    color: rgb(151, 151, 151)
+}

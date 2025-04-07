@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE | SQL</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    
+    <h1>Die CREATE-Anweisung</h1>
+    <h2>CREATE DATABASE</h2>
+    <div class="text">
+        <p>Erstellt eine Datenbank.</p>
+        <code>CREATE DATABASE adressen;</code>
+    </div>
+
+    <h2>CREATE TABLE</h2>
+    <div class="text">
+        <p>Erstellt eine Tabelle.</p>
+<pre>
+CREATE TABLE (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    vorname VARCHAR(255),
+    nachname VARCHAR(255),
+    geburtstag DATE,
+    beschreibung TEXT
+);
+</pre>
+    </div>
+    
+    
+</body>
+</html>

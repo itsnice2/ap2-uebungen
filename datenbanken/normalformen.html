@@ -5,19 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Normalformen | Datenbanken</title>
     <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
 </head>
 <body>
 
-    <h1>Was sind Normalformen?</h1>
-    <p>...</p>
+    <h1><a href="https://www.nachhilfe-team.net/lernen-leicht-gemacht/normalformen/" target="_blank">Was ist eine Normalisierung?</a></h1>
+    <p class="text">Die Normalisierung von relationalen Datenbanken ist ein Vorgehen, bei dem die Ausgangstabelle in mehrere kleine Tabellen zerlegt wird. Dann werden sie über Fremdschlüssel in Beziehung gesetzt.</p>
+    <p  class="text">Ziel einer solchen Normalisierung ist das Erschaffen einer redundanzfreien Datenspeicherung, die Vermeidung von Anomalien, sowie die Erstellung eines klar strukturierten Datenbankmodells.</p>
+    <p class="text">Wir nehmen eine Adressliste als Beispiel:</p>
+    <a href="normalform0.png"><img src="normalform0.png" width="600px"></a>
     
-    <h1>1. Normalform</h1>
-    <p>...</p>
+    <h2>1. Normalform</h2>
+    <p class="text">Die 1. Normalform ist dann gegeben, wenn alle Attribute in einer Tabelle Atomar vorliegen.</p>
+    <p class="text">Atomar bedeutet, dass sich jedes einzelne Attribut nicht in weitere Attribute aufteilen lässt. Dadurch kann eine Anwendung jedes Attribut einzeln behandeln.</p>
+    <a href="normalform1.png"><img src="normalform1.png" width="600px"></a>
 
-    <h1>2. Normalform</h1>
-    <p>...</p>
+    <h2>2. Normalform</h2>
+    <p class="text">Die 2. Normalform ist dann gegeben, wenn:</p>
+    <ol class="text">
+        <li>Die 1. Normalform gegeben ist und</li>
+        <li>Jedes nicht dem Primärschlüssel zugehörige Attribut funktional vom Primärschlüssel abhängig ist, jedoch nicht von einzelnen Teilen des Primärschlüssels abhängt.</li>
+    </ol>
+    <p class="text">Bei der Anwendung der 2. Normalform wird die Ausgangs-Tabelle also in mehrere Tabellen verlagert.</p>
+    <a href="normalform2.png"><img src="normalform2.png" width="600px"></a>
+        
+        
 
-    <h1>3. Normalform</h1>
-    <p>...</p>
+    <h2>3. Normalform</h2>
+    <p class="text">Die 3. Normalform ist gegeben, wenn</p>
+    <ol class="text">
+        <li>Sich die Relation in der 2. Normalform befindet (und damit auch in der 1. NF) und</li>
+        <li>Keine Nicht-Schlüsselattribute funktional voneinander abhängig sind.</li>
+    </ol>
+    <a href="normalform3.png"><img src="normalform3.png" width="600px"></a>
+
+    <h2>Aus der Praxis</h2>
+    <p class="text">Nicht immer ist die 3. Normalform nötig, und nicht jede Doppelung muss unnötig sein. Um mal bei diesem Beispiel zu bleiben: Es ist durchaus ok wenn ein Straßenname mehrfach vorkommt. Vor allem wenn man nur einige dutzende/hunderte Personeneinträge hat. Und vor allem wenn andere Daten, z.B. Bestellungen, die Mehrheit der Datensätz ausmacht.</p>
+    <p class="text">Bei einer Datenbank aber, wo es vor allem um Adressen geht, da wäre das tatsächlich sinnvoll.</p>
 </body>
 </html>

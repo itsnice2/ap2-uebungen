@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELECT, ORDER, GROUP, LIMIT | SQL</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    
+    <h1>Die SELECT-Anweisung</h1>
+    <div class="text">
+        <p>Wählt Einträge aus einer Tabelle aus. Entweder alles, oder nur bestimmte Spalten.</p>
+<pre>
+    <label class="kommentar">-- Alle Einträge</label>
+    SELECT * FROM adressen;
+    <label class="kommentar">-- nur die Spalten 'vorname' und 'nachname'</label>
+    SELECT vorname, nachname FROM adressen;
+</pre>
+        <p><a href="https://www.w3resource.com/sql/subqueries/understanding-sql-subqueries.php" target="_blank">Man kann auch Abfragen von Abfragen machen (subquerys).</a></p>
+<pre>
+    <label class="kommentar">-- im SELECT-Teil</label>
+    SELECT first_name, <b>(SELECT department_name FROM departments WHERE departments.department_id = employees.department_id)</b> AS department_name
+    FROM employees;
+
+    <label class="kommentar">-- im FROM-Teil</label>
+    SELECT *
+    FROM <b>(SELECT first_name, salary FROM employees WHERE salary > 5000)</b> AS "high_salaried"
+
+    <label class="kommentar">-- im WHERE-Teil</label>
+    SELECT first_name
+    FROM employees
+    WHERE department_id IN <b>(SELECT department_id FROM departments WHERE location_id>1500)</b>;
+
+    <label class="kommentar">-- im HAVING-Teil</label>
+    SELECT department_id, AVG(salary)
+    FROM employees
+    GROUP BY department_id
+    HAVING AVG(salary) > <b>(SELECT AVG(salary) FROM employees)</b>;
+</pre>
+    </div>
+    
+    <h2>ORDER BY</h2>
+    <div class="text">
+        <p>Legt die Sortierung der Abfrage fest, z.B. nach Geburtstag absteigend, und bei gleichen Geburtstagen nach Nachname aufsteigend:</p>
+<pre>
+    <label class="kommentar">-- DESC = Descending = Absteigend</label>
+    <label class="kommentar">-- ASC  = Ascending  = Aufsteigend</label>
+    SELECT * FROM adressen ORDER BY geburtstag DESC, nachname ASC;
+</pre>
+    </div>
+
+    <h2>GROUP BY</h2>
+    <div class="text">
+        <p>Gruppiert gleiche Ergebnisse. Sinnvoll um keine doppelten Einträge zu sehen.</p>
+<pre>
+    SELECT *, SUM(geburtstag) FROM adressen GROUP BY geburtstag;
+</pre>
+    </div>
+
+    <h2>LIMIT</h2>
+    <div class="text">
+        <p>Limitiert die Anzahl der Funde, um z.B. nur die ersten 100 anzuzeigen</p>
+<pre>
+    SELECT * FROM adressen 
+    LIMIT 100;
+</pre>
+        <p>Kann z.B. für Pagination genutzt werden, zusammen mit <code>OFFSET</code>. In diesem Beispiel nur 10 Einträge, mit einem Offset von 10, d.h. Einträge 11 bis 20 werden abgefragt.</p>
+<pre>
+    SELECT * FROM adressen 
+    LIMIT 10
+    OFFSET 10;
+</pre>
+    </div>
+
+
+    
+</body>
+</html>

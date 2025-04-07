@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALTER | SQL</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    
+    <h1>Die ALTER-Anweisung</h1>
+    <div class="text">
+        <p>Die Tabellenstruktur an sich (NICHT DIE EINTRÄGE!) ändern.</p>
+<pre>
+    <label class="kommentar">-- Spalte hinzufügen</label>
+    ALTER TABLE adresse
+    ADD email VARCHAR(255);
+
+    <label class="kommentar">-- Spalte löschen</label>
+    ALTER TABLE adresse
+    DROP COLUMN email;
+
+    <label class="kommentar">-- Spalte ändern</label>
+    ALTER TABLE adresse
+    MODIFY COLUMN email VARCHAR(100);
+</pre>
+    </div>
+    
+</body>
+</html>

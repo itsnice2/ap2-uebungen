@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSERT | SQL</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    
+    <h1>Die INSERT-Anweisung</h1>
+    <div class="text">
+        <p>Neue Einträge in eine Tabelle hinzufügen</p>
+<pre>
+    INSERT INTO adressen
+        (vorname, nachname, geburtstag)
+    VALUES
+        ('Max', 'Mustermann', '01.02.1984'),
+        ('Martina', 'Musterfrau', '03.04.1985'),
+    ;
+</pre>
+    </div>
+
+    <h1>Die UPDATE-Anweisung</h1>
+    <div class="text">
+        <p>Vorhanden Einträge in einer Tabelle ändern</p>
+<pre>
+    UPDATE adressen
+    SET vorname = 'Moritz'
+    WERE vorname = 'max';
+</pre>
+    </div>
+    
+</body>
+</html>
