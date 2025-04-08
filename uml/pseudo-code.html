@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Code | UML</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1><a href="https://www.computerweekly.com/de/tipp/Was-ist-Pseudocode-und-wie-arbeitet-man-damit" target="_blank">Pseudo-Code</a></h2>
+    <p class="text">Pseudocode ist eine lesbare Beschreibung eines Programms oder Algorithmus, die nicht in einer bestimmten Programmiersprache, sondern in Alltagssprache verfasst ist. Er dient als High-Level-Design-Tool, das es Entwicklern ermöglicht, Algorithmen und Prozesse zu konzipieren, ohne sich in der Syntax zu verzetteln.</p>
+    <p class="text">Im Wesentlichen ist Pseudocode eine Möglichkeit, die Logik eines Programms oder Algorithmus auszudrücken, ohne die Zwänge der Syntax einer bestimmten Programmiersprache. Anders als echter Programmcode ist er nicht dazu gedacht, kompiliert oder ausgeführt zu werden. Stattdessen hilft Pseudocode dem Programmierer, ein Problem zu durchdenken und einen Plan für die Lösung zu entwickeln. Er ermöglicht einfache Änderungen und ist ein schneller Weg, um Ideen und Algorithmen zu schreiben.</p>
+    <p class="text"><b>ACHTUNG:</b> In Pseudo-Code wird kein spezieller Programmcode geschrieben! Benutze als keine C++/C#/PHP/JS-Syntax (nur Beispiele)! Pseudo-Code muss allgemein gehalten werden.</p>    
+    
+    <h3>Beispiel 1: JavaScript als Pseudo-Code</h3>
+    <table>
+        <tr>
+            <th>JavaScript</th>
+            <th>Pseudo-Code</th>
+        </tr>
+        <tr>
+            <td><code>var vorname;</code></td>
+            <td>Erstelle Variable "vorname"</td>
+        </tr>
+        <tr>
+            <td><code>vorname = 1;</code></td>
+            <td>Weise "vorname" den Wert 1 zu</td>
+        </tr>
+        <tr>
+            <td><code>name = vorname + " " + nachname;</code></td>
+            <td>
+                Weise "name" den Wert<br>
+                   (vorname + leerzeichen + nachname)<br>
+                zu
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>
+                    if(vorname == "Karl")<br>
+                    { ... }<br>
+                    else<br>
+                    { ... }                   
+                </code>
+            </td>
+            <td>
+                Beginne Wenn: Wenn vorname gleich "Karl"<br>
+                        Dann ...<br>
+                    Beginne Sonst: Sonst ...<br>
+                    Ende Sonst<br>
+                Ende Wenn
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>
+                    while(i < 10){
+                        ...
+                    }
+                </code>
+            </td>
+            <td>
+                Beginne Solange: Solange i kleiner ist als 10<br>
+                    Mache ...<br>
+                Ende Solange<br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>
+                    for (i=0; i&gt;10; i++)<br>
+                    { ... }
+                </code>
+            </td>
+            <td>
+                Beginn Für<br>
+                    Für i gleich 0, solange i kleiner ist als 10, addiere 1 zu i<br>
+                    Mache ...<br>
+                Ende Für
+            </td>
+        </tr>
+        <tr>
+            <td><code>return vorname;</code></td>
+            <td>Gib den Wert der Variable "vorname" zurück</td>
+        </tr>
+        <tr>
+            <td>
+                <code>
+                    function testfunktion()<br>
+                    { ... }
+                </code>
+            </td>
+            <td>Erstelle Funktion "testfunktion()"</td>
+        </tr>
+        <tr>
+            <td>
+                <code>
+                    function testfunktion(text, nummer)<br>
+                    { ... }
+                </code>
+            </td>
+            <td>Erstelle Funktion "testfunktion()" mit den Argumenten "text" und "nummer"</td>
+        </tr>
+    </table>
+
+    <h3>Beispiel 2:</h3>
+<pre>
+<table class="code-tabelle">
+    <tr class="code-tabelle">
+        <th class="code-tabelle code-th">JavaScript</th>
+        <th class="code-tabelle code-th">Als Pseudo-Code</th>
+    </tr>
+    <tr class="code-tabelle">
+        <td class="code code-tabelle js">
+var zahl = 1;
+var benutzer = "Karl";
+
+
+function test(user, numbers){    
+
+    var message = user + " hat " + numbers.toString() + " neue Nachrichten.";
+    return message;
+}
+
+
+
+test(benutzer, zahl);
+        </td>
+        <td class="code code-tabelle">
+Erstelle die Variable "zahl" mit dem Integer-Wert 1
+Erstelle die Variable "benutzer" mit dem String "Karl"
+
+
+Erstelle eine Funktine namens "test", mit den Argumenten "user" und "numbers"
+Beginne Funktion
+            Erstelle eine Variable "message", und fülle sie mit den Argumenten "numbers" und "user"
+            Gib den Wert der Variable "message" zurück
+Ende Funktion
+
+
+
+Führe die Funktion "test" aus, und übergib die Variablen "benutzer" und "zahl" als Argumente
+        </td>
+    </tr>
+</table>
+</pre>
+
+    <h3><a href="https://www.computerweekly.com/de/tipp/Was-ist-Pseudocode-und-wie-arbeitet-man-damit#:~:text=FOR%20i%20=%201%20to%20array%20length%20%E2%80%93%201" target="_blank">Beispiel 3: Bubble-Sort</a></h3>
+<pre class="code2">
+FOR i = 1 to array length – 1
+
+    FOR j = 1 to array length – i
+
+        IF array[j] > array[j + 1]
+
+            SWAP array[j] and array[j + 1]
+
+        END IF
+
+    END FOR
+
+END FOR
+</pre>
+
+
+
+    <style>
+        table{
+            width: 600px;
+            
+        }
+
+        .code{
+            text-align: left;
+            align-content: start;
+        }
+        .code-tabelle{
+            border: none;
+        }
+
+        .code-th{
+            border-bottom: solid 1px lightgray;
+            font-size: 18pt;
+        }
+
+        .js{
+            border-right: solid 1px lightgray;;
+        }
+
+        .code2{
+            width: 300px;
+            text-align: left;
+            position: relative;
+            left: calc(50% - 150px);
+        }
+    </style>
+
+</body>
+</html>

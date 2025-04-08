@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalwert | Algorithmen</title>
+    <link rel="stylesheet" href="../assets/ap2.css">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    <h1>Minimalwert finden</h1>
+        
+    <h3>Minimalwert als Pseudocode</h3>    
+<pre class="code">
+Erstelle eine Funktion namens minimalwerte, die ein Array namens werte als Argument entgegennimmt
+
+    Erstelle eine Integer-Variable namens min_wert, mit dem ersten Wert aus dem Array werte als Inhalt
+    Erstelle eine Integer-Variable namens anzahl, mit der Anzahl der Werte aus dem Array werte als Inhalt
+
+    Beginne Schleife: So oft durchlaufen, wie die Anzahl der Werte im Array werte
+
+        Beginne Wenn: Wenn der aktuelle Wert kleiner ist als der Wert in min_wert
+
+            Gib der Variable min_wert den Wert des aktuellen Wertes
+
+        Ende Wenn
+
+    Ende Schleife
+
+    Gib den Wert der Variablen min_wert zurück.
+
+Ende Funktion
+</pre>
+
+    <h3>Minimalwert in JavaScript</h3>    
+<pre class="code">
+function minimalwert(werte){
+    var min_wert = werte[0];
+    var anzahl = werte.length;
+
+    for( var i = 0; i < anzahl - 1; i++){
+        if(werte[i] < min_wert){
+            min_wert = werte[i];
+        }
+    }
+
+    return min_wert;
+};
+</pre>
+
+<div>
+    <h5>Selber ausprobieren</h5>
+    <div class="ausgabe">
+        <label id="start">...</label>
+    </div>
+    <div class="ausgabe">
+        <button id="sort">Minimalwert finden</button>
+    </div>
+    <div class="ausgabe">
+        <label>Kleinster Wert: </label><label id="ergebnis"></label>
+    </div>        
+</div>
+
+<style>
+    .code{
+        width: 400px;
+        text-align: left;
+        justify-self: center;
+        padding: 30px 30px;
+        border: solid 1px lightgrey;
+        border-radius: 20px;
+        overflow-x: auto;
+    }
+</style>
+
+<script>
+
+    var zahlen = [10, 100, 3, 5, 27, 18, 42, 23, 99, 7];
+    document.getElementById("start").innerHTML = "Werteliste: " + zahlen;
+
+    function minimalwert(werte){
+        var min_wert = werte[0];
+        var anzahl = werte.length;
+
+        for( var i = 0; i < anzahl - 1; i++){
+            if(werte[i] < min_wert){
+                min_wert = werte[i];
+            }
+        }
+
+        return min_wert;
+    };
+
+    document.getElementById("sort").addEventListener("click", function(){
+        document.getElementById("ergebnis").innerHTML = minimalwert(zahlen);
+    });
+
+</script>
+
+</body>
+</html>

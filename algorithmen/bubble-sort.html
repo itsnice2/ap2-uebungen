@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble-Sort | Algorithmen</title>
+    <link rel="stylesheet" href="../assets/ap2.css">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    <h1><a href="https://en.wikipedia.org/wiki/Bubble_sort" target="_blank">Bubble-Sort</a></h1>
+    <p class="text">Der Bubble-Sort-Alorithmus vergleicht eine Liste (bzw. Array) von Werten nach und nach mit dem jeweils nachfolgenden Wert. Wenn der Wert größer ist als der nachfolgende Wert, werden die Werte getauscht.</p>
+    
+    <h3>Bubble-Sort als Pseudocode</h3>    
+<pre class="code">
+Beginne Funktion bubbleSort mit dem Array werte als Argument
+
+    Erstelle Variable laenge, mit dem Integerwert der Anzahl der Arraywerte
+
+    Beginne Schleife 1: Erstelle eine Variable namens i, und erhöhe sie solange um 1, solange i kleiner ist als die Variable laenge minus 1
+
+        Beginne Schleife 2: Erstelle eine Variable namens j, und erhöhe sie solange um 1, wie j kleiner ist als die Variable laenge minus Variable i minus 1
+
+            Beginne Wenn: Wenn der Parameter werte[j] größer ist als werte[j + 1]
+
+                Erstelle eine Variable namens tausch, und gib ihr den Wert von werte[j]
+                Gib der Variable werte[j] den Wert von werte[j + 1]
+                Gib der Variable werte[j + 1] den Wert von tausch
+
+            Ende Wenn
+
+        Ende Schleife 2
+
+    Ende Schleife 1
+
+Ende Funktion
+</pre>
+
+    <h3><a href="https://medium.com/@interviewer.live/understanding-bubble-sort-algorithm-in-javascript-1b252141fb71" target="_blank">Bubble-Sort in JavaScript</a></h3>
+    
+<pre class="code">
+function bubbleSort(werte){
+    var laenge = werte.length;
+
+    for(var i = 0; i < laenge; i++){
+
+        for(var j = 0; j < laenge - i - 1; j++){
+
+            if(werte[j] > werte[j + 1]){
+                var tausch   = werte[j];
+                werte[j]     = werte[j + 1];
+                werte[j + 1] = tausch;
+            }
+        }
+    }
+    return werte;
+};
+</pre>
+<div>
+    <h5>Selber ausprobieren</h5>
+    <div class="ausgabe">
+        <label id="start">...</label>
+    </div>
+    <div class="ausgabe">
+        <button id="sort">Bubble-Sort starten</button>
+    </div>
+    <div class="ausgabe">
+        <label>Ergebnis: </label><label id="ergebnis"></label>
+    </div>        
+</div>
+
+    <h3>Bubble-Sort in PHP</h3>
+<pre class="code">
+function bubbleSort(array $werte): array{
+    $laenge = count($werte);
+
+    for( $i = 0; $i < $laenge - 1; $i++ ){
+
+        for( $j = 0; $j < $laenge - $i - 1; $j++ ){
+            
+            if( $werte[$j] > $werte[$j + 1] ){
+
+                $tausch         = $werte[$j];
+                $werte[$j]      = $werte[$j + 1];
+                $werte[$j + 1]  = $tausch;
+            }
+        }
+    }
+    
+    return $werte;
+}
+</pre>
+
+<style>
+    .code{
+        width: 500px;
+        text-align: left;
+        justify-self: center;
+        padding: 30px 30px;
+        border: solid 1px lightgrey;
+        border-radius: 20px;
+        overflow-x: auto;
+    }
+</style>
+
+<script>
+
+    var zahlen = [1, 10, 100, 3, 5, 27, 18, 42, 23, 99, 2, 7];
+    document.getElementById("start").innerHTML = "Startwerte: " + zahlen;
+
+    function bubbleSort(werte){
+        var laenge = werte.length;
+
+        for(var i = 0; i < laenge; i++){
+
+            for(var j = 0; j < laenge - i - 1; j++){
+
+                if(werte[j] > werte[j + 1]){
+                    var tausch = werte[j];
+                    werte[j] = werte[j + 1];
+                    werte[j + 1] = tausch;
+                }
+            }
+        }
+        return werte;
+    };
+
+    document.getElementById("sort").addEventListener("click", function(){
+        document.getElementById("ergebnis").innerHTML = bubbleSort(zahlen);
+    });
+
+</script>
+
+</body>
+</html>
