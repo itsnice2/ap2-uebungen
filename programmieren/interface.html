@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface | Programmierung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>Interface / Schnittstelle</h2>
+    <p class="text"><small>Frage an ChatGPT: <i>Erkläre mir was in der Programmierung ein Interface ist.</i></small></p>
+    <p class="text">In der Programmierung ist ein Interface ein Vertrag, der die Struktur und das Verhalten von Klassen definiert, ohne dabei die Details der Implementierung festzulegen. Es handelt sich um eine Sammlung von Methodendeklarationen (also Signaturen von Methoden), die von einer Klasse, die das Interface implementiert, <b>verwendet werden müssen.</b></p>    
+    <p class="text">Beispiel: Ich will das versenden von Nachrichten in verschiedenen Klassen implementieren:</p>
+
+    
+    <h2><a href="interface.php">Beispiel für PHP</a></h2>
+<pre>
+interface SpiegelNachrichten
+{
+    public function neueNachricht( $nachricht );
+}
+
+
+
+class User implements SpiegelNachrichten
+{
+    public function neueNachricht($nachricht)
+    {
+        echo "Neue Nachricht für User: " . $nachricht;
+    }
+}
+
+
+
+class LokalZeitung implements SpiegelNachrichten
+{
+    public function neueNachricht($nachricht)
+    {
+        echo "Neue Nachricht für LokalZeitung: " . $nachricht;
+    }
+}
+
+
+
+$user = new User();
+$zeitung = new LokalZeitung();
+
+$user->neueNachricht("Willkommen im System!");
+echo "&lt;br&gt;";
+$zeitung->neueNachricht("Breaking News: Neues Ereignis in der Stadt!");
+</pre>
+
+    <h2>Beispiel für C#</h2>
+<pre>
+using System;
+
+
+
+public interface SpiegelNachrichten
+{
+    public void neueNachricht(string Nachricht); 
+}
+
+
+
+public class User : SpiegelNachrichten
+{
+    public void neueNachricht(string Nachricht)
+    {
+        Console.WriteLine("Neue Nachricht für User: " + Nachricht);
+    }
+}
+
+
+
+public class LokalZeitung : SpiegelNachrichten
+{
+    public void neueNachricht(string Nachricht)
+    {
+        Console.WriteLine("Neue Nachricht für LokalZeitung: " + Nachricht);
+    }
+}
+
+
+
+class Program
+{
+    static void Main(string[] args)
+    {        
+        SpiegelNachrichten user = new User();
+        user.neueNachricht("Willkommen im System!");
+        
+        SpiegelNachrichten lokalZeitung = new LokalZeitung();
+        lokalZeitung.neueNachricht("Breaking News: Neues Ereignis in der Stadt!");
+    }
+}
+</pre>
+
+<hr>
+
+<h2><a href="https://www.reddit.com/r/csharp/comments/wssr6p/comment/il0iayp/" target="_blank">Reddit-Kommentar der das ganz gut erklärt:</a></h2>
+
+<p class="text">Suppose I had a game. In my game, I have a bunch of objects of different types, and these object all need to move, and they all move differently depending on what type of object they are.</p>
+<p class="text">Now, each object type is of course a class, and it makes sense that the logic for each object type's movement should be built into the class, so I write a Move() method into each of them.</p>
+
+<pre style="background-color: #eeeeee;">
+class Enemy {
+   public void Move() {
+   }
+}
+
+class Player {
+   public void Move() {
+   }
+}
+
+class Bullet {
+   public void Move() {
+   }
+}
+</pre>
+
+<p class="text">I write a game engine to handle all my game objects, and my game engine is in charge of updating the objects, i.e. calling Move() on each one.</p>
+<p class="text">Since they are all different types, I would have to call each type separately. The game engine would need to know what each type is.</p>
+
+<pre style="background-color: #eeeeee;">
+class GameEngine {
+   private Enemy enemy;
+   private Player player;
+   private Bullet bullet;
+
+   public void UpdateEachFrame() {
+        enemy.Move();
+        player.Move();
+        bullet.Move();
+   }
+}
+</pre>
+
+<p class="text">But what if I want more object types? As you might guess, this doesn't scale very well. That's where interfaces come to the rescue. Interfaces are a contract, and like any contract, it guarantees something, in this case, that the class that implements it has a specific set og methods and or properties, regardless of what class type it is. Interface members are always public (it makes no sense if an interface is private, as interaces are all about... interfacing) so we don't specify it in the declaration.</p>
+
+<pre style="background-color: #eeeeee;">
+interface IMove {
+   void Move();
+}
+
+class Enemy : IMove {
+   // compiler forces Enemy to implement Move(), or else we get an error
+   public void Move() {
+   }
+}
+</pre>
+
+<p class="text">Now we can do sommething like:</p>
+
+<pre style="background-color: #eeeeee;">
+class GameEngine {
+   List<IMove> gameObjects;
+   Player player;
+
+   public void Init() {
+      gameObjects = new List<IMove>();
+      gameObjects.Add(new Enemy());
+      gameObjects.Add(new Enemy());
+      gameObjects.Add(new Enemy());
+      player = new Player();
+      gameObjects.Add(player);
+   }
+
+   public void HandleInputs(Buttons button) {
+     switch(button) {
+       case Buttons.Up:
+          player.SetDirection(Directions.Up);
+          break;
+       case Buttons.Fire:
+          gameObjects.Add(new Bullet());
+          break;
+     } 
+   }  
+
+   public void UpdateEachFrame() {
+       foreach(var gameObject in gameObjects) {
+           gameObject.Move();
+       }
+   }
+}
+</pre>
+<p class="text">Sorry, I got carried away with the example.</p>
+<p class="text">Interfaces are extremely useful when writing libraries, since you can make the methods accept or return interfaces, meaning they don't care about the class type, only that it implements an interface, making your code more accessible to developers.</p>
+
+<style>
+    pre{
+        width: 600px;
+        text-align: left;
+        position: relative;
+        left: calc(50% - 300px);
+
+        border: solid 1px lightgrey;
+        border-radius: 10px;
+        padding: 30px 30px;
+
+    }
+</style>
+</body>
+</html>

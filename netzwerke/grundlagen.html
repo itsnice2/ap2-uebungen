@@ -11,57 +11,67 @@
     <h1>Netzwerkegrundlagen</h1>
     
     <h2>Netzwerkarten</h2>
-    <table>
+    <table class="netzwerke">
         <tr>
             <th> </th>
             <th>Erklärung</th>
         </tr>
         <tr>
-            <td>LAN</td>
-            <td>
-                <b>Local Area Network</b><br>
-                <p>Lokales Netzwerk</p>
+            <td class="mitte">PAN</td>
+            <td class="mitte">
+                <h4>Personal Area Network</h4>
+                <p>Ein persönliches Netzwerk, das nur wenige Meter umfasst, beispielsweise Bluetooth-Verbindungen</p>
             </td>
         </tr>
         <tr>
-            <td>WLAN</td>
-            <td></td>
+            <td class="mitte">LAN</td>
+            <td class="mitte">
+                <h4>Local Area Network</h4>
+                <p>Ein lokales Netzwerk, das ein Gebäude oder Rechenzentrum umfasst, beispielsweise ein Firmennetzwerk.</p>
+            </td>
         </tr>
         <tr>
-            <td>VLAN</td>
-            <td></td>
+            <td class="mitte">WLAN</td>
+            <td class="mitte">
+                <h4>Wireless Local Area Network</h4>
+                <p>Drahtloses Netzwerk, das es Geräten ermöglicht, sich kabellos zu verbinden.</p>
+            </td>
+        </tr>                
+        <tr>
+            <td class="mitte">MAN</td>
+            <td class="mitte">
+                <h4>Metropolitan Area Network</h4>
+                <p>Ein Netzwerk, das Städte umfasst und eine Reichweite von bis zu 100 km hat 
+                </p>
+            </td>
         </tr>
         <tr>
-            <td>VPN</td>
-            <td></td>
+            <td class="mitte">WAN</td>
+            <td class="mitte">
+                <h4>Wide Area Network</h4>
+                <p>Ein Weitverkehrsnetz, das Länder oder Kontinente umfasst, beispielsweise das Internet </p>
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
+            <td class="mitte">GAN</td>
+            <td class="mitte">
+                <h4>Global Area Network</h4>
+                <p>Ein weltumspannendes Netzwerk, das mehrere WANs umfasst, beispielsweise das Internet </p>
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
+            <td class="mitte">VLAN</td>
+            <td class="mitte">
+                <h4>Virtual Local Area Network</h4>
+                <p>Eine Technologie, die ein physisches Netzwerk in logische Teilnetze aufteilt. VLANs werden eingesetzt, um Datenströme zu trennen oder zu priorisieren. Sie sind besonders nützlich, um komplexe Netzwerke effizient und sicher zu gestalten. </p>
+            </td>
         </tr>
         <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
+            <td class="mitte">VPN</td>
+            <td class="mitte">
+                <h4>Virtual Private Network</h4>
+                <p>Ein geschlossenes, privates virtuelles Netzwerk, das eine sichere Verbindung zwischen einem VPN-Client und einem VPN-Server ermöglicht </p>
+            </td>
         </tr>
     </table>
 
@@ -73,44 +83,64 @@
             <th>TCP/IP-Referenzmodell</th>
             <th>Protokolle</th>
             <th>Einheiten</th>
-            <th>Beispiele</th>
+            <th>Geräte</th>
         </tr>
         <tr>
             <td class="mitte">7.</td>
             <td class="mitte">Anwendungschicht</td>
             <td class="mitte" rowspan="3">Anwendung</td>
-            <td class="mitte"></td>
-            <td></td>
-            <td></td>
+            <td class="mitte" rowspan="3">
+                <b>DHCP<br>
+                DNS<br>
+                FTP<br>
+                HTTP<br>
+                HTTPS</b><br>
+                LDAP<br>
+                MQTT<br>
+                NCP<br>
+                RTP<br>
+                <b>SMTP</b><br>
+                XMPP
+            </td>
+            <td class="mitte" rowspan="3">
+                Daten
+            </td>
+            <td class="mitte" rowspan="4">
+                Gateway<br>
+                Content-Switch<br>
+                Proxy<br>
+                Layer-4-7-Switch
+            </td>
         </tr>
         <tr>
             <td class="mitte">6.</td>
             <td class="mitte">Darstellungsschicht</td>
-            <td></td>
-            <td class="mitte"></td>
-            <td></td>
-            <td></td>
+            
+            
+
         </tr>
         <tr>
             <td class="mitte">5.</td>
             <td class="mitte">Sitzungsschicht</td>
-            <td></td>
-            <td class="mitte"></td>
-            <td></td>
-            <td></td>
+            
+            
+
         </tr>
         <tr>
             <td class="mitte">4.</td>
             <td class="mitte">Transportschicht</td>
             <td class="mitte">Transportschicht</td>
             <td class="mitte">
-                TCP<br>
+                <b>TCP</b><br>
                 UDP<br>
                 SCTP<br>
                 SPX
             </td>
-            <td></td>
-            <td></td>
+            <td class="mitte">
+                TCP<br>
+                UDP
+            </td>
+            
         </tr>
         <tr>
             <td class="mitte">3.</td>
@@ -119,28 +149,43 @@
             <td class="mitte">
                 ICMP<br>
                 IGMP<br>
-                IP<br>
+                <b>IP</b><br>
                 IPsec<br>
                 IPX
             </td>
-            <td></td>
-            <td></td>
+            <td class="mitte">
+                Pakete
+            </td>
+            <td class="mitte">
+                Router<br>
+                Layer-3-Switch<br>
+                <small>(liest Ziel-IP aus Header aus)</small>
+            </td>
+            
         </tr>
         <tr>
             <td class="mitte">2.</td>
             <td class="mitte">Sicherungsschicht</td>
             <td class="mitte" rowspan="2">Netzzugriff</td>
             <td class="mitte">
-                IEEE 802.3 Ethernet<br>
-                IEEE 802.11 WLAN<br>
+                <b>IEEE 802.3 Ethernet</b><br>
+                <b>IEEE 802.11 WLAN</b><br>
                 TLAP<br>
                 FDDI<br>
-                MAC<br>
+                <b>MAC</b><br>
                 Token Ring<br>
                 ARCNET
             </td>
-            <td></td>
-            <td></td>
+            <td class="mitte">
+                Frames
+            </td>
+            <td class="mitte">
+                Bridge<br>
+                Layer-2-Switch<br>
+                <small>(keine IP-Header auslesen)</small><br>
+                Access-Point
+            </td>
+            
         </tr>
         <tr>
             <td class="mitte">1.</td>
@@ -150,13 +195,34 @@
                 Token Ring<br>
                 ARCNET
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td class="mitte">
+                Bits
+            </td>
+            <td class="mitte">
+                Netzwerkkabel<br>
+                Repeater<br>
+                Hub<br>
+                Antenne
+            </td>
+            
         </tr>
     </table>
 
     <h2></h2>
     <p class="text"></p>
+    
+    <style>
+        table{
+            width: 600px;
+        }
+
+        p, h4{
+            text-align: left;
+        }
+
+        .netzwerke{
+            width: 400px;
+        }
+    </style>
 </body>
 </html>

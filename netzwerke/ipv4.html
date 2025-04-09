@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPv4 | Netzwerke</title>
+    <link rel="stylesheet" href="../assets/ap2.css">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    <h1><a href="https://de.wikipedia.org/wiki/IPv4" target="_blank">IPv4</a></h1>
+    
+    <h2>Aufbau</h2>
+    <p class="text">Eine IPv4-Adresse besteht aus 4 * 1 Byte = 4 * 8 Bits = 32 Bits</p>
+    <p class="text">Es gibt maximal 4.294.967.296 mögliche Adressen (2^32).</p>
+    <p class="text">Es gibt in der Regel 256-2 = <b>254 nutzbare Adressen</b>: Netzadresse (0) und Broadcastadresse (255) werden abgezogen, weil nicht nutzbar. Ein andere Aufteilung erlaubt uns <a href="subnetting.html">Subnetting</a>.</p>
+    <table>
+        <tr>
+            <td>Beispiel</td>
+            <td><code>192.168.0.12</code></td>
+        </tr>
+        <tr>
+            <td>Subnet</td>
+            <td><code>255.255.255.0</code></td>
+        </tr>
+        <tr>
+            <td>CIDR</td>
+            <td><code>192.168.0.12/24</code></td>
+        </tr>
+        <tr>
+            <td>Bits</td>
+            <td>
+                <p>192.168.0.12 in Bits:</p>
+                <p><code>11000000.10101000.00000000.00001100</code></p>
+            </td>
+        </tr>
+        <tr>
+            <td>Netzanteil</td>
+            <td><code><label>11000000.10101000</label>.00000000.00001100</code></td>
+        </tr>
+        <tr>
+            <td>Hostanteil</td>
+            <td><code>11000000.10101000.<label class="gruen">00000000.00001100</label></code></td>
+        </tr>
+    </table>
+    <p><a href="https://tools.nocksoft.de/iprechner/?ip=192.168.0.12&format=decimal" target="_blank">IP-Umrechner</a></p>
+
+    <h2>Netze</h2>
+    <p class="text"></p>
+    <table>
+        <tr>
+            <th>Klasse</th>
+            <th>Bereich von</th>
+            <th>Bereich bis</th>
+            <th>Bits von</th>
+            <th>Bits bis</th>
+        </tr>
+        <tr>
+            <td>A</td>
+            <td>0.0.0.0/8</td>
+            <td>127.255.255.255</td>
+            <td><code><label>00000000</label>.00000000.00000000.00000000</code></td>
+            <td><code>01111111.11111111.11111111.11111111</code></td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td>128.0.0.0/16</td>
+            <td>191.255.255.255</td>
+            <td><code><label>10000000.00000000</label>.00000000.00000000</code></td>
+            <td><code>01111111.11111111.11111111.11111111</code></td>
+        </tr>
+        <tr>
+            <td>C</td>
+            <td>192.0.0.0/24</td>
+            <td>223.255.255.255</td>
+            <td><code><label>11000000.00000000.00000000</label>.00000000</code></td>
+            <td><code>11011111.11111111.11111111.11111111</code></td>
+        </tr>
+        <tr>
+            <td>D</td>
+            <td>224.0.0.0/4</td>
+            <td>239.255.255.255</td>
+            <td><code><label>1110</label>0000.00000000.00000000.00000000</code></td>
+            <td><code>11101111.11111111.11111111.11111111</code></td>
+        </tr>
+        <tr>
+            <td>E</td>
+            <td>240.0.0.0/4</td>
+            <td>255.255.255.255</td>
+            <td><code><label>1111</label>0000.00000000.00000000.00000000</code></td>
+            <td><code>11111111.11111111.11111111.11111111</code></td>
+        </tr>
+    </table>
+
+    <h2>Besondere Netze</h2>
+    <p class="text"></p>
+    <table>
+        <tr>
+            <th>Bereich</th>
+            <th>Erklärung</th>            
+        </tr>
+        <tr>
+            <td>10.0.0.0/8</td>
+            <td>Privater Netzbereich</td>
+        </tr>
+        <tr>
+            <td>127.0.0.0/8</td>
+            <td>Loopback / localhost</td>
+        </tr>
+        <tr>
+            <td>172.16.0.0/12</td>
+            <td>Privater Netzbereich</td>
+        </tr>
+        <tr>
+            <td>192.168.0.0/16</td>
+            <td>Privater Netzbereich</td>
+        </tr>
+        <tr>
+            <td>169.254.0.0/16</td>
+            <td>
+                <p>Automatische Adresskonfiguration (link local), APIPA</p>
+                <p>Diese Adresse bekommt der Rechner, wenn es keine Netzwerkverbindung gibt.</p>
+            </td>
+        </tr>        
+    </table>
+    
+    <style>
+       code{
+        font-size: 14pt;
+       }
+
+       label{
+        color: red;
+       }
+
+       .gruen{
+        color: green;
+       }
+    </style>
+</body>
+</html>

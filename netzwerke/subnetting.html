@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subnetting | Netzwerke</title>
+    <link rel="stylesheet" href="../assets/ap2.css">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    <h1><a href="https://www.elektronik-kompendium.de/sites/net/0907201.htm" target="_blank">Subnetting</a></h1>
+    
+    <h2>Was ist Subnetting?</h2>
+    <p class="text">Die Aufteilung eines zusammenhängenden Adressraums von IP-Adressen in mehrere kleinere Adressräume nennt man Subnetting.</p>
+
+    <h2>Warum Subnetting?</h2>
+    <p class="text">Die Berücksichtigung der physikalischen Netzstruktur durch die gezielte Vergabe von IP-Adressen und damit eine logische Zusammenfassung mehrerer Hosts zu einem Subnetz reduziert die Routing-Informationen auf die Angabe der Netzwerk-Adresse. Die Netzwerk-Adresse gewährleistet den Standort einer IP-Adresse in einem bestimmten Subnetz. Ein Router benötigt dann nur noch die Routing-Information zu diesem Subnetz und nicht zu allen einzelnen Hosts in diesem Subnetz. Der letzte Router, der in das Ziel-Subnetz routet, ist dann für die Zustellung des IP-Datenpakets verantwortlich.</p>
+
+    <h2>Wie funktioniert Subnetting?</h2>
+    <p class="text">Jede IP-Adresse teilt sich in Netz-Adresse und Host-Adresse. Die Subnetzmaske bestimmt, an welcher Stelle diese Trennung stattfindet. </p>  
+    
+    <h2>IPv4-Subnetting</h2>
+    <table>
+        <tr>
+          <th >Hostanzahl</th>
+          <th >Subnetzmaske</th>
+          <th nowrap>32-Bit-Wert</th>
+          <th >Suffix</th>
+        </tr>
+        <tr>
+          <td class="rechts"><strong><code>16.777.214</strong></td>
+          <td class="links"><strong>255.0.0.0</code></strong></td>
+          <td nowrap><strong><code>1111 1111 0000 0000 0000 0000 0000 0000</code></strong></td>
+          <td><strong>/8</strong></td>
+        </tr>
+        <tr>
+          <td class="rechts">8.388.606</td>
+          <td class="links">255.128.0.0</code></td>
+          <td nowrap><code>1111 1111  1000 0000 0000 0000 0000 0000</code></td>
+          <td>/9</td>
+        </tr>
+        <tr>
+          <td class="rechts">4.194.302</td>
+          <td class="links">255.192.0.0</code></td>
+          <td nowrap><code>1111 1111  1100 0000 0000 0000 0000 0000</code></td>
+          <td>/10</code></td>
+        </tr>
+        <tr>
+          <td class="rechts">2.097.150</code></td>
+          <td class="links">255.224.0.0</code></td>
+          <td nowrap><code>1111 1111  1110 0000 0000 0000 0000 0000</code></td>
+          <td>/11</td>
+        </tr>
+        <tr>
+          <td class="rechts">1.048.574</td>
+          <td class="links">255.240.0.0</code></td>
+          <td nowrap><code>1111 1111  1111 0000 0000 0000 0000 0000</code></td>
+          <td>/12</td>
+        </tr>
+        <tr>
+          <td class="rechts">524.286</td>
+          <td class="links">255.248.0.0</code></td>
+          <td nowrap><code>1111 1111  1111 1000 0000 0000 0000 0000</code></td>
+          <td>/13</td>
+        </tr>
+        <tr>
+          <td class="rechts">262.142</td>
+          <td class="links">255.252.0.0</code></td>
+          <td nowrap><code>1111 1111  1111 1100 0000 0000 0000 0000</code></td>
+          <td>/14</td>
+        </tr>
+        <tr>
+          <td class="rechts">131.070</code></td>
+          <td class="links">255.254.0.0</code></td>
+          <td nowrap><code>1111 1111  1111 1110 0000 0000 0000 0000</code></td>
+          <td>/15</td>
+        </tr>
+        <tr>
+          <td class="rechts"><strong>65.534</strong></td>
+          <td class="links"><strong>255.255.0.0</code></strong></td>
+          <td nowrap><strong><code>1111 1111 1111 1111  0000 0000 0000 0000</code></strong></td>
+          <td><strong>/16</strong></td>
+        </tr>
+        <tr>
+          <td class="rechts">32.766</td>
+          <td class="links">255.255.128.0</code></td>
+          <td nowrap><code>1111 1111 1111 1111  1000 0000 0000 0000</code></td>
+          <td>/17</td>
+        </tr>
+        <tr>
+          <td class="rechts">16.382</td>
+          <td class="links">255.255.192.0</code></td>
+          <td nowrap><code>1111 1111 1111 1111  1100 0000 0000 0000</code></td>
+          <td>/18</td>
+        </tr>
+        <tr>
+          <td class="rechts">8.190</code></td>
+          <td class="links">255.255.224.0</code></td>
+          <td nowrap><code>1111 1111 1111 1111  1110 0000 0000 0000</code></td>
+          <td>/19</td>
+        </tr>
+        <tr>
+          <td class="rechts">4.094</td>
+          <td class="links">255.255.240.0</code></td>
+          <td nowrap><code>1111 1111 1111 1111  1111 0000 0000 0000</code></td>
+          <td>/20</code></td>
+        </tr>
+        <tr>
+          <td class="rechts">2.046</td>
+          <td class="links">255.255.248.0</code></td>
+          <td nowrap><code>1111 1111 1111 1111  1111 1000 0000 0000</code></td>
+          <td>/21</td>
+        </tr>
+        <tr>
+          <td class="rechts">1.022</td>
+          <td class="links">255.255.252.0</code></td>
+          <td nowrap><code>1111 1111 1111 1111  1111 1100 0000 0000</code></td>
+          <td>/22</td>
+        </tr>
+        <tr>
+          <td class="rechts">510</code></td>
+          <td class="links">255.255.254.0</code></td>
+          <td nowrap><code>1111 1111 1111 1111  1111 1110 0000 0000</code></td>
+          <td>/23</td>
+        </tr>
+        <tr>
+          <td class="rechts"><strong>254</strong></td>
+          <td class="links"><strong>255.255.255.0</code></strong></td>
+          <td nowrap><strong><code>1111 1111 1111 1111 1111 1111  0000 0000</code></strong></td>
+          <td><strong>/24</strong></td>
+        </tr>
+        <tr>
+          <td class="rechts">126</td>
+          <td class="links">255.255.255.128</td>
+          <td nowrap><code>1111 1111 1111 1111 1111 1111  1000 0000</code></td>
+          <td>/25</td>
+        </tr>
+        <tr>
+          <td class="rechts">62</td>
+          <td class="links">255.255.255.192</td>
+          <td nowrap><code>1111 1111 1111 1111 1111 1111  1100 0000</code></td>
+          <td>/26</td>
+        </tr>
+        <tr>
+          <td class="rechts">30</code></td>
+          <td class="links">255.255.255.224</td>
+          <td nowrap><code>1111 1111 1111 1111 1111 1111  1110 0000</code></td>
+          <td>/27</td>
+        </tr>
+        <tr>
+          <td class="rechts">14</td>
+          <td class="links">255.255.255.240</code></td>
+          <td nowrap><code>1111 1111 1111 1111 1111 1111  1111 0000</code></td>
+          <td>/28</td>
+        </tr>
+        <tr>
+          <td class="rechts">6</td>
+          <td class="links">255.255.255.248</td>
+          <td nowrap><code>1111 1111 1111 1111 1111 1111  1111 1000</code></td>
+          <td>/29</td>
+        </tr>
+        <tr>
+          <td class="rechts">2</td>
+          <td class="links">255.255.255.252</td>
+          <td nowrap><code>1111 1111 1111 1111 1111 1111  1111 1100</code></td>
+          <td>/30</code></td>
+        </tr>
+      </table>
+    
+    <h2></h2>
+    <p class="text"></p>
+
+    <h2></h2>
+    <p class="text"></p>    
+    
+    <style>
+       code{
+        font-size: 12pt;
+       }
+
+       label{
+        color: red;
+       }
+
+       .gruen{
+        color: green;
+       }
+
+       .rechts{
+        text-align: end;
+       }
+
+       .links{
+        text-align: left;
+       }
+
+       td{
+        text-align: center;
+       }
+    </style>
+</body>
+</html>

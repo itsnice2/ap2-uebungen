@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objektorientierung | Programmierung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>Objektorientierung</h2>
+    <p class="text"><small>Frage an ChatGPT: Was ist objektorientierte Programmierung</small></p>
+    <p class="text">Objektorientierte Programmierung (OOP) ist ein Programmierparadigma, das auf der Organisation von Software in Objekte basiert. Diese Objekte sind Instanzen von Klassen, die sowohl Daten (Attribute) als auch Methoden (Verhalten) kapseln. OOP zielt darauf ab, die Komplexität von Software zu reduzieren, indem es die Wiederverwendbarkeit, Modularität und Wartbarkeit von Code fördert.</p>
+    <p class="text">Die <b>Grundprinzipien der objektorientierten Programmierung</b> sind:</p>
+
+    <h2>Klassen und Objekte</h2>
+    <p class="text"><b>Klasse:</b> Eine Klasse ist eine Vorlage oder ein Bauplan, der die Struktur und das Verhalten von Objekten definiert. Sie beschreibt, welche Attribute und Methoden die Objekte dieser Klasse haben sollen.</p>
+    <p class="text"><b>Objekt:</b> Ein Objekt ist eine Instanz einer Klasse. Jedes Objekt hat eigene Werte für die Attribute der Klasse und kann die Methoden der Klasse ausführen.</p>
+    
+    <h2>Kapselung (Encapsulation)</h2>
+    <p class="text">Kapselung bedeutet, dass die Daten (Attribute) und die Methoden, die auf diese Daten zugreifen, zusammen in einem Objekt versteckt (kapselt) werden. Der Zugriff auf die Daten erfolgt nur über öffentliche Methoden, um die Daten vor direktem Zugriff von außen zu schützen.</p>    
+    <p class="text">Dies fördert die Datenintegrität und ermöglicht es, die Implementierung eines Objekts zu ändern, ohne dass der Code, der mit dem Objekt interagiert, angepasst werden muss.</p>
+
+    <h2>Vererbung (Inheritance)</h2>
+    <p class="text">Mit Vererbung kann eine Klasse von einer anderen Klasse erben und deren Eigenschaften und Methoden übernehmen. Das ermöglicht es, wiederverwendbaren Code zu erstellen und Hierarchien zu bilden.</p>
+    <p class="text">Eine Unterklasse kann zusätzliche Eigenschaften und Methoden haben oder die geerbten Methoden überschreiben (Methodenüberschreibung).</p>
+    
+    <h2>Polymorphismus (Polymorphism)</h2>
+    <p class="text">Polymorphismus bedeutet, dass dieselbe Methode in verschiedenen Kontexten unterschiedliche Implementierungen haben kann. Das bedeutet, dass man dieselbe Methode auf verschiedene Arten aufrufen kann, je nachdem, welches Objekt sie aufruft.</p>
+    <p class="text">Es gibt zwei Hauptarten des Polymorphismus: Methodenüberladung (gleiche Methode mit verschiedenen Parametern) und Methodenüberschreibung (eine Methode wird in einer Unterklasse neu definiert).</p>    
+    
+    <h2>Abstraktion (Abstraction)</h2>
+    <p class="text">Abstraktion bedeutet, dass nur die relevanten Details eines Objekts oder einer Methode für den Benutzer zugänglich sind, während die komplexen Implementierungsdetails verborgen bleiben.</p>
+    <p class="text">Eine abstrakte Klasse oder abstrakte Methode ist ein Konzept, das es ermöglicht, die Struktur einer Klasse festzulegen, ohne eine vollständige Implementierung bereitzustellen. Unterklassen müssen dann die abstrakten Methoden implementieren.</p>
+    
+    <h2>Beispiel in C#</h2>
+    <p class="text"></p>
+<pre>
+using System;
+
+<label class="kommentar">// Abstrakte Klasse (Abstraktion)</label>
+public abstract class Fahrzeug
+{
+    public string Marke { get; set; }
+
+    <label class="kommentar">// Abstrakte Methode (Polymorphismus)</label>
+    public abstract void Fahren();
+}
+
+<label class="kommentar">// Klasse Auto erbt von Fahrzeug (Vererbung)</label>
+public class Auto : Fahrzeug
+{
+    public int AnzahlTueren { get; set; }
+
+    public override void Fahren() <label class="kommentar">// Überschreiben der Methode</label>
+    {
+        Console.WriteLine("Das Auto fährt.");
+    }
+}
+
+<label class="kommentar">// Klasse ElektroAuto erbt von Auto (Vererbung)</label>
+public class ElektroAuto : Auto
+{
+    public int Batteriekapazitaet { get; set; }
+
+    public override void Fahren() <label class="kommentar">// Überschreiben der Methode</label>
+    {
+        Console.WriteLine("Das Elektroauto fährt umweltfreundlich.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        <label class="kommentar">// Objekte erstellen (Objekte von Klassen)</label>
+        Auto meinAuto = new Auto() { 
+            Marke = "BMW", 
+            AnzahlTueren = 4 
+        };        
+        ElektroAuto meinElektroAuto = new ElektroAuto() { 
+            Marke = "Tesla", 
+            AnzahlTueren = 4, 
+            Batteriekapazitaet = 75 
+        };
+
+        <label class="kommentar">// Methodenaufrufe</label>
+        meinAuto.Fahren();             <label class="kommentar">// Das Auto fährt.</label>
+        meinElektroAuto.Fahren();      <label class="kommentar">// Das Elektroauto fährt umweltfreundlich.</label>
+    }
+}
+</pre>
+    
+    <h2>Beispiel in JavaScript</h2>
+    <p class="text">Verbrenner-Fahrzeug: <input type="text" id="fz1" value="BMW"> Elektro-Fahrzeug: <input type="text" id="fz2" value="Tesla"> </p>
+    <p class="text"><button id="do_it">Tu was</button></p>
+    <p class="text">Ergebnis: <br><label id="ergebnis1"></label><br><label id="ergebnis2"></label></p>
+<pre>
+<label class="kommentar">// Abstrakte Klasse (Abstraktion)</label>
+class Fahrzeug {
+    constructor(marke) {
+        if (this.constructor === Fahrzeug) {
+            throw new Error("Cannot instantiate an abstract class.");
+        }
+        this.marke = marke;
+    }
+
+    <label class="kommentar">// Abstrakte Methode (Polymorphismus)</label>
+    fahren() {
+        throw new Error("Method 'fahren()' must be implemented.");
+    }
+}
+
+<label class="kommentar">// Klasse Auto erbt von Fahrzeug (Vererbung)</label>
+class Auto extends Fahrzeug {
+    constructor(marke, anzahlTueren) {
+        super(marke);
+        this.anzahlTueren = anzahlTueren;
+    }
+
+    <label class="kommentar">// Überschreiben der Methode</label>
+    fahren() {
+        return "Dein " + this.marke + " hat " + this.anzahlTueren + " Türen";
+    }
+}
+
+<label class="kommentar">// Klasse ElektroAuto erbt von Auto (Vererbung)</label>
+class ElektroAuto extends Auto {
+    constructor(marke, anzahlTueren, batteriekapazitaet) {
+        super(marke, anzahlTueren);
+        this.batteriekapazitaet = batteriekapazitaet;
+    }
+
+    <label class="kommentar">// Überschreiben der Methode</label>
+    fahren() {
+        return "Dein " + this.marke + " hat " + this.anzahlTueren + " Türen und eine Batteriekapazität von " + this.batteriekapazitaet;
+    }
+}
+
+document.getElementById("do_it").addEventListener("click", function(){
+    var fahrzeug1 = document.getElementById("fz1").value;
+    var fahrzeug2 = document.getElementById("fz2").value;
+
+    <label class="kommentar">// Objekte erstellen (Objekte von Klassen)</label>
+    let meinAuto = new Auto(fahrzeug1, 4);
+    let meinElektroAuto = new ElektroAuto(fahrzeug2, 4, 75);
+
+    <label class="kommentar">// Ausgabe der Methodenaufrufe</label>
+    document.getElementById("ergebnis1").innerHTML = meinAuto.fahren();
+    document.getElementById("ergebnis2").innerHTML = meinElektroAuto.fahren();
+});
+</pre>
+    
+<style>
+    pre{
+        width: 520px;
+        text-align: left;
+        position: relative;
+        left: calc(50% - 260px);
+
+        border: solid 1px lightgrey;
+        border-radius: 10px;
+        padding: 30px 30px;
+
+        overflow-x: auto;
+    }
+
+    .kommentar{
+        color: #acacac;
+    }
+
+    input{
+        width: 70px;
+    }
+</style>
+
+<script>
+    // Abstrakte Klasse (Abstraktion)
+    class Fahrzeug {
+        constructor(marke) {
+            if (this.constructor === Fahrzeug) {
+                throw new Error("Cannot instantiate an abstract class.");
+            }
+            this.marke = marke;
+        }
+
+        // Abstrakte Methode (Polymorphismus)
+        fahren() {
+            throw new Error("Method 'fahren()' must be implemented.");
+        }
+    }
+
+    // Klasse Auto erbt von Fahrzeug (Vererbung)
+    class Auto extends Fahrzeug {
+        constructor(marke, anzahlTueren) {
+            super(marke);
+            this.anzahlTueren = anzahlTueren;
+        }
+
+        // Überschreiben der Methode
+        fahren() {
+            return "Dein " + this.marke + " hat " + this.anzahlTueren + " Türen";
+        }
+    }
+
+    // Klasse ElektroAuto erbt von Auto (Vererbung)
+    class ElektroAuto extends Auto {
+        constructor(marke, anzahlTueren, batteriekapazitaet) {
+            super(marke, anzahlTueren);
+            this.batteriekapazitaet = batteriekapazitaet;
+        }
+
+        // Überschreiben der Methode
+        fahren() {
+            return "Dein " + this.marke + " hat " + this.anzahlTueren + " Türen und eine Batteriekapazität von " + this.batteriekapazitaet;
+        }
+    }
+
+    document.getElementById("do_it").addEventListener("click", function(){
+        var fahrzeug1 = document.getElementById("fz1").value;
+        var fahrzeug2 = document.getElementById("fz2").value;
+
+        // Objekte erstellen (Objekte von Klassen)
+        let meinAuto = new Auto(fahrzeug1, 4);
+        let meinElektroAuto = new ElektroAuto(fahrzeug2, 4, 75);
+
+        // Ausgabe der Methodenaufrufe
+        document.getElementById("ergebnis1").innerHTML = meinAuto.fahren();             // Das Auto fährt.
+        document.getElementById("ergebnis2").innerHTML = meinElektroAuto.fahren();      // Das Elektroauto fährt umweltfreundlich.
+    });
+</script>
+    
+</body>
+</html>

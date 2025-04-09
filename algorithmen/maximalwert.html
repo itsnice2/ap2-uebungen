@@ -14,7 +14,7 @@
 <pre class="code">
 Erstelle eine Funktion namens maximalwerte, die ein Array namens werte als Argument entgegennimmt
 
-    Erstelle eine Integer-Variable namens max_wert, mit dem vorgegebenen Wert 0 als Inhalt
+    Erstelle eine Integer-Variable namens max_wert,  mit dem ersten Wert aus dem Array werte als Inhalt
     Erstelle eine Integer-Variable namens anzahl, mit der Anzahl der Werte aus dem Array werte als Inhalt
 
     Beginne Schleife: So oft durchlaufen, wie die Anzahl der Werte im Array werte
@@ -35,7 +35,7 @@ Ende Funktion
     <h3>Maximalwert in JavaScript</h3>    
 <pre class="code">
 function maximalwert(werte){
-    var max_wert = 0;
+    var max_wert = werte[0];
     var anzahl = werte.length;
 
     for( var i = 0; i < anzahl - 1; i++){
@@ -79,7 +79,7 @@ function maximalwert(werte){
     document.getElementById("start").innerHTML = "Werteliste: " + zahlen;
 
     function maximalwert(werte){
-        var max_wert = 0;
+        var max_wert = werte[0];
         var anzahl = werte.length;
 
         for( var i = 0; i < anzahl - 1; i++){

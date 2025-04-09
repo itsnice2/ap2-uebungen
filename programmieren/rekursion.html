@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekursion | Programmierung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>Rekursion</h2>
+    <p class="text"><small>Frage an ChatGPT: Erkläre mir Rekursion in der Programmierung, mit einem einfachen Beispiel in C#</small></p>
+    <p class="text">Rekursion ist ein Konzept in der Programmierung, bei dem eine Funktion sich selbst aufruft, um ein Problem in kleinere Teilprobleme zu zerlegen. Es wird oft verwendet, um Probleme zu lösen, die sich natürlich in kleinere, ähnliche Probleme unterteilen lassen, wie z. B. die Berechnung von Fakultäten oder das Durchlaufen von Datenstrukturen wie Bäumen.</p>
+    <p class="text">Eine rekursive Funktion muss immer eine Abbruchbedingung (oder Basisfall) haben, damit sie nicht unendlich weiterläuft. Wenn die Abbruchbedingung erfüllt ist, gibt die Funktion einen Wert zurück, der die Rekursion beendet.</p>
+    <hr style="width: 300px">
+    <p class="text">Beispiel: Fakultät, das Produkt aller positiven Zahlen von 1 bis n (in unserem Beispiel 1 bis 5)</p>
+    <p class="text">5! = 5 x 4 x 3 x 2 x 1 = 120</p>
+
+    <h2>Beispiel in C#</h2>
+<pre>
+using System;
+
+class Program
+{    
+    public static int fakultaet(int n)
+    {
+        if (n == 0)
+        {
+            return 1;
+        }
+        else
+        {
+            return n * fakultaet(n - 1);
+        }
+    }
+
+
+    static void Main(string[] args)
+    {
+        int zahl = 5;
+        int ergebnis = fakultaet(zahl);
+        Console.WriteLine($"{zahl}! = {ergebnis}");
+    }
+}
+</pre>
+
+<h2>Beispiel in JavaScript</h2>
+<p class="text">Fakultät von <input type="text" id="eingabe" value="5"> <button id="berechnen">Berechnen</button></p>
+<p class="text">Ergebnis: <label id="ergebnis"></label></p>
+<pre>
+document.getElementById("berechnen").addEventListener("click", function(){
+    var eingabe = document.getElementById("eingabe").value;
+    var ergebnis = fakultaet(eingabe);
+    document.getElementById("ergebnis").innerHTML = ergebnis;
+});
+
+
+function fakultaet(zahl){
+    if(zahl == 0){
+        return 1;
+    }
+    else{
+        return zahl * fakultaet(zahl -1);
+    }
+}
+</pre>
+    
+<style>
+    pre{
+        width: 520px;
+        text-align: left;
+        position: relative;
+        left: calc(50% - 260px);
+
+        border: solid 1px lightgrey;
+        border-radius: 10px;
+        padding: 30px 30px;
+
+        overflow-x: auto;
+    }
+
+    b{
+        font-size: 12pt;
+    }
+
+    input{
+        width: 50px;
+    }
+</style>
+
+<script>
+
+    
+
+    document.getElementById("berechnen").addEventListener("click", function(){
+        var eingabe = document.getElementById("eingabe").value;
+        var ergebnis = fakultaet(eingabe);
+        document.getElementById("ergebnis").innerHTML = ergebnis;
+    });
+
+    function fakultaet(zahl){
+        if(zahl == 0){
+            return 1;
+        }
+        else{
+            return zahl * fakultaet(zahl -1);
+        }
+    }
+
+</script>
+
+</body>
+</html>

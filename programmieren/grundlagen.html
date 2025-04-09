@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grundlagen | Programmieren</title>
+    <title>Grundlagen | Programmierung</title>
     <link href="../assets/ap2.css" rel="stylesheet">
     <link rel="icon" href="../assets/icon.png">
 </head>
@@ -12,68 +12,409 @@
     <h1>Programmiergrundlagen</h2>
     <p class="text"></p>
     <p class="text"></p>
-    <tabel>
+    <table>
         <tr>
             <th>Was</th>
-            <th>Erklärung</th>
-            <th>Beispiel</th>            
+            <th style="width: 200px;">Erklärung</th>
+            <th>Beispiel in C#</th>
+            <th>Beispiel in PHP</th>
         </tr>
         <tr>
-            <td>Variable</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Funktion</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Argumente</td>
-            <td>Werte, die an eine Funktion übergeben werden</td>
+            <td class="mitte">Variable</td>
+            <td>Ein <b>Behälter</b> der Werte speichert (Zahlen, Buchstaben, Worte, etc)</td>
             <td>
                 <code>
-                    meine_funktion(int <b>zahl</b>, string <b>text</b>)
+                    <b>int zahl</b> = 1;<br>
+                    <b>string satz</b> = "Hallo Welt";
+                </code>
+            </td>
+            <td>
+                <code>
+                    <b>$zahl</b> = 1;<br>
+                    <b>$satz</b> = "Hallo Welt";
                 </code>
             </td>
         </tr>
         <tr>
-            <td>Parameter</td>
+            <td class="mitte">Kommentar</td>
+            <td>kommentiert deinen Code</td>
+            <td>
+                <code>
+                    // Einzeiliger Kommentar<br><br>
+                    /*<br>
+                         Mehrzeiliger Kommentar<br>
+                    */<br>
+                </code>
+            </td>
+            <td>
+                <code>
+                    // Einzeiliger Kommentar<br><br>
+                    # Einzeiliger Kommentar<br><br>
+                    /*<br>
+                         Mehrzeiliger Kommentar<br>
+                    */<br>
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">Funktion /<br>Methode</td>
+            <td>Ein Programmabschnitt, der immer wieder gebrauchte Befehle sammelt. Wird eine Funktion innerhalt einer Klasse erstellt, nennt man sie <b>Methode</b>.</td>
+            <td>
+                <code>
+                    public void meine_funktion(int zahl, string text)<br>
+                    {<br>
+                             // auszuführender Code<br>
+                    }
+                </code>
+            </td>
+            <td>
+                <code>
+                    function meine_function($zahl, $text)<br>
+                    {<br>
+                             // auszuführender Code<br>
+                    }
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">Argumente</td>
+            <td>Werte, die an eine Funktion übergeben werden</td>
+            <td>
+                <code>
+                    public void meine_funktion(<b>int zahl, string text</b>)<br>
+                    {<br>
+                         // auszuführender Code<br>
+                    }
+                </code>
+            </td>
+            <td>
+                <code>
+                    function meine_funktion(<b>$zahl, $worte</b>)<br>
+                    {<br>
+                         // auszuführender Code<br>
+                    }
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">Parameter</td>
             <td>Variablen, die in einer Funktion definiert werden</td>
             <td>
                 <code>
-                    meine_funktion(int <b>zahl</b>, string <b>text</b>)
+                    public void meine_funktion(int zahl, string text)<br>
+                    {<br>
+                         <b>int meine_zahl</b> = zahl;<br>
+                         <b>string mein_text</b> = text;<br>
+                    }
+                </code>
+            </td>
+            <td>
+                <code>
+                    function meine_funktion(<b>$zahl, $worte</b>)<br>
+                    {<br>
+                         <b>$neue_zahl</b> = $zahl;<br>
+                         <b>$neues_wort</b> = $worte;<br>
+                    }
                 </code>
             </td>
         </tr>        
         <tr>
-            <td>Klasse</td>
-            <td></td>
-            <td></td>
+            <td class="mitte">Klasse</td>
+            <td>In der objektorientierten Programmierung ist eine Klasse ein Bauplan für Objekte, die ähnliche Eigenschaften haben.</td>
+            <td>
+                <code>
+                    class MeineKlasse<br>
+                    {<br>
+                         // Methoden etc<br>
+                    }
+                </code>
+            </td>
+            <td>
+                <code>
+                    class MeineKlasse<br>
+                    {<br>
+                         // Methoden etc<br>
+                    }
+                </code>
+            </td>
         </tr>
         <tr>
-            <td>Bedingung</td>
-            <td></td>
-            <td></td>
+            <td class="mitte">Bedingung</td>
+            <td><b>Kontrolliert</b> ob eine Bedingung erfüllt / nicht erfüllt ist</td>
+            <td>
+                <code>
+                    int i = 10;<br><br>
+                    if(i > 1)<br>
+                    {<br>
+                         Console.WriteLine(i + " ist größer als 1");<br>
+                    }
+                </code>
+            </td>
+            <td>
+                <code>
+                    $i = 1;<br><br>
+
+                    if($i &lt; 10)<br>
+                    {<br>
+                             echo "Die Zahl " . $i . " ist kleiner als 10";<br>
+                    }
+                </code>
+            </td>
         </tr>
         <tr>
-            <td>Schleife</td>
-            <td></td>
-            <td></td>
+            <td class="mitte">Schleife</td>
+            <td><b>Wiederholt</b> Anweisungen</td>
+            <td>
+                <code>
+                    for(int i = 0; i &lt; 6; i++)<br>
+                    {<br>
+                         Console.WriteLine(i);<br>
+                    }
+                </code>
+            </td>
+            <td>
+                <code>
+                    for($i = 0; $i &lt; 6; $i++)<br>
+                    {<br>
+                         echo $i;<br>
+                    }
+                </code>
+            </td>
         </tr>
         <tr>
-            <td>Schleife<br><small>Kopfgesteuert</small></td>
-            <td></td>
-            <td></td>
+            <td class="mitte">Schleife<br><small>kopfgesteuert</small></td>
+            <td>Bei einer kopfgesteuerten Schleife wird die Bedingung <b>am Anfang geprüft</b>, und dann erst der Code ausgeführt.</td>
+            <td>
+                <code>
+                    int i = 0;<br><br>
+                    while (i &lt; 10) <br>
+                    {<br>
+                         Console.WriteLine(i);<br>
+                         i++;<br>
+                    }
+                </code>
+            </td>
+            <td>
+                <code>
+                    $i = 0;<br><br>
+                    while ($i &lt; 10) <br>
+                    {<br>
+                         echo $i;<br>
+                         $i++;<br>
+                    }
+                </code>
+            </td>
         </tr>
         <tr>
-            <td>Schleife<br><small>Fußgesteuert</small></td>
-            <td></td>
-            <td></td>
+            <td class="mitte">Schleife<br><small>fußgesteuert</small></td>
+            <td>Bei einer fußgesteuerten Schleife wird der Code <b>mindestens einmal ausgeführt</b>, und dann erst die Bedingung geprüft.</td>
+            <td>
+                <code>
+                    int i = 0;<br><br>
+                    do <br>
+                    {<br>
+                         Console.WriteLine(i);<br>
+                         i++;<br>
+                    }<br>
+                    while (i &lt; 10);
+                </code>
+            </td>
+            <td>
+                <code>
+                    $i = 0;<br><br>
+                    do <br>
+                    {<br>
+                         echo $i;<br>
+                         $i++;<br>
+                    }<br>
+                    while ($i &lt; 10);
+                </code>
+            </td>
         </tr>
         
-    </tabel>
+    </table>
 
+    <h2>Beispiel in C# (Konsolenanwendung)</h2>
+<pre>
+using System;
+
+
+public class <b>Testklasse</b>
+{
+
+    public void <b>meine_zahl</b>(int zahl)
+    {
+        Console.WriteLine("Ihre Zahl ist: " + zahl);
+    }
+
+    public void <b>mein_text</b>(string text)
+    {
+        Console.WriteLine("Ihr Wort ist: " + text);
+    }
+
+    public void <b>bedingung</b>(int zahl)
+    {
+        int i = zahl;
+
+        if (i == 10)
+        {
+            Console.WriteLine(i + " ist genau gleich 10");
+        }
+        else if (i &gt; 10)
+        {
+            Console.WriteLine(i + " ist größer als 10");
+        }
+        else 
+        {
+            Console.WriteLine(i + " ist kleiner als 10");
+        }
+    }
+
+    public void <b>schleife</b>(int zahl)
+    {
+        Console.WriteLine("Die Zahlen von 1 bis " + zahl + ":");
+
+        for (int i = 1; i &lt;= zahl; i++)
+        {            
+            Console.WriteLine(i);
+        }
+    }
+
+    public void <b>kopfschleife</b>(int zahl)
+    {
+        Console.WriteLine("Kopfgesteuerte Schleife, solange die eingegebene Zahl kleiner als 10 ist, höherzählen:");
+
+        while (zahl &lt; 10)
+        {            
+            Console.WriteLine(zahl);
+            zahl++;
+        }
+    }
+
+    public void <b>fussschleife</b>(int zahl)
+    {
+        Console.WriteLine("Fußgesteuerte Schleife, solange die eingegebene Zahl kleiner als 10 ist, höherzählen:");
+
+        do
+        {            
+            Console.WriteLine(zahl);
+            zahl++;
+        }
+        while (zahl &lt; 10);
+    }
+
+}
+
+
+
+class <b>Program</b>
+{
+    static void <b>Main</b>()
+    {
+        Testklasse test = new Testklasse();
+        test.meine_zahl(10);
+        test.mein_text("Na sowas");
+        test.bedingung(9);
+        test.schleife(7);
+        test.kopfschleife(5);
+        test.fussschleife(3);
+    }
+    
+}
+</pre>
+
+    <h2><a href="grundlagen_beispiel.php">Beispiel in PHP</a></h2>
+<pre>
+class <b>Testklasse</b>{
+    public function <b>bedingung</b>($zahl){
+        if($zahl == 10){
+            echo "Die Zahl " . $zahl . " ist genau gleich 10&#60;br&#62;";
+        }
+        elseif($zahl &#62; 10){
+            echo "Die Zahl " . $zahl . " ist größer als 10&#60;br&#62;";
+        }
+        else{
+            echo "Die Zahl " . $zahl . " ist nicht größer als 10&#60;br&#62;";
+        }
+    }
+
+    public function <b>schleife</b>($zahl){
+        echo "Schleife von 1 bis " . $zahl . "&#60;br&#62;";
+        for($i = 1; $i &#60; $zahl; $i++){ 
+            echo $i . "&#60;br&#62;";
+        }
+    }
+
+    public function <b>kopfschleife</b>($zahl){
+        echo "Kopfgesteuerte Schleife von 1 bis " . $zahl . "&#60;br&#62;";
+        
+        $i = 1;
+
+        while($i &#60;= $zahl){
+            echo $i . "&#60;br&#62;";
+            $i++;
+        }
+    }
+
+    public function <b>fussschleife</b>($zahl){
+        echo "Kopfgesteuerte Schleife von 1 bis " . $zahl . "&#60;br&#62;";
+
+        $i = 1;
+
+        do{
+            echo $i . "&#60;br&#62;";
+            $i++;
+        }
+        while($i &#60;= $zahl);
+    }
+}
+
+
+
+function <b>meine_zahl</b>($zahl){
+    echo "Meine Zahl ist: " . $zahl . "&#60;br&#62;";
+}
+
+
+
+function <b>mein_text</b>($text){
+    echo "Mein Text ist: " . $text . "&#60;br&#62;";
+}
+
+
+
+$test = new Testklasse();
+
+$test-&#62;bedingung(9);
+$test-&#62;schleife(7);
+$test-&#62;kopfschleife(5);
+$test-&#62;fussschleife(3);
+
+meine_zahl(42);
+mein_text("Mein Text");
+</pre>
+
+<style>
+    pre{
+        min-width: 400px;
+        max-width: 800px;
+        text-align: left;
+        position: relative;
+        /*left: calc(50% - 200px);*/
+
+        border: solid 1px lightgrey;
+        border-radius: 10px;
+        padding: 30px 30px;
+
+        overflow-x: auto;
+
+        justify-self: center;
+    }
+
+    b{
+        font-size: 12pt;
+    }
+</style>
 
 </body>
 </html>

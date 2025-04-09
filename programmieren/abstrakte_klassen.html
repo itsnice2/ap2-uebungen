@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstrakte Klassen | Programmierung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>Abstrakte Klassen</h2>
+    <p class="text"><small>Frage an ChatGPT: Was sind abstrakte Klassen?</small></p>
+    <p class="text">Abstrakte Klassen sind ein Konzept der objektorientierten Programmierung (OOP), das in vielen Programmiersprachen, einschließlich C#, Java und anderen, verwendet wird. Sie dienen als Vorlage für andere Klassen und können nicht direkt instanziiert werden. Stattdessen sollen sie als Basis für abgeleitete Klassen dienen, die die abstrakten Methoden implementieren.</p>
+    <p class="text">Abstrakte Klassen sind eine Möglichkeit, die Struktur und das Verhalten von Klassen zu definieren, ohne sie vollständig zu implementieren. Sie bieten eine Grundlage für andere Klassen und ermöglichen es, einheitliche Schnittstellen und Funktionalitäten sicherzustellen.</p>
+
+    <h2>Merkmale abstrakter Klassen</h2>
+
+    <h3>Abstrakte Methoden</h3>
+    <p class="text">Eine abstrakte Klasse kann abstrakte Methoden enthalten, die keine Implementierung haben. Diese Methoden müssen in den abgeleiteten Klassen überschrieben und implementiert werden.</p>
+    <p class="text">Abstrakte Methoden definieren nur den Methoden-Signatur, nicht die konkrete Ausführung der Methode.</p>
+
+    <h3>Konstruktormethoden</h3>
+    <p class="text">Abstrakte Klassen können Konstruktoren haben, die in den abgeleiteten Klassen verwendet werden. Sie können auch Felder und Eigenschaften definieren.</p>
+
+    <h3>Nicht instanziierbar</h3>
+    <p class="text">Eine abstrakte Klasse kann nicht direkt instanziiert werden. Du kannst keine Objekte direkt von einer abstrakten Klasse erstellen, sondern nur von einer konkreten (nicht-abstrakten) Klasse, die von der abstrakten Klasse erbt.</p>
+
+    <h3>Verwendung zur Vererbung</h3>
+    <p class="text">Abstrakte Klassen dienen häufig dazu, ein gemeinsames Grundgerüst für mehrere Klassen bereitzustellen. Sie ermöglichen es, in abgeleiteten Klassen spezifische Implementierungen zu definieren, während sie gleichzeitig eine gemeinsame Schnittstelle bieten.</p>
+    
+    <h2>Beispiel in C#</h2>
+    <p class="text"></p>
+<pre>
+using System;
+
+<label class="kommentar">// Abstrakte Klasse (Abstraktion)</label>
+public abstract class Fahrzeug
+{
+    public string Marke { get; set; }
+
+    <label class="kommentar">// Abstrakte Methode (Polymorphismus)</label>
+    public abstract void Fahren();
+}
+
+<label class="kommentar">// Klasse Auto erbt von Fahrzeug (Vererbung)</label>
+public class Auto : Fahrzeug
+{
+    public int AnzahlTueren { get; set; }
+
+    public Auto(string marke, int anzahlTueren)
+    {
+        Marke = marke;
+        AnzahlTueren = anzahlTueren;
+    }
+
+    <label class="kommentar">// Überschreiben der Methode</label>
+    public override void Fahren()
+    {
+        Console.WriteLine($"Das Auto {Marke} mit {AnzahlTueren} Türen fährt.");
+    }
+}
+
+<label class="kommentar">// Klasse ElektroAuto erbt von Auto (Vererbung)</label>
+public class ElektroAuto : Auto
+{
+    public int Batteriekapazitaet { get; set; }
+
+    public ElektroAuto(string marke, int anzahlTueren, int batteriekapazitaet)
+        : base(marke, anzahlTueren)
+    {
+        Batteriekapazitaet = batteriekapazitaet;
+    }
+
+    <label class="kommentar">// Überschreiben der Methode</label>
+    public override void Fahren()
+    {
+        Console.WriteLine($"Das Elektroauto {Marke} mit {AnzahlTueren} Türen und {Batteriekapazitaet} kWh fährt umweltfreundlich.");
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        <label class="kommentar">// Erstellen von Fahrzeugobjekten</label>
+        Fahrzeug meinAuto = new Auto("BMW", 4);
+        Fahrzeug meinElektroAuto = new ElektroAuto("Tesla", 4, 75);
+
+        <label class="kommentar">// Fahren der Fahrzeuge</label>
+        Console.WriteLine("Fahrzeug 1:");
+        meinAuto.Fahren(); <label class="kommentar">// Das Auto fährt.</label>
+
+        Console.WriteLine("\nFahrzeug 2:");
+        meinElektroAuto.Fahren(); <label class="kommentar">// Das Elektroauto fährt umweltfreundlich.</label>
+
+        <label class="kommentar">// Warten auf eine Eingabe, bevor das Programm endet</label>
+        Console.ReadKey();
+    }
+}
+
+</pre>
+
+<style>
+    pre{
+        width: 600px;
+        text-align: left;
+        position: relative;
+        left: calc(50% - 300px);
+
+        border: solid 1px lightgrey;
+        border-radius: 10px;
+        padding: 30px 30px;
+
+        overflow-x: auto;
+    }
+
+    .kommentar{
+        color: #acacac;
+    }
+</style>
+
+</body>
+</html>
