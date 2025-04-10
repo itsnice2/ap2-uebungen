@@ -38,10 +38,12 @@ table, tr, th, td{
 }
 
 table{
-    justify-self: center;
+    width: 600px;
+    position: relative;
+    left: calc(50% - 300px);
 }
 
-td{
+td, .links{
     text-align: left;
 }
 
@@ -66,4 +68,8 @@ tr:hover{
 
 .mitte{
     text-align: center;
+}
+
+.rechts{
+    text-align: end;
 }

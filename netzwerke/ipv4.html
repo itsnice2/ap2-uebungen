@@ -47,7 +47,7 @@
 
     <h2>Netze</h2>
     <p class="text"></p>
-    <table>
+    <table class="table2">
         <tr>
             <th>Klasse</th>
             <th>Bereich von</th>
@@ -119,23 +119,35 @@
             <td>169.254.0.0/16</td>
             <td>
                 <p>Automatische Adresskonfiguration (link local), APIPA</p>
-                <p>Diese Adresse bekommt der Rechner, wenn es keine Netzwerkverbindung gibt.</p>
+                <p>Eine Adresse aus diesem Bereich bekommt der Rechner, wenn es keine Netzwerkverbindung gibt.</p>
             </td>
         </tr>        
     </table>
     
     <style>
-       code{
-        font-size: 14pt;
-       }
+        code{
+            font-size: 14pt;
+        }
 
-       label{
-        color: red;
-       }
+        label{
+            color: red;
+        }
 
-       .gruen{
-        color: green;
-       }
+        .gruen{
+            color: green;
+        }
+
+        table{
+            width: 600px;
+            position: relative;
+            left: calc(50% - 300px);
+        }
+
+       .table2{
+            width: 900px;
+            position: relative;
+            left: calc(50% - 450px);
+        }
     </style>
 </body>
 </html>

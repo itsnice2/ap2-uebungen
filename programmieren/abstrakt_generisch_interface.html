@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>abstrakt vs generisch vs Interface | Programmierung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>Abstrakte Klassen vs Generische Klassen vs Interface</h2>
+    <!--<p class="text"><small>Frage an ChatGPT: </small></p>-->
+    <p class="text"></p>
+
+    <table>
+        <tr>
+            <th></th>
+            <th><a href="generische_klassen.html">generische Klassen</a></th>
+            <th><a href="abstrakte_klassen.html">abstrakte Klassen</a></th>
+            <th><a href="interface.html">Interface</a></th>            
+        </tr>
+        <tr>
+            <td>Definition</td>
+            <td>Kapseln Operationen, die nicht für einen bestimmten Datentyp spezifisch sind</td>
+            <td>Definieren ein Standardverhalten</td>
+            <td>Konzentrieren sich auf das Verhalten</td>
+        </tr>
+        <tr>
+            <td>Methoden</td>
+            <td></td>
+            <td>Zwingen Unterklassen zur Implementierung bestimmter Methoden</td>
+            <td>Stellen keine konkreten Methoden bereit</td>
+        </tr>
+        <tr>
+            <td>Vererbung</td>
+            <td></td>
+            <td>Eine Klasse kann von höchstens einer abstrakten Klasse abgeleitet werden</td>
+            <td>Eine Klasse kann beliebig viele Interfaces implementieren</td>
+        </tr>
+        <tr>
+            <td>Eigenschaften</td>
+            <td></td>
+            <td>Können Variablen bereitstellen</td>
+            <td>Können nur Konstantendefinitionen enthalten</td>
+        </tr>
+        <tr>
+            <td>Instanziierung</td>
+            <td>wie normale Klasse, mit Typparameter in &lt;&gt; direkt nach Klassennamen</td>
+            <td>Können direkt mit dem Schlüsselwort „new“ instanziiert werden</td>
+            <td>Können nicht direkt instanziiert werden</td>
+        </tr>
+        <tr>
+            <td>Verwendung</td>
+            <td>Häufig für Auflistungen wie verknüpfte Listen, Hashtabellen, Stapeln, Warteschlangen</td>
+            <td>Für generische Klassen oder Auflistungsklassen</td>
+            <td>wenn verschiedene Klassen eine gemeinsame Fähigkeit haben sollen, wie zum Beispiel das Drucken oder Vergleichen von Objekten</td>
+        </tr>
+        <tr>
+            <td>weiteres</td>
+            <td>Kapseln Operationen, die nicht spezifisch für einen bestimmten Datentyp sind</td>
+            <td>Können als eine besondere Form einer Klasse angesehen werden</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <div class="inhalt">
+
+        <div class="abschnitt">
+            <h3>Generische Klasse in C#</h3>
+<pre>
+using System;
+
+
+public class SpiegelNachrichten<T>
+{
+    public void NeueNachricht(T empfaenger, string nachricht)
+    {
+        Console.WriteLine($"Neue Nachricht für {empfaenger.GetType().Name}: {nachricht}");
+    }
+}
+
+
+
+public class User
+{
+    // ...
+}
+
+
+
+public class LokalZeitung
+{
+    // ...
+}
+
+
+
+
+
+
+
+class Program
+{
+    static void Main(string[] args)
+    {        
+        SpiegelNachrichten<User> userNachrichten = new SpiegelNachrichten<User>();
+        User user = new User();
+        userNachrichten.NeueNachricht(user, "Willkommen im System!");
+        
+        SpiegelNachrichten<LokalZeitung> lokalZeitungNachrichten = new SpiegelNachrichten<LokalZeitung>();
+        LokalZeitung lokalZeitung = new LokalZeitung();
+        lokalZeitungNachrichten.NeueNachricht(lokalZeitung, "Breaking News: Neues Ereignis in der Stadt!");
+    }
+}
+</pre>
+        </div>
+
+        <div class="abschnitt">
+            <h3>Abstrakte Klasse in C#</h3>
+<pre>
+using System;
+
+
+public abstract class SpiegelNachrichten
+{
+    public abstract void neueNachricht(string Nachricht);
+}
+
+
+
+public class User : SpiegelNachrichten
+{
+    public override void neueNachricht(string Nachricht)
+    {
+        Console.WriteLine("Neue Nachricht für User: " + Nachricht);
+    }
+}
+
+
+
+public class LokalZeitung : SpiegelNachrichten
+{
+    public override void neueNachricht(string Nachricht)
+    {
+        Console.WriteLine("Neue Nachricht für LokalZeitung: " + Nachricht);
+    }
+}
+
+
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        SpiegelNachrichten user = new User();
+        user.neueNachricht("Willkommen im System!");
+        
+        SpiegelNachrichten lokalZeitung = new LokalZeitung();
+        lokalZeitung.neueNachricht("Breaking News: Neues Ereignis in der Stadt!");
+    }
+}
+</pre>
+        </div>
+
+        <div class="abschnitt">
+            <h3>Interface in C#</h3>
+<pre>
+using System;
+
+
+public interface SpiegelNachrichten
+{
+    public void neueNachricht(string Nachricht); 
+}
+
+
+
+public class User : SpiegelNachrichten
+{
+    public void neueNachricht(string Nachricht)
+    {
+        Console.WriteLine("Neue Nachricht für User: " + Nachricht);
+    }
+}
+
+
+
+public class LokalZeitung : SpiegelNachrichten
+{
+    public void neueNachricht(string Nachricht)
+    {
+        Console.WriteLine("Neue Nachricht für LokalZeitung: " + Nachricht);
+    }
+}
+
+
+
+class Program
+{
+    static void Main(string[] args)
+    {        
+        SpiegelNachrichten user = new User();
+        user.neueNachricht("Willkommen im System!");
+        
+        SpiegelNachrichten lokalZeitung = new LokalZeitung();
+        lokalZeitung.neueNachricht("Breaking News: Neues Ereignis in der Stadt!");
+    }
+}
+</pre>
+        </div>
+    </div>
+    
+<style>
+    .abschnitt{
+        width: 30%;
+    }
+    pre{
+        width: 87%;
+        text-align: left;
+
+        border: solid 1px lightgrey;
+        border-radius: 10px;
+        padding: 30px 30px;
+
+        overflow-x: auto;
+    }
+
+    .kommentar{
+        color: #acacac;
+    }
+
+    table{
+        width: 800px;
+        position: relative;
+        left: calc(50% - 400px);
+    }
+</style>
+
+</body>
+</html>

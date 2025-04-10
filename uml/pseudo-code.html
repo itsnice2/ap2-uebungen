@@ -107,7 +107,7 @@
 
     <h3>Beispiel 2:</h3>
 <pre>
-<table class="code-tabelle">
+<table class="table2">
     <tr class="code-tabelle">
         <th class="code-tabelle code-th">JavaScript</th>
         <th class="code-tabelle code-th">Als Pseudo-Code</th>
@@ -149,9 +149,9 @@ Führe die Funktion "test" aus, und übergib die Variablen "benutzer" und "zahl"
 
     <h3><a href="https://www.computerweekly.com/de/tipp/Was-ist-Pseudocode-und-wie-arbeitet-man-damit#:~:text=FOR%20i%20=%201%20to%20array%20length%20%E2%80%93%201" target="_blank">Beispiel 3: Bubble-Sort</a></h3>
 <pre class="code2">
-FOR i = 1 to array length – 1
+FOR i = 1 to array length - 1
 
-    FOR j = 1 to array length – i
+    FOR j = 1 to array length - i
 
         IF array[j] > array[j + 1]
 
@@ -169,7 +169,14 @@ END FOR
     <style>
         table{
             width: 600px;
-            
+            position: relative;
+            left: calc(50% - 300px);            
+        }
+
+        .table2{
+            width: 1000px;
+            position: relative;
+            left: calc(50% - 500px);            
         }
 
         .code{
@@ -178,6 +185,8 @@ END FOR
         }
         .code-tabelle{
             border: none;
+            
+            
         }
 
         .code-th{

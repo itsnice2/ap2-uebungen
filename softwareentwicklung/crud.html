@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD | Softwareentwicklung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1><a href="https://de.wikipedia.org/wiki/CRUD" target="_blank">CRUD</a></h1>
+    <p class="text">Das Akronym CRUD umfasst die vier grundlegenden Operationen persistenter Speicher.</p>
+
+    <table>
+        <tr>
+            <th> </th>
+            <th> </th>
+            <th>Beispiel SQL</th>
+            <th>Beispiel PHP</th>
+        </tr>
+        <tr>
+            <td class="mitte">CREATE</td>
+            <td>Datensatz erstellen</td>
+            <td>
+                <code>
+                    INSERT INTO meine_tabelle<br>
+                       (nachname, vorname) <br>
+                    VALUES<br>
+                       ('Mustermann', 'Max');<br>
+                </code>
+            </td>
+            <td>
+                <code>
+                    $handle = fopen("liste.csv","w");<br>
+                    fwrite($handle,"Max,Mustermann");<br>
+                    fclose($handle);
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">READ</td>
+            <td>Datensatz lesen</td>
+            <td>
+                <code>
+                    SELECT *<br>
+                    FROM meine_tabelle;
+                </code>
+            </td>
+            <td>
+                <code>
+                    file_get_contents("liste.csv");
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">UPDATE</td>
+            <td>Datensatz aktualisieren</td>
+            <td>
+                <code>
+                    UPDATE meine_tabelle<br>
+                    SET vorname = 'Mark'<br>
+                    WHERE nachname = 'mustermann';
+                </code>
+            </td>
+            <td>
+                <code>                   
+                    $meineDatei = file_get_contents("liste.csv");<br>
+                    $meineDatei = str_replace("Max","Mark", $meineDatei);<br>
+                    file_put_contents("liste.csv", $mein_text);
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">DELETE</td>
+            <td>Datensatz löschen</td>
+            <td>
+                <code>
+                    DELETE<br>
+                    FROM meine_tabelle<br>
+                    WHERE nachname = 'mustermann';
+                </code>
+            </td>
+            <td>
+                <code>                    
+                    unlink("liste.csv");
+                </code>
+            </td>
+        </tr>
+    </table>
+
+    <style>
+        table{
+            width: 1000px;
+            position: relative;
+            left: calc(50% - 500px);
+        }
+    </style>
+    
+</body>
+</html>

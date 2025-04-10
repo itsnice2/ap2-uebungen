@@ -10,8 +10,109 @@
 <body>
 
     <h1>Generische Klassen</h2>
-    <!--<p class="text"><small>Frage an ChatGPT: </small></p>-->
-    <p class="text"></p>
+    <p class="text"><small>Frage an ChatGPT: Was sind generische Klassen?</small></p>
+    <p class="text">Generische Klassen sind in objektorientierten Programmiersprachen wie Java oder C# Klassen, die mit Platzhaltern für Datentypen arbeiten. Diese Platzhalter werden als Generika bezeichnet und ermöglichen es, dass eine Klasse mit verschiedenen Datentypen verwendet werden kann, ohne dass für jeden Datentyp eine separate Klasse erstellt werden muss.</p>
+    <p class="text">Die Hauptvorteile von generischen Klassen sind:</p>
+    <p class="text"><b>Wiederverwendbarkeit</b>: Sie ermöglichen es, eine Klasse einmal zu definieren und diese dann mit unterschiedlichen Datentypen zu verwenden.</p>
+    <p class="text"><b>Typensicherheit</b>: Der Compiler kann während der Kompilierung überprüfen, ob die richtigen Datentypen verwendet werden. Dies reduziert Laufzeitfehler.</p>
+    <p class="text">Programmiersprachen in denen es generische Klassen gibt:</p>
+    <ul class="text">
+        <li>Java</li>
+        <li>C#</li>
+        <li>C++</li>
+        <li>Swift</li>
+        <li>Kotlin</li>
+        <li>TypeScrip</li>
+        <li>Go (Golang)</li>
+        <li>Rust</li>
+        <li>Python</li>
+    </ul>
+
+    <h2>Beispiel in Java</h2>
+<pre>
+<label class="kommentar">// Generische Klasse für eine einfache Box</label>
+class Box&lt;T&gt; {
+    private T value;
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public T getValue() {
+        return value;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        <label class="kommentar">// Box für Integer</label>
+        Box&lt;Integer&gt; intBox = new Box&lt;&gt;();
+        intBox.setValue(10);
+        System.out.println(intBox.getValue());  <label class="kommentar">// Ausgabe: 10</label>
+
+        <label class="kommentar">// Box für String</label>
+        Box&lt;String&gt; strBox = new Box&lt;&gt;();
+        strBox.setValue("Hallo");
+        System.out.println(strBox.getValue());  <label class="kommentar">// Ausgabe: Hallo</label>
+    }
+}
+</pre>
+
+<h2>Beispiel in C#</h2>
+<pre>
+using System;
+
+<label class="kommentar">// Generische Klasse für eine einfache Box</label>
+class Box&lt;T&gt;
+{
+    private T value;
+
+    public void SetValue(T value)
+    {
+        this.value = value;
+    }
+
+    public T GetValue()
+    {
+        return value;
+    }
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        <label class="kommentar">// Box für Integer</label>
+        Box&lt;intT&gt; intBox = new Box&lt;intT&gt;();
+        intBox.SetValue(10);
+        Console.WriteLine(intBox.GetValue());  <label class="kommentar">// Ausgabe: 10</label>
+
+        <label class="kommentar">// Box für String</label>
+        Box&lt;stringT&gt; strBox = new Box&lt;stringT&gt;();
+        strBox.SetValue("Hallo");
+        Console.WriteLine(strBox.GetValue());  <label class="kommentar">// Ausgabe: Hallo</label>
+    }
+}
+</pre>
     
+<style>
+    pre{
+        width: 600px;
+        text-align: left;
+        position: relative;
+        left: calc(50% - 300px);
+
+        border: solid 1px lightgrey;
+        border-radius: 10px;
+        padding: 30px 30px;
+
+        overflow-x: auto;
+    }
+
+    .kommentar{
+        color: #acacac;
+    }
+</style>
+
 </body>
 </html>

@@ -127,8 +127,20 @@
 
 <style>
     table{
-        width: 1000px !important;
-    }    
+        
+        width: 1000px;
+        position: relative;
+        left: calc(50% - 500px);
+    }
+
+    .code{
+        width: 800px;
+        position: relative;
+        left: calc(50% - 400px);
+        border: solid 1px lightgrey;
+        border-radius: 15px;
+        padding: 30px 30px;
+    }
 </style>
 
 </body>

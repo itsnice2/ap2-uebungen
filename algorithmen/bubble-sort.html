@@ -42,11 +42,11 @@ Ende Funktion
 function bubbleSort(werte){
     var laenge = werte.length;
 
-    for(var i = 0; i < laenge; i++){
+    for(var i = 0; i &lt; laenge; i++){
 
-        for(var j = 0; j < laenge - i - 1; j++){
+        for(var j = 0; j &lt; laenge - i - 1; j++){
 
-            if(werte[j] > werte[j + 1]){
+            if(werte[j] &gt; werte[j + 1]){
                 var tausch   = werte[j];
                 werte[j]     = werte[j + 1];
                 werte[j + 1] = tausch;
@@ -74,11 +74,11 @@ function bubbleSort(werte){
 function bubbleSort(array $werte): array{
     $laenge = count($werte);
 
-    for( $i = 0; $i < $laenge - 1; $i++ ){
+    for( $i = 0; $i &lt; $laenge - 1; $i++ ){
 
-        for( $j = 0; $j < $laenge - $i - 1; $j++ ){
+        for( $j = 0; $j &lt; $laenge - $i - 1; $j++ ){
             
-            if( $werte[$j] > $werte[$j + 1] ){
+            if( $werte[$j] &gt; $werte[$j + 1] ){
 
                 $tausch         = $werte[$j];
                 $werte[$j]      = $werte[$j + 1];
@@ -94,6 +94,8 @@ function bubbleSort(array $werte): array{
 <style>
     .code{
         width: 500px;
+        position: relative;
+        left: calc(50% - 250px);
         text-align: left;
         justify-self: center;
         padding: 30px 30px;
