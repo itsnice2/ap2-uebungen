@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortier-Algorithmen-Vergleich | Algorithmen</title>
+    <link rel="stylesheet" href="../assets/ap2.css">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    <h1>Sortier-Algorithmen-Vergleich</h1>
+    <p><a href="https://dev.to/koladev/8-must-know-sorting-algorithms-5ja" target="_blank">8 must-know sorting algorithms</a></p>
+    <p><a href="https://www.crio.do/blog/top-10-sorting-algorithms-2024/" target="_blank">Top 10 sorting algorithms you must know about</a></p>
+    <h2>Wann wird welcher Algorithmus genutzt?</h2>
+        
+    <table>
+        <tr>
+            <th><a href="bubble-sort.html">Bubble Sort</a></th>
+            <td>
+                <ul>
+                    <li>simpler Code wird benötigt</li>
+                    <li>Komplexität ist egal</li>
+                </ul>
+            </td>
+            <td><a href="bubble-sort.webp"><img src="bubble-sort.webp" height="100px"></a></td>
+        </tr>
+        <tr>
+            <th><a href="">Selection Sort</a></th>
+            <td>
+                <ul>
+                    <li>kleine Arrays / Datensätze sortieren</li>
+                    <li>Abhaken aller Elemente ist obligatorisch</li>
+                    <li>Einfachheit ist wichtiger als Leistung</li>
+                </ul>
+            </td>
+            <td><a href="selection-sort.webp"><img src="selection-sort.webp" height="100px"></a></td>
+        </tr>
+        <tr>
+            <th><a href="">Insertion Sort</a></th>
+            <td>
+                <ul>
+                    <li>verknüpfte Listen (linked listes)</li>
+                    <li>das Array ist klein</li>
+                </ul>
+            </td>
+            <td><a href="insertion-sort.webp"><img src="insertion-sort.webp" height="100px"></a></td>
+        </tr>
+        <tr>
+            <th><a href="">QuickSort</a></th>
+            <td>
+                <ul>
+                    <li>Rekursion wird benötigt und unterstützt</li>
+                    <li>Das Array ist klein</li>
+                    <li>Es sind noch einige Elemente übrig, die sortiert werden müssen</li>
+                </ul>
+            </td>
+            <td><a href="quick-sort.webp"><img src="quick-sort.webp" height="100px"></a></td>
+        </tr>
+        <tr>
+            <th><a href="">MergeSort</a></th>
+            <td>
+                <ul>
+                    <li>große Datensätze / Datenbanken</li>
+                    <li>verknüpfte Listen (linked lists)</li>
+                    <li>wenn Datenstabilität im Vordergrund steht</li>
+                </ul>
+            </td>
+            <td><a href="merge-sort.webp"><img src="merge-sort.webp" height="100px"></a></td>
+        </tr>
+        <tr>
+            <th><a href="">Bucket Sort</a></th>
+            <td>
+                <ul>
+                    <li>Kommazahlen (float)</li>
+                    <li>Die Eingabe wird gleichmäßig über einen Bereich verteilt.</li>
+                </ul>
+            </td>
+            <td>
+                <a href="bucket-sort-1.webp"><img src="bucket-sort-1.webp" height="100px"></a>
+                <a href="bucket-sort-2.webp"><img src="bucket-sort-2.webp" height="100px"></a>
+            </td>
+        </tr>
+        <tr>
+            <th><a href="">Shell Sort</a></th>
+            <td>
+                <ul>
+                    <li>Optimierung des Insertion Sort / bessere Laufzeit</li>
+                    <li>kurze Subarrays</li>
+                    <li>Die Rekursion überschreitet eine Grenze.</li>
+                    <li>Die Einfügung funktioniert nicht gut, wenn nahe Elemente weit entfernt sind.</li>
+                </ul>
+            </td>
+            <td><a href="shell-sort.gif"><img src="shell-sort.gif" height="120px"></a></td>
+        </tr>
+        <tr>
+            <th><a href="">Heap Sort</a></th>
+            <td>
+                <ul>
+                    <li>große Datensätze</li>
+                    <li>Ermittlung von Extremwerten</li>
+                    <li>Datenkomprimierung</li>
+                    <li>Dijkstra-Algorithmus zur Ermittlung des kürzesten Pfades in einem Graphen</li>
+                    <li>Grundlage für Prioritätswarteschlangen, die in Betriebssystemen und der Netzwerkplanung verwendet werden</li>
+                </ul>
+            </td>
+            <td><a href="heap-sort.webp"><img src="heap-sort.webp" height="160px"></a></td>
+        </tr>
+    </table>
+
+
+<style>
+    table{
+        width: 800px;
+        position: relative;
+        left: calc(50% - 400px)
+    }
+</style>
+
+
+
+</body>
+</html>

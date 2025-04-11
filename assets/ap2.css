@@ -28,7 +28,7 @@ a{
 
 .code{
     text-align: left;
-    margin-left: 50px;
+    /* margin-left: 50px; */
 }
 
 table, tr, th, td{
@@ -39,8 +39,8 @@ table, tr, th, td{
 
 table{
     width: 600px;
-    position: relative;
-    left: calc(50% - 300px);
+    /*position: relative;
+    left: calc(50% - 300px);*/
 }
 
 td, .links{
@@ -72,4 +72,8 @@ tr:hover{
 
 .rechts{
     text-align: end;
+}
+
+.kommentar{
+    color: #acacac;
 }

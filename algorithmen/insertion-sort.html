@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertion Sort | Algorithmen</title>
+    <link rel="stylesheet" href="../assets/ap2.css">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    <h1>Insertion Sort</h1>
+    <p class="text">Der Insertion Sort ist ein einfacher Sortieralgorithmus, der wie das Sortieren von Spielkarten in der Hand funktioniert: Man nimmt ein Element nach dem anderen und fügt es an der richtigen Stelle im bereits sortierten Teil der Liste ein.
+
+    </p>
+    <h2>Funktionsweise</h2>
+    <ul class="text">
+        <li>Man geht von links nach rechts durch das Array.</li>
+        <li>Das erste Element gilt als „sortiert“.</li>
+        <li>Für jedes weitere Element:</li>
+        <ul>
+            <li>Man vergleicht es mit den vorherigen (sortierten) Elementen.</li>
+            <li>Man schiebt die größeren Elemente eins nach rechts.</li>
+            <li>Dann setzt man das aktuelle Element an die richtige Stelle.</li>
+        </ul>
+    </ul>
+    <a href="https://dev.to/koladev/8-must-know-sorting-algorithms-5ja" target="_blank"><img src="insertion-sort.webp"></a>
+
+    <h2>Selection Sort in JavaScript</h2>
+<pre class="code">
+function <b>insertionSort</b>(zahlen) {
+    for (let i = 1; i &lt; zahlen.length; i++) {
+        let current = zahlen[i];
+        let j = i - 1;
+
+        <label class="kommentar">// Solange das vorherige Element größer ist, nach rechts verschieben</label>
+        while (j &gt;= 0 && zahlen[j] &gt; current) {
+            zahlen[j + 1] = zahlen[j];
+            j--;
+        }
+
+        <label class="kommentar">// Aktuelles Element an der richtigen Stelle einfügen</label>
+        zahlen[j + 1] = current;
+    }
+
+    return zahlen;
+</pre>
+    <p class="text">Selber ausprobieren:</p>
+    <p class="text">Startwerte: <label id="start"></label> <button id="sort">Sortieren</button></p>
+    <p class="text">Ergebnis: <label id="ergebnis"></label></p>
+
+<style>
+    .code{
+        width: 600px;
+        justify-self: center;
+        
+        position:sticky;
+        left: calc(50% - 300px);        
+        
+        text-align: left;        
+        padding: 30px 30px;
+        border: solid 1px lightgrey;
+        border-radius: 20px;
+        overflow-x: auto;
+    }
+
+</style>
+
+<script>
+
+    var zahlen = [1, 10, 100, 3, 5, 27, 18, 42, 23, 99, 2, 7];
+    document.getElementById("start").innerHTML = zahlen;  
+
+    document.getElementById("sort").addEventListener("click", function(){
+        document.getElementById("ergebnis").innerHTML = insertionSort(zahlen);
+    });
+
+    function insertionSort(zahlen) {
+        for (let i = 1; i < zahlen.length; i++) {
+            let current = zahlen[i];
+            let j = i - 1;
+
+            // Solange das vorherige Element größer ist, nach rechts verschieben
+            while (j >= 0 && zahlen[j] > current) {
+                zahlen[j + 1] = zahlen[j];
+                j--;
+            }
+
+            // Aktuelles Element an der richtigen Stelle einfügen
+            zahlen[j + 1] = current;
+        }
+
+        return zahlen;
+    }
+</script>
+
+</body>
+</html>

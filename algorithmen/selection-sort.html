@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort | Algorithmen</title>
+    <link rel="stylesheet" href="../assets/ap2.css">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    <h1>Selection Sort</h1>
+    <p class="text">Selection Sort ist ein einfacher Sortieralgorithmus, der in-place arbeitet und eine Liste schrittweise sortiert, indem er wiederholt das kleinste (oder größte) Element aus dem unsortierten Teil auswählt und es an den Anfang (oder das Ende) des sortierten Teils verschiebt.</p>
+    <h2>Funktionsweise</h2>
+    <ul class="text">
+        <li>Durchlaufe das Array von vorne bis hinten.</li>
+        <li>Suche das kleinste Element im unsortierten Teil des Arrays.</li>
+        <li>Tausche dieses kleinste Element mit dem ersten Element des unsortierten Teils.</li>
+        <li>Verschiebe den "unsortierten Teil" eins nach rechts.</li>
+        <li>Wiederhole die Schritte, bis das ganze Array sortiert ist.</li>
+    </ul>
+    <a href="https://www.crio.do/blog/top-10-sorting-algorithms-2024/" target="_blank"><img src="Selection-Sort.gif" width="500px"></a>
+
+    <h2>Selection Sort in JavaScript</h2>
+<pre class="code">
+function <b>selectionSort</b>(zahlen) {
+    const n = zahlen.length;
+
+    for (let i = 0; i &lt; n - 1; i++) {
+        <label class="kommentar">// Nehme an, das aktuelle Element ist das kleinste</label>
+        let minIndex = i;
+
+        <label class="kommentar">// Finde das kleinste Element im Rest des Arrays</label>
+        for (let j = i + 1; j &lt; n; j++) {
+        if (zahlen[j] &lt; zahlen[minIndex]) {
+            minIndex = j;
+        }
+        }
+
+        <label class="kommentar">// Tausche nur, wenn nötig</label>
+        if (minIndex !== i) {
+        let temp = zahlen[i];
+        zahlen[i] = zahlen[minIndex];
+        zahlen[minIndex] = temp;
+        }
+    }
+
+    return zahlen;
+}
+</pre>
+    <p class="text">Selber ausprobieren:</p>
+    <p class="text">Startwerte: <label id="start"></label> <button id="sort">Sortieren</button></p>
+    <p class="text">Ergebnis: <label id="ergebnis"></label></p>
+
+<style>
+    .code{
+        width: 400px;
+        justify-self: center;
+        
+        position:sticky;
+        left: calc(50% - 200px);        
+        
+        text-align: left;        
+        padding: 30px 30px;
+        border: solid 1px lightgrey;
+        border-radius: 20px;
+        overflow-x: auto;
+    }
+
+</style>
+
+<script>
+
+    var zahlen = [1, 10, 100, 3, 5, 27, 18, 42, 23, 99, 2, 7];
+    document.getElementById("start").innerHTML = zahlen;  
+
+    document.getElementById("sort").addEventListener("click", function(){
+        document.getElementById("ergebnis").innerHTML = selectionSort(zahlen);
+    });
+
+    function selectionSort(zahlen) {
+        const n = zahlen.length;
+
+        for (let i = 0; i < n - 1; i++) {
+            // Nehme an, das aktuelle Element ist das kleinste
+            let minIndex = i;
+
+            // Finde das kleinste Element im Rest des Arrays
+            for (let j = i + 1; j < n; j++) {
+            if (zahlen[j] < zahlen[minIndex]) {
+                minIndex = j;
+            }
+            }
+
+            // Tausche nur, wenn nötig
+            if (minIndex !== i) {
+            let temp = zahlen[i];
+            zahlen[i] = zahlen[minIndex];
+            zahlen[minIndex] = temp;
+            }
+        }
+
+        return zahlen;
+    }
+</script>
+
+</body>
+</html>

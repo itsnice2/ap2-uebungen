@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <h1>Programmiergrundlagen</h2>
+    <h1>Programmiergrundlagen</h1>
     <p class="text"></p>
     <p class="text"></p>
     <table>
@@ -20,7 +20,7 @@
             <th>Beispiel in PHP</th>
         </tr>
         <tr>
-            <td class="mitte">Variable</td>
+            <td class="mitte" rowspan="7">Variable</td>
             <td>Ein <b>Behälter</b> der Werte speichert (Zahlen, Buchstaben, Worte, etc)</td>
             <td>
                 <code>
@@ -35,6 +35,73 @@
                 </code>
             </td>
         </tr>
+        <tr>
+            <td>Die meisten Sprachen unterscheiden unterschiedliche Variablentypen (wie z.B. C++/C#), aber manche nicht (wie z.B. PHP, JavaScript und Python). In letzteren gibt es aber Methoden, um sicherzugehen dass der Wert wie eine Zahl/wie ein String behandelt wird.<br><br>Gebräuchliche Variablentypen:</td>
+            <td>
+                <code>
+                    <b>int</b> zahl1 = 42;<br><br>
+
+                    <b>float</b> zahl2 = 0.123456789012345678901234567890F;<br>
+                    <b>double</b> zahl3 = 0.123456789012345678901234567890D;<br>
+                    <b>decimal</b> zahl4 = 0.123456789012345678901234567890M;<br><br>
+
+                    <b>char</b> buchstabe = 'A';<br>
+                    <b>string</b> satz = "Dies ist ein String";<br><br>
+
+                    Console.WriteLine(zahl1);<br>
+                    Console.WriteLine(zahl2);<br>
+                    Console.WriteLine(zahl3);<br>
+                    Console.WriteLine(zahl4);<br>               
+                    Console.WriteLine(buchstabe);<br>
+                    Console.WriteLine(satz);<br><br>                    
+                </code>
+            </td>
+            <td>
+                <code>
+                    $int_variable = 1;<br>
+                    $float_variable = 3.1415;<br><br>
+                    
+                    $char_variable = "A";<br>
+                    $string_variable = "Dies hier ist auch ein String";<br><br>
+                    
+                    echo $int_variable . "&lt;br&gt;";<br>
+                    echo $float_variable . "&lt;br&gt;";<br>
+                    echo $char_variable . "&lt;br&gt;";<br>
+                    echo $string_variable;
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">int</td>
+            <td colspan="2">Ganzzahl, z.B.: 1, 42, 40000</td>
+        </tr>
+        <tr>
+            <td class="mitte">float</td>
+            <td colspan="2">
+                Kommazahl, 32 Bit, 7 Dezimalstellen<br>
+                <i>z.B.: 3.1415</i>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">double</td>
+            <td colspan="2">
+                Kommazahl, 64 Bit, 15 Dezimalstellen, z.B.: 3.14159265358979323846<br>
+                <i>z.B.: </i>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">char</td>
+            <td colspan="2">
+                Ein einzelnes Zeichen<br>
+                <i>z.B.: </i>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">string</td>
+            <td colspan="2">Zeichenkette<br>
+                <i>z.B.: </i>
+            </td>
+        </tr>        
         <tr>
             <td class="mitte">Kommentar</td>
             <td>kommentiert deinen Code</td>
@@ -53,6 +120,92 @@
                     /*<br>
                          Mehrzeiliger Kommentar<br>
                     */<br>
+                </code>
+            </td>
+        </tr>
+        <tr>
+            <td class="mitte">Array</td>
+            <td>
+                <p>Ein Array kann mehrere Werte in einer Variable speichern. Arrays kann man sich wie Listen vorstellen, z.B. eine Einkaufsliste mit Zutaten für eine Pizza.</p>
+                <p>Ein eindimensionales Array ist wie eine Liste für eine einzelne Pizza.</p>
+                <p>Ein mehrdimensionales Array ist wie je eine Liste für verschiedene Pizzen (erste Dimension). Jede Pizza hat eine unterschiedliche Zutaten (zweite Dimension).</p>
+            </td>
+            <td>
+                <code>
+                    <b>// Eindimensionales Array</b><br><br>
+
+                    string[] mein_array = new string[3];<br><br>
+                    mein_array[0] = "Max";<br>
+                    mein_array[1] = "Mustermann";<br>
+                    mein_array[2] = "m.m@webseite.de";<br><br>
+                    Console.WriteLine(mein_array[0] + " " + mein_array[1] + " - " + mein_array[2]);<br><br>
+
+
+                    Console.WriteLine("------------------------");<br><br>
+
+
+                    <b>// Zweidimensionales Array</b><br><br>
+
+                    string[,] mein_array2 = new string[2,3];<br><br>
+                    mein_array2[0,0] = "Max";<br>
+                    mein_array2[0,1] = "Mustermann";<br>
+                    mein_array2[0,2] = "m.m@webseite.de";<br>
+                    mein_array2[1,0] = "Max";<br>
+                    mein_array2[1,1] = "Mustermann";<br>
+                    mein_array2[1,2] = "m.m@webseite.de";<br><br>
+                    Console.WriteLine(mein_array2[0, 0] + " " + mein_array2[0, 1] + " - " + mein_array2[0, 2]);<br>
+                    Console.WriteLine(mein_array2[1, 0] + " " + mein_array2[1, 1] + " - " + mein_array2[1, 2]);<br><br><br><br>
+
+                    Console.WriteLine("------------------------");<br><br><br>
+
+                    <b>// Assoziatives Array Array</b><br>
+                    NameValueCollection mein_array3 = new NameValueCollection();<br>
+                    mein_array3["vorname"]  = "Max";<br>
+                    mein_array3["nachname"] = "Mustermann";<br>
+                    mein_array3["email"]    = "m.m@webseite.de";<br><br>
+
+                    Console.WriteLine(mein_array3["vorname"] + " " + mein_array3["nachname"] + " - " + mein_array3["email"]);
+                </code>
+            </td>
+            <td>
+                <code>
+                    <b>// Eindimensionales Array</b><br><br>
+
+                    $mein_array = array();<br><br>
+                    $mein_array[] = "Max";<br>
+                    $mein_array[] = "Mustermann";<br>
+                    $mein_array[] = "m.m@webseite.de";<br><br>
+                    echo $mein_array[0] . " " . $mein_array[1] . " - " .$mein_array[2];<br><br>
+
+
+                    echo "&#60;br&#62;------------------&#60;br&#62;";<br><br>
+
+
+                    <b>// Zweidimensionales Array</b><br><br>
+
+                    $mein_array = array();<br><br>
+                    $mein_array[0][] = "Max";<br>
+                    $mein_array[0][] = "Mustermann";<br>
+                    $mein_array[0][] = "m.m@webseite.de";<br><br>
+
+                    $mein_array[1][] = "Martina";<br>
+                    $mein_array[1][] = "Musterfrau";<br>
+                    $mein_array[1][] = "martina.m@webseite.de";<br><br>
+
+                    echo $mein_array[0][0] . " " . $mein_array[0][1] . " - " .$mein_array[0][2];<br>
+                    echo "&#60;br&#62;";<br>
+                    echo $mein_array[1][0] . " " . $mein_array[1][1] . " - " .$mein_array[1][2];<br><br>
+
+                    echo "&#60;br&#62;------------------&#60;br&#62;";<br><br>
+
+                    <b>// Assoziatives Array</b><br>
+                    $mein_array = [<br>
+                        "vorname"  =&#62; "Max",<br>
+                        "nachname" =&#62; "Mustermann",<br>
+                        "email"    =&#62; "m.m@webseite.de"<br>
+                    ];<br><br>
+
+                    echo $mein_array['vorname'] . " " . $mein_array['nachname'] . " - " .$mein_array['email'];
                 </code>
             </td>
         </tr>
@@ -406,8 +559,6 @@ mein_text("Mein Text");
         padding: 30px 30px;
 
         overflow-x: auto;
-
-        justify-self: center;
     }
 
     b{
@@ -415,9 +566,7 @@ mein_text("Mein Text");
     }
 
     table{
-        width: 1200px;
-        position: relative;
-        left: calc(50% - 600px);
+        width: 100%;
     }
 </style>
 
