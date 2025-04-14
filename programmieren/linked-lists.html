@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked Lists | Programmierung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>Linked Lists</h1>
+    <p class="text"><small>Frage an ChatGPT: Erkläre mir linked lists und zeige mir ein Beispiel in C#</small></p>
+    <p class="text">Klar! Eine Linked List (verkettete Liste) ist eine Datenstruktur, bei der Elemente (sogenannte „Nodes“) linear angeordnet sind, aber nicht im Speicher hintereinander liegen. Stattdessen verweist jedes Element auf das nächste – dadurch kann man Elemente effizient einfügen oder löschen, ohne den gesamten Speicherblock zu verschieben (wie z. B. bei einem Array).</p>
+    <p class="text">Eine Linked List besteht aus:</p>
+    <ul class="text">
+        <li><b>Node (Knoten)</b>: Enthält die Daten und einen Verweis auf den nächsten Knoten.</li>
+        <li><b>Head</b>: Zeiger auf den ersten Knoten der Liste.</li>
+    </ul>
+    <p class="text">Es gibt verschiedene Arten:</p>
+    <ul class="text">
+        <li><b>Singly Linked List</b>: Jeder Knoten zeigt nur auf den nächsten.</li>
+        <li><b>Doubly Linked List</b>: Jeder Knoten zeigt auf den nächsten und vorherigen.</li>
+        <li><b>Circular Linked List</b>: Der letzte Knoten zeigt zurück auf den ersten.</li>
+    </ul>
+
+    <h2>Beispiel in C#</h2>
+<pre>
+using System;
+
+class <b>Node</b>
+{
+    public int <b>Data</b>;
+    public Node <b>Next</b>;
+
+    public <b>Node</b>(int data)
+    {
+        Data = data;
+        Next = null;
+    }
+}
+
+class <b>LinkedList</b>
+{
+    public Node <b>Head</b>;
+
+    public void <b>Add</b>(int data)
+    {
+        Node newNode = new Node(data);
+
+        if (Head == null)
+        {
+            Head = newNode;
+        }
+        else
+        {
+            Node current = Head;
+            while (current.Next != null)
+            {
+                current = current.Next;
+            }
+            current.Next = newNode;
+        }
+    }
+
+    public void <b>PrintList</b>()
+    {
+        Node current = Head;
+        while (current != null)
+        {
+            Console.Write(current.Data + " -> ");
+            current = current.Next;
+        }
+        Console.WriteLine("null");
+    }
+}
+
+class <b>Program</b>
+{
+    static void <b>Main</b>()
+    {
+        LinkedList list = new LinkedList();
+
+        list.Add(1);
+        list.Add(2);
+        list.Add(3);
+
+        <label class="kommentar">// Ausgabe: 1 -> 2 -> 3 -> null</label>
+        list.PrintList();  
+    }
+}
+    
+</pre>
+
+    <style>
+        pre{
+            width: 600px;
+            text-align: left;
+            position: relative;
+            left: calc(50% - 300px);
+    
+            border: solid 1px lightgrey;
+            border-radius: 10px;
+            padding: 30px 30px;
+    
+        }
+
+        b{
+            font-size: 12pt;
+        }
+    </style>
+
+</body>
+</html>

@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <h2>Klassendiagramm</h2>
+    <h2><a href="https://www.ionos.de/digitalguide/websites/web-entwicklung/klassendiagramme-mit-uml-erstellen/" target="_blank">Klassendiagramm</a></h2>
     <p class="text">Klassendiagramme werden zum Beispiel häufig von Software-Ingenieuren genutzt, um die Software-Architektur zu dokumentieren. Es handelt sich um eine Art Strukturdiagramm, denn es beschreibt, was das modellierte System enthalten muss.</p>
     <p class="text">Die Klassenform an sich besteht aus einem Rechteck mit drei Reihen. Die oberste Reihe enthält den Namen der Klasse, die mittlere Reihe gibt ihre Attribute an, und die unterste Reihe gibt Aufschluss über die Methoden oder Abläufe innerhalb der Klasse. Klassen und Unterklassen werden gruppiert, um die statische Beziehung zwischen den einzelnen Objekten zu verdeutlichen.</p>
 
@@ -20,31 +20,38 @@
             <td>
                 <b>Attribute</b><br>
                 <code>
-                    - = private<br>
-                    # = protected<br>
-                    + = public<br>
-                    ~ = package
+                    -   private<br>
+                    #   protected<br>
+                    +   public<br>
+                    ~   package
                 </code>
             </td>
-        </tr>
-    <!--
+            <td>Die Klasse ist dreigeteilt in <b>Klassennamen</b>, <b>Eigenschaften</b> und <b>Methoden</b></td>
+        </tr>    
         <tr>
-            <td><img src="" height=""></td>
-            <td></td>
-            <td></td>
+            <td><img src="klassendiagramm_komposition.png" height=""></td>
+            <td><a href="https://www.google.com/search?q=klassendiagramm++was+ist+eine+komposition&sca_esv=3efceaf071fd96ef&sxsrf=AHTn8zpLmyuWpdR39xElD3W4xJO2FCQrHA%3A1744619401171&ei=icf8Z9qhCunjxc8Py7_L8Q4&ved=0ahUKEwiairPdjdeMAxXpcfEDHcvfMu4Q4dUDCBA&uact=5&oq=klassendiagramm++was+ist+eine+komposition&gs_lp=Egxnd3Mtd2l6LXNlcnAiKWtsYXNzZW5kaWFncmFtbSAgd2FzIGlzdCBlaW5lIGtvbXBvc2l0aW9uMggQABiABBiiBDIFEAAY7wUyCBAAGIAEGKIEMggQABiABBiiBDIIEAAYgAQYogRI9iBQtgdY3x9wBHgBkAEAmAGDAaABwwyqAQQ0LjExuAEDyAEA-AEBmAINoALQB8ICChAAGLADGNYEGEfCAgcQIxiwAhgnwgIIEAAYCBgNGB7CAggQIRigARjDBMICChAhGKABGMMEGAqYAwCIBgGQBgiSBwM2LjegB-AzsgcDMi43uAfGBw&sclient=gws-wiz-serp" target="_blank">Komposition</a></td>
+            <td>Beziehung zwischen zwei Klassen, bei der das Ganze die Teile enthält</td>
         </tr>
-    --> 
+        <tr>
+            <td><img src="klassendiagramm_aggregation.png" height=""></td>
+            <td><a href="https://www.google.com/search?q=klassendiagramm+was+ist+eine+aggregation&sca_esv=3efceaf071fd96ef&sxsrf=AHTn8zqFYmXSvcA9b5NYDwzmFGyBHKkGcA%3A1744619407551&ei=j8f8Z9-vIdOQxc8PgZqe2AE&oq=klassendiagramm++was+ist+eine+aggre&gs_lp=Egxnd3Mtd2l6LXNlcnAiI2tsYXNzZW5kaWFncmFtbSAgd2FzIGlzdCBlaW5lIGFnZ3JlKgIIADIFECEYoAEyBRAhGKABMgUQIRigATIFECEYoAFI98QBUNe5AViwvgFwBHgBkAEAmAGlAaABkwWqAQMwLjW4AQPIAQD4AQGYAgmgAq4FwgIKEAAYsAMY1gQYR8ICBxAhGKABGAqYAwCIBgGQBgiSBwM0LjWgB5YRsgcDMC41uAegBQ&sclient=gws-wiz-serp" target="_blank">Aggregation</a></td>
+            <td>Beziehung zwischen Klassen, die beschreibt, wie sich ein Ganzes aus seinen Teilen zusammensetzt</td>
+        </tr>
     </table>
+
+    <h3>Beziehungen:</h3>
+    <a href="https://www.ionos.de/digitalguide/websites/web-entwicklung/klassendiagramme-mit-uml-erstellen/" target="_blank"><img src="Klassendiagramm-Beziehungskanten.webp" width="400px"></a>
 
     <h3>Beispiel:</h3>
     <a href="https://www.lucidchart.com/pages/de/uml-klassendiagramme" target="_blank"><img src="klassendiagramm_beispiel.png" width="400px"></a>
 
     <style>
         table{
-            width: 300px;
+            width: 500px;
             position: relative;
             position: relative;
-            left: calc(50% - 150px);
+            left: calc(50% - 250px);
         }
     </style>
 </body>

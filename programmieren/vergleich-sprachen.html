@@ -9,15 +9,18 @@
 </head>
 <body>
 
-    <h1>Programmiersprachenvergleich</h1>
+    <h1>Programmiersprachenvergleich (die Basics)</h1>
     <p id="text">        
         <button id="php-btn">PHP</button>
         <button id="javascript-btn">JavaScript</button>
         <button id="csharp-btn">C#</button>
         <button id="cpp-btn">C++</button>
+        <!-- <button id="c-btn">C</button> -->
         <button id="python-btn">Python</button>
-        <button id="visualbasic-btn">VisualBasic</button>
-            
+        <button id="visualbasic-btn">VB .NET</button>
+        <button id="bash-btn">bash</button>
+        <button id="powershell-btn">PowerShell</button>
+              
         <button id="alle"><label class="allezeigen">I  O</label></button>
     </p>
 
@@ -58,6 +61,7 @@
             </div>
         </div>
 
+        <!-- ----- PHP ------------------------------------------------------------------------------------------------------------------------- -->
         <div class="code-abschnitt" id="php">
             <div class="sektion ueberschrift">
                 PHP
@@ -74,30 +78,86 @@
                 */<br>
             </div>
             <div class="sektion arrays code">
-                Arrays
+                <b>// Eindimensionales Array</b><br><br>
+
+                $mein_array = array();<br><br>
+                $mein_array[] = "Max";<br>
+                $mein_array[] = "Mustermann";<br>
+                $mein_array[] = "m.m@webseite.de";<br><br>
+                echo $mein_array[0] . " " . $mein_array[1] . " - " .$mein_array[2];<br><br><br>
+
+                <b>// Zweidimensionales Array</b><br><br>
+
+                $mein_array = array();<br><br>
+                $mein_array[0][] = "Max";<br>
+                $mein_array[0][] = "Mustermann";<br>
+                $mein_array[0][] = "m.m@webseite.de";<br><br>
+
+                $mein_array[1][] = "Martina";<br>
+                $mein_array[1][] = "Musterfrau";<br>
+                $mein_array[1][] = "martina.m@webseite.de";<br><br>
+
+                echo $mein_array[0][0] . " " . $mein_array[0][1] . " - " .$mein_array[0][2];<br>
+                echo "&#60;br&#62;";<br>
+                echo $mein_array[1][0] . " " . $mein_array[1][1] . " - " .$mein_array[1][2];<br><br><br>
+
+                <b>// Assoziatives Array</b><br><br>
+                $mein_array = [<br>
+                    "vorname"  =&#62; "Max",<br>
+                    "nachname" =&#62; "Mustermann",<br>
+                    "email"    =&#62; "m.m@webseite.de"<br>
+                ];<br><br>
+
+                echo $mein_array['vorname'] . " " . $mein_array['nachname'] . " - " .$mein_array['email'];
             </div>
             <div class="sektion funktionen code">
-                Funktionen
+                function meine_function($zahl, $text)<br>
+                {<br>
+                    // auszuführender Code<br>
+                }
             </div>
             <div class="sektion klassen code">
-                Klassen
+                class MeineKlasse<br>
+                {<br>
+                    // Methoden etc<br>
+                }
             </div>
             <div class="sektion bedingungen code">
-                Bedingungen
+                $i = 1;<br><br>
+
+                if($i &lt; 10)<br>
+                {<br>
+                    echo $i;<br>
+                }
             </div>
             <div class="sektion schleife code">
-                Schleifen
+                for($i = 0; $i &lt; 6; $i++)<br>
+                {<br>
+                    echo $i;<br>
+                }
             </div>
             <div class="sektion schleife-kopf code">
-                Schleifen<br>
-                <small>kopfgesteuert</small>
+                $i = 0;<br><br>
+
+                while ($i &lt; 10)<br>
+                {<br>
+                    echo $i;<br>
+                    $i++;<br>
+                }
             </div>
             <div class="sektion schleife-fuss code">
-                Schleifen<br>
-                <small>fußgesteuert</small>
+                $i = 0;<br><br>
+
+                do<br>
+                {<br>
+                    echo $i;<br>
+                    $i++;<br>
+                }<br>
+                while ($i &lt; 10);
             </div>
         </div>
 
+        <!-- ----- JavaScript ------------------------------------------------------------------------------------------------------------------ -->
         <div class="code-abschnitt" id="javascript">
             <div class="sektion ueberschrift">
                 JavaScript
@@ -115,30 +175,79 @@
                 */<br>
             </div>
             <div class="sektion arrays code">
-                Arrays
+                <b>// Eindimensionales Array</b><br><br>
+
+                var mein_array = ["Max", "Mustermann", "m.m@webseite.de"];<br><br>
+            
+                console.log( mein_array[0] + " " +  mein_array[1] + " - " +  mein_array[2]);<br><br><br>
+
+                <b>// Zweidimensionales Array</b><br><br>
+
+                var mein_array = [<br>
+                    ["Max", "Mustermann", "m.m@webseite.de"],<br>
+                    ["Martina", "Musterfrau", "martina.m@webseite.de"]<br>
+                ];<br><br>
+            
+                console.log( mein_array[0][0] + " " +  mein_array[0][1] + " - " +  mein_array[0][2]);<br>
+                console.log( mein_array[1][0] + " " +  mein_array[1][1] + " - " +  mein_array[1][2]);<br><br><br>
+
+                <b>// Zweidimensionales Array</b><br><br>
+
+                var mein_array = {<br>
+                    "vorname": "Max",<br>
+                    "nachname": "Mustermann",<br>
+                    "email": "m.m@webseite.de"<br>
+                };<br><br>
+
+                console.log( mein_array["vorname"] + " " +  mein_array["nachname"] + " - " +  mein_array["email"]);
             </div>
             <div class="sektion funktionen code">
-                Funktionen
+                function meine_function(zahl, text)<br>
+                {<br>
+                    // auszuführender Code<br>
+                }
             </div>
             <div class="sektion klassen code">
-                Klassen
+                class MeineKlasse<br>
+                {<br>
+                    // Methoden etc<br>
+                }
             </div>
             <div class="sektion bedingungen code">
-                Bedingungen
+                var i = 1;<br><br>
+
+                if( i &lt; 10)<br>
+                {<br>
+                    console.log(i);<br>
+                }
             </div>
             <div class="sektion schleife code">
-                Schleifen
+                for(int i = 0; i &lt; 6; i++)<br>
+                {<br>
+                    console.log(i);<br>
+                }
             </div>
             <div class="sektion schleife-kopf code">
-                Schleifen<br>
-                <small>kopfgesteuert</small>
+                var i = 1;<br><br>
+
+                while (i &lt; 10){<br>
+                    console.log(i);<br>
+                    i++;<br>
+                }
             </div>
             <div class="sektion schleife-fuss code">
-                Schleifen<br>
-                <small>fußgesteuert</small>
+                var i = 1;<br><br>
+                
+                do<br>
+                {<br>
+                    console.log(i);<br>
+                    i++;<br>
+                }<br>
+                while (i &lt; 10);
             </div>
         </div>
 
+        <!-- ----- C# ------------------------------------------------------------------------------------------------------------------------- -->
         <div class="code-abschnitt" id="csharp">
             <div class="sektion ueberschrift">
                 C#
@@ -147,7 +256,7 @@
                 <b>int</b> zahl1 = 42;<br>
                 <b>float</b> zahl2 = 0.12345679F;<br>
                 <b>double</b> zahl3 = 0.123456789012345678D;<br>
-                <b>decimal</b> zahl4 = 0.12345678901234567890123456789M;<br>
+                <b>decimal</b> zahl4 = 0.12345678901234567890123456789M;<br><br>
                 <b>char</b> buchstabe = 'A';<br>
                 <b>string</b> satz = "Dies ist ein String";
             </div>
@@ -158,209 +267,545 @@
                 */<br>
             </div>
             <div class="sektion arrays code">
-                Arrays
+                    <b>// Eindimensionales Array</b><br><br>
+
+                    string[] mein_array = new string[3];<br><br>
+                    mein_array[0] = "Max";<br>
+                    mein_array[1] = "Mustermann";<br>
+                    mein_array[2] = "m.m@webseite.de";<br><br>
+                    Console.WriteLine(mein_array[0] + " " + mein_array[1] + " - " + mein_array[2]);<br><br><br>
+
+
+                    <b>// Zweidimensionales Array</b><br><br>
+
+                    string[,] mein_array2 = new string[2,3];<br><br>
+                    mein_array2[0,0] = "Max";<br>
+                    mein_array2[0,1] = "Mustermann";<br>
+                    mein_array2[0,2] = "m.m@webseite.de";<br>
+                    mein_array2[1,0] = "Martina";<br>
+                    mein_array2[1,1] = "Musterfrau";<br>
+                    mein_array2[1,2] = "martina.m@webseite.de";<br><br>
+                    Console.WriteLine(mein_array2[0, 0] + " " + mein_array2[0, 1] + " - " + mein_array2[0, 2]);<br>
+                    Console.WriteLine(mein_array2[1, 0] + " " + mein_array2[1, 1] + " - " + mein_array2[1, 2]);<br><br><br>
+
+                    <b>// Assoziatives Array</b><br><br>
+                    NameValueCollection mein_array3 = new NameValueCollection();<br>
+                    mein_array3["vorname"]  = "Max";<br>
+                    mein_array3["nachname"] = "Mustermann";<br>
+                    mein_array3["email"]    = "m.m@webseite.de";<br><br>
+
+                    Console.WriteLine(mein_array3["vorname"] + " " + mein_array3["nachname"] + " - " + mein_array3["email"]);
             </div>
             <div class="sektion funktionen code">
-                Funktionen
+                public void meine_funktion(int zahl, string text)<br>
+                {<br>
+                    // auszuführender Code<br>
+                }
             </div>
             <div class="sektion klassen code">
-                Klassen
+                class MeineKlasse<br>
+                {<br>
+                    // Methoden etc<br>
+                }
             </div>
             <div class="sektion bedingungen code">
-                Bedingungen
+                int i = 10;<br><br>
+
+                if(i > 1)<br>
+                {<br>
+                    Console.WriteLine(i);<br>
+                }
             </div>
             <div class="sektion schleife code">
-                Schleifen
+                for(int i = 0; i &lt; 6; i++)<br>
+                {<br>
+                    Console.WriteLine(i);<br>
+                }
             </div>
             <div class="sektion schleife-kopf code">
-                Schleifen<br>
-                <small>kopfgesteuert</small>
+                int i = 0;<br><br>
+
+                while (i &lt; 10)<br>
+                {<br>
+                    Console.WriteLine(i);<br>
+                    i++;<br>
+                }
             </div>
             <div class="sektion schleife-fuss code">
-                Schleifen<br>
-                <small>fußgesteuert</small>
+                int i = 0;<br><br>
+
+                do<br>
+                {<br>
+                    Console.WriteLine(i);<br>
+                    i++;<br>
+                }<br>
+                while (i &lt; 10);
             </div>
         </div>
 
+        <!-- ----- C++ ------------------------------------------------------------------------------------------------------------------------- -->
         <div class="code-abschnitt" id="cpp">
             <div class="sektion ueberschrift">
                 C++
             </div>
             <div class="sektion variablen code">
-                Variablen
+                <b>int</b> variable1 = 1;<br>
+                <b>float</b> variable2 = 3.123456;<br>
+                <b>double</b> variable3 = 0.123456;<br><br>
+                <b>char</b> variable4 = 'A';<br>
+                <b>std::string</b> variable5 = "Dies ist ein String";<br>
+                <i>// Strings an sich mit Hilfer dieser Bibliothek: #include &lt;string&gt;</i><br>
             </div>
             <div class="sektion kommentare code">
-                Kommentare
+                // Einzeiliger Kommentar<br><br>
+
+                /*<br>
+                    Mehrzeiliger Kommentar<br>
+                */
             </div>
-            <div class="sektion arrays code">
-                Arrays
+            <div class="sektion arrays code">                
+                <b>// Eindimensionales Array</b><br><br>
+
+                std::string mein_array[3];<br><br>
+
+                mein_array[0] = "Max";<br>
+                mein_array[1] = "Mustermann";<br>
+                mein_array[2] = "m.m@webseite.de";<br><br>
+
+                std::cout &lt;&lt; "Person: " &lt;&lt; mein_array[0] &lt;&lt; " " &lt;&lt; mein_array[1] &lt;&lt; " - " &lt;&lt; mein_array[2] &lt;&lt; "\n";<br><br><br>
+
+                
+                <b>// Zweidimensionales Array</b><br><br>
+
+                std::string mein_array2[2][3] = {<br>
+                    { "Max", "Mustermann", "m.m@webseite.de" },<br>
+                    { "Martina", "Musterfrau", "martina.m@webseite.de" }<br>
+                };<br><br>
+
+                std::cout &lt;&lt; "Person 1: " &lt;&lt; mein_array2[0][0] &lt;&lt; " " &lt;&lt; mein_array2[0][1] &lt;&lt; " - " &lt;&lt; mein_array2[0][2] &lt;&lt; "\n";<br>
+                std::cout &lt;&lt; "Person 2: " &lt;&lt; mein_array2[1][0] &lt;&lt; " " &lt;&lt; mein_array2[1][1] &lt;&lt; " - " &lt;&lt; mein_array2[1][2] &lt;&lt; "\n";<br><br><br>
+
+
+                <b>// Assoziatives Array</b><br>
+                <i>// mit Hilfe einer Map: #include &lt;map&gt;</i><br><br>
+
+                std::map<std::string, std::string> mein_array3;<br><br>
+
+                mein_array3["vorname"] = "Max";<br>
+                mein_array3["nachname"] = "Mustermann";<br>
+                mein_array3["email"] = "m.m@webseite.de";<br><br>
+
+                std::cout &lt;&lt; "Person: " &lt;&lt; mein_array3["vorname"] &lt;&lt; " " &lt;&lt; mein_array3["nachname"] &lt;&lt; " - " &lt;&lt; mein_array3["email"] &lt;&lt; "\n";
             </div>
             <div class="sektion funktionen code">
-                Funktionen
+                void test() {<br>
+                    // auszuführender Code<br>
+                }
             </div>
             <div class="sektion klassen code">
-                Klassen
+                class Testklasse {<br>
+                    // Methoden etc<br>
+                };
             </div>
             <div class="sektion bedingungen code">
-                Bedingungen
+                int i = 10;<br><br>
+
+                if (i &gt; 1) {<br>
+                    std::cout &lt;&lt; "Variable 1: " &lt;&lt; i &lt;&lt; "\n";<br>
+                }
             </div>
             <div class="sektion schleife code">
-                Schleifen
+                for (int i = 0; i &lt; 10; i++) {<br>
+                    std::cout &lt;&lt; "i.....: " &lt;&lt; i &lt;&lt; "\n";<br>
+                }<br>
             </div>
             <div class="sektion schleife-kopf code">
-                Schleifen<br>
-                <small>kopfgesteuert</small>
+                int i = 0;<br><br>
+
+                while (i &lt; 10) {<br>
+                    std::cout &lt;&lt; "i.....: " &lt;&lt; i &lt;&lt; "\n";<br>
+                    i++;<br>
+                }
             </div>
             <div class="sektion schleife-fuss code">
-                Schleifen<br>
-                <small>fußgesteuert</small>
+                int i = 0;<br><br>
+
+                do<br>
+                {<br>
+                    std::cout &lt;&lt; "i.....: " &lt;&lt; i &lt;&lt; "\n";<br>
+                    i++;<br>
+                } <br>
+                while (i &lt; 10);
             </div>
         </div>
 
+        <!-- ----- C ------------------------------------------------------------------------------------------------------------------------- -->         
+        <div class="code-abschnitt" id="c">
+            <div class="sektion ueberschrift">
+                C
+            </div>
+            <div class="sektion variablen code">
+                
+            </div>
+            <div class="sektion kommentare code">
+                // Einzeiliger Kommentar<br><br>
+
+                /*<br>
+                    Mehrzeiliger Kommentar<br>
+                */
+            </div>
+            <div class="sektion arrays code">                
+                <b>// Eindimensionales Array</b><br><br>
+
+                
+                <b>// Zweidimensionales Array</b><br><br>
+
+
+                <b>// Assoziatives Array</b><br>
+
+
+            </div>
+            <div class="sektion funktionen code">
+                
+            </div>
+            <div class="sektion klassen code">
+               
+            </div>
+            <div class="sektion bedingungen code">
+               
+            </div>
+            <div class="sektion schleife code">
+               
+            </div>
+            <div class="sektion schleife-kopf code">
+                
+            </div>
+            <div class="sektion schleife-fuss code">
+                
+            </div>
+        </div>
+
+        <!-- ----- Python ------------------------------------------------------------------------------------------------------------------------- -->
         <div class="code-abschnitt" id="python">
             <div class="sektion ueberschrift">
                 Python
             </div>
             <div class="sektion variablen code">
-                Variablen
+                <b>variable1</b> = 5<br>
+                <b>variable2</b> = "Hallo Welt"<br>
             </div>
             <div class="sektion kommentare code">
-                Kommentare
+                # Einzeiliger Kommentar<br><br>
+
+                """ <br>
+                    ein mehrzeiliger Kommentar<br>
+                    ist eigentlich nur ein String<br>
+                    der keiner Variable <br>
+                    zugewiesen ist<br>
+                """
             </div>
             <div class="sektion arrays code">
-                Arrays
+                <b># Eindimensionales Array</b><br><br>
+                mein_array = ["Max", "Mustermann", "m.m@webseite.de"]<br><br>
+
+                print(mein_array[0] + " " + mein_array[1] + " - " + mein_array[2])<br><br><br>
+
+                <b># Mehrdimensionales Array</b><br><br>
+                mein_array2 = [<br>
+                    ["Max", "Mustermann", "m.m@webseite.de"],<br>
+                    ["Martina", "Musterfrau", "martina.m@webseite.de"]<br>
+                ]<br><br>
+
+                print(mein_array2[0][0] + " " + mein_array2[0][1] + " - " + mein_array2[0][2])<br>
+                print(mein_array2[1][0] + " " + mein_array2[1][1] + " - " + mein_array2[1][2])<br><br><br>
+
+                <b># Assoziatives Array</b><br><br>
+                mein_array3 = {<br>
+                    "vorname": "Max",<br>
+                    "nachname": "Mustermann",<br>
+                    "email": "m.m@webseite.de",<br>
+                }<br><br>
+
+                print(mein_array3["vorname"] + " " + mein_array3["nachname"] + " - " + mein_array3["email"])
             </div>
             <div class="sektion funktionen code">
-                Funktionen
+                def meine_funktion(zahl, text):<br>
+                    # auszuführender Code...<br>
+                    # Python nutzt keine Klammern,<br>
+                    # sondern rückt Code ein<br><br>
+                # Das hier gehört nicht mehr zur Funktion
             </div>
             <div class="sektion klassen code">
-                Klassen
+                class MeineKlasse:<br>
+                    # auszuführender Code
             </div>
             <div class="sektion bedingungen code">
-                Bedingungen
+                i = 5;<br><br>
+                if i &gt; 2:<br>
+                    print("Ja!")
             </div>
             <div class="sektion schleife code">
-                Schleifen
+                <label class="kommentar"># Gibt einzelne Einträge aus</label><br>
+                text = ["Max", "Mustermann"]<br>
+                for x in variable4:<br>
+                    print(x)<br><br>
+
+                <label class="kommentar"># Gibt 0-5 aus</label><br>
+                for x in range(6):<br>
+                    print(x)
             </div>
             <div class="sektion schleife-kopf code">
-                Schleifen<br>
-                <small>kopfgesteuert</small>
+                i = 0<br><br>
+
+                while i &lt; 6:<br>
+                    print(i)<br>
+                    i += 1
             </div>
             <div class="sektion schleife-fuss code">
-                Schleifen<br>
-                <small>fußgesteuert</small>
+                i = 0 <br><br>
+
+                while True:<br>
+                    print(i)<br>
+                    i += 1<br>
+                    if i &gt; 5:<br>
+                        break
             </div>
         </div>
 
+        <!-- ----- VisualBasic.Net ------------------------------------------------------------------------------------------------------------------------- -->
         <div class="code-abschnitt" id="visualbasic">
             <div class="sektion ueberschrift">
-                VisualBasic.Net
+                Visual Basic .NET
             </div>
             <div class="sektion variablen code">
-                Variablen
+                <b>Dim</b> zahl1 <b>As Integer</b> = 1<br>
+                <b>Dim</b> zahl2 <b>As Double</b> = 3.1415<br>
+                <b>Dim</b> text <b>As String</b> = "Hallo Welt"
             </div>
             <div class="sektion kommentare code">
-                Kommentare
+                ' Kommentar
             </div>
             <div class="sektion arrays code">
-                Arrays
+                <b>' Eindimensionales Array</b><br><br>
+                Dim mein_array1(3) As String<br>
+                mein_array1(0) = "Max"<br>
+                mein_array1(1) = "Mustermann"<br>
+                mein_array1(2) = "m.m@webseite.de"<br><br>
+
+                Console.WriteLine(mein_array1(0) + " " + mein_array1(1) + " - " + mein_array1(2))<br><br><br>
+
+
+                <b>' Mehrdimensionales Array</b><br><br>
+                Dim mein_array2(,) As String = {<br>
+                    {"Max", "Mustermann", "m.m@webseite.de"},<br>
+                    {"Martina", "Musterfrau", "martina.m@webseite.de"}<br>
+                }<br><br>
+
+                Console.WriteLine(mein_array2(0, 0) + " " + mein_array2(0, 1) + " - " + mein_array2(0, 2))<br>
+                Console.WriteLine(mein_array2(1, 0) + " " + mein_array2(1, 1) + " - " + mein_array2(1, 2))<br><br><br>
+
+
+                <b>' Assoziatives Array</b><br><br>
+                Dim mein_array3 As New Dictionary(Of String, String) From {<br>
+                    {"vorname", "Max"},<br>
+                    {"nachname", "Mustermann"},<br>
+                    {"email", "m.m@webseite.de"}<br>
+                }<br><br>
+
+                Console.WriteLine(mein_array3("vorname") + " " + mein_array3("nachname") + " - " + mein_array3("email"))
             </div>
             <div class="sektion funktionen code">
-                Funktionen
+                Function meine_funktion(ByVal zahl As Integer, ByVal text As String) As Integer<br>
+                    ' auszuführender Code<br>
+                End Function
             </div>
             <div class="sektion klassen code">
-                Klassen
+                Class MeineKlasse<br>
+                    ' auszuführender Code<br>
+                End Class<br><br>
+
+                <label class="kommentar">' Aufruf<br></label>
+                Dim klasse As MeineKlasse = New MeineKlasse()
             </div>
             <div class="sektion bedingungen code">
-                Bedingungen
+                Dim i As Integer = 5<br><br>
+
+                If (i > 2) Then<br>
+                    ' auszuführender Code<br>
+                End If
             </div>
             <div class="sektion schleife code">
-                Schleifen
+                For i = 0 To 5<br>
+                    Console.WriteLine("value of a: {0}", i)<br>
+                Next
             </div>
             <div class="sektion schleife-kopf code">
-                Schleifen<br>
-                <small>kopfgesteuert</small>
+                Dim i As Integer = 0<br><br>
+
+                While i &lt; 10<br>
+                    Console.WriteLine("value of a: {0}", i)<br>
+                    i = i + 1<br>
+                End While
             </div>
             <div class="sektion schleife-fuss code">
-                Schleifen<br>
-                <small>fußgesteuert</small>
+                Dim i As Integer = 0<br><br>
+
+                Do<br>
+                    Console.WriteLine("value of a: {0}", i)<br>
+                    i = i + 1<br>
+                Loop While (i &lt; 10)
             </div>
         </div>
 
+        <!-- ----- bash ------------------------------------------------------------------------------------------------------------------------- -->
         <div class="code-abschnitt" id="bash">
             <div class="sektion ueberschrift">
-                bash
+                <a href="https://devhints.io/bash" target="_blank">bash</a>
             </div>
             <div class="sektion variablen code">
-                Variablen
+                zahl=1
+                text="Hallo Welt"
             </div>
             <div class="sektion kommentare code">
-                Kommentare
+                # Kommentar
             </div>
             <div class="sektion arrays code">
-                Arrays
+                Fruits=('Apple' 'Banana' 'Orange')<br><br>
+                Fruits[0]="Apple"<br>
+                Fruits[1]="Banana"<br>
+                Fruits[2]="Orange"<br><br>
+                echo "${Fruits[0]} - ${Fruits[1]} - ${Fruits[2]}"
             </div>
             <div class="sektion funktionen code">
-                Funktionen
+                meine_funktion() {<br>
+                    # auszuführender Code<br>
+                }
             </div>
             <div class="sektion klassen code">
-                Klassen
+                
             </div>
             <div class="sektion bedingungen code">
-                Bedingungen
+                if [[ -z "$string" ]]; then<br>
+                    # auszuführender Code<br>
+                elif [[ -n "$string" ]]; then<br>
+                    # auszuführender Code<br>
+                fi
             </div>
             <div class="sektion schleife code">
-                Schleifen
+                for ((i = 0 ; i &lt; 10 ; i++)); do<br>
+                    echo "$i"<br>
+                done<br><br>
+
+                for i in {1..5}; do<br>
+                    echo "$i"<br>
+                done
             </div>
             <div class="sektion schleife-kopf code">
-                Schleifen<br>
-                <small>kopfgesteuert</small>
+                while true; do<br>
+                    echo "ok"<br>
+                done
             </div>
             <div class="sektion schleife-fuss code">
-                Schleifen<br>
-                <small>fußgesteuert</small>
+
             </div>
         </div>
 
+        <!-- ----- PowerShell ------------------------------------------------------------------------------------------------------------------ -->
         <div class="code-abschnitt" id="powershell">
             <div class="sektion ueberschrift">
                 Powershell
             </div>
             <div class="sektion variablen code">
-                Variablen
+                $variable1 = 1<br>
+                $variable2 = 3.1415<br>
+                $variable3 = "Hallo Welt"<br>
+                $variable4 = "C:\Windows\System32"<br>
+                $variable5 = (Get-Date).DateTime
             </div>
             <div class="sektion kommentare code">
-                Kommentare
+                # Einzeiliger Kommentar<br><br>
+
+                &lt;# <br>
+                    Mehrzeiliger Kommentar<br>
+                #&gt;
             </div>
             <div class="sektion arrays code">
-                Arrays
+                <b># Eindimensionales Array</b><br><br>
+                Write-Host $mein_array1 = @("Max", "Mustermann", "m.m@webseite.de")<br>
+                Write-Host $mein_array1[0]<br>
+                Write-Host $mein_array1[1]<br>
+                Write-Host $mein_array1[2]<br><br><br>
+
+                <b># Mehrdimensionales Array</b><br><br>
+                $mein_array2 = @(<br>
+                    ("Max", "Mustermann", "m.m@webseite.de"),<br>
+                    ("Martina", "Musterfrau", "martina.m@webseite.de")<br>
+                )<br>
+                Write-Host $mein_array2[0][0]<br>
+                Write-Host $mein_array2[0][1]<br>
+                Write-Host $mein_array2[0][2]<br>
+                Write-Host $mein_array2[1][0]<br>
+                Write-Host $mein_array2[1][1]<br>
+                Write-Host $mein_array2[1][2]<br><br><br>
+
+                <b># Assoziatives Array</b><br><br>
+                $mein_array3 = @{<br>
+                    "Vorname" = "Max"; <br>
+                    "Nachname" = "Mustermann"; <br>
+                    "EMail" = "m.m@webseite.de"<br>
+                    }<br>
+                Write-Host $mein_array3["Vorname"]<br>
+                Write-Host $mein_array3["Nachname"]<br>
+                Write-Host $mein_array3["EMail"]
             </div>
             <div class="sektion funktionen code">
-                Funktionen
+                FUNCTION meine_funktion($zahl, $text)<br>
+                {<br>
+                    # auszuführender Code<br>
+                }
             </div>
             <div class="sektion klassen code">
-                Klassen
+                class MeineKlasse {<br>
+                    # auszuführender Code<br>
+                }
             </div>
             <div class="sektion bedingungen code">
-                Bedingungen
+                $zahl = 10<br><br>
+                if($zahl -gt 5)<br>
+                {<br>
+                    Write-Host "Ihre Zahl ist größer als 5"<br>
+                }
             </div>
             <div class="sektion schleife code">
-                Schleifen
+                FOR($zaehler = 0; $zaehler -le 30; $zaehler++)<br>
+                {<br>
+                    Write-Host "Wert:" $zaehler<br>
+                }
             </div>
             <div class="sektion schleife-kopf code">
-                Schleifen<br>
-                <small>kopfgesteuert</small>
+                $i = 0<br><br>
+                WHILE($i -lt 10)<br>
+                {<br>
+                    Write-Host "i: " $i<br>
+                    $i++<br>
+                }
             </div>
             <div class="sektion schleife-fuss code">
-                Schleifen<br>
-                <small>fußgesteuert</small>
+                $i = 0<br><br>
+                do<br>
+                {<br>
+                    $i += 1<br>
+                    Write-Host "i: " $i<br>
+                }<br>
+                WHILE($i -lt 10)
             </div>
         </div>
 
        
     </div>
 
-    <style>        
+    <style> 
+
         .vergleich{
             display: flex;
             overflow-x: auto;
@@ -415,73 +860,75 @@
         }
 
         .kommentare{
-            height: 100px;
+            height: 120px;
         }
 
         .arrays{
-            height: 50px;
+            height: 700px;
+            /*overflow-x: scroll;*/            
         }
 
         .funktionen{
-            height: 50px;
+            height: 100px;
         }
 
         .klassen{
-            height: 50px;
+            height: 110px;
         }
 
         .bedingungen{
-            height: 50px;
+            height: 110px;
         }
 
         .schleife{
-            height: 50px;
+            height: 130px;
         }
 
         .schleife-kopf{
-            height: 50px;
+            height: 110px;
         }
 
         .schleife-fuss{
-            height: 50px;
+            height: 130px;
         }
 
         /* ################################################################################################################### */
 
-        #php, #javascript, #csharp, #cpp, #python, #visualbasic, #bash, #powershell{
-            
+        #php, #javascript, #csharp, #cpp, #python, #visualbasic, #bash, #powershell{            
+            overflow-x: auto;
+            overflow-y:hidden;
         }
 
         #php{
-            width: 300px;
+            min-width: 600px;
         }
 
         #javascript{
-            width: 300px;
+            min-width: 600px;
         }
 
         #csharp{
-            width: 350px;
+            min-width: 600px;
         }
 
         #cpp{
-            
+            min-width: 600px;
         }
 
         #python{
-            
+            min-width: 600px;
         }
 
         #visualbasic{
-            
+            min-width: 600px;
         }
         
         #bash{
-            
+            min-width: 600px;
         }
 
         #powershell{
-            
+            min-width: 600px;
         }
 
 
@@ -490,9 +937,32 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
+
+        /* ***** Hilfsvariablen **************************************************************************** */
+
+        // für Button "I O"/Alle anzeigen/verstecken
         var showAll = 0;
+        // Ob eine Zeile grau markiert ist        
+        var markiert = {
+            "variablen": 0,
+            "kommentare": 0,
+            "arrays": 0,
+            "funktionen": 0,
+            "klassen": 0,
+            "bedingungen": 0,
+            "schleifen": 0,
+            "schleifen_kopf": 0,
+            "schleifen_fuss": 0
+        };
+        // Zeilenfarben
+        var farbe_markiert = "#efffef";
+        var farbe_nicht_markiert = "#ffffff";
+        // Für Tests: Spalten verstecken
+        hideShow(4);
 
         $(document).ready(function(){
+
+            /* ***** BUTTONS Oben **************************************************************************** */
 
             $("#php-btn").on("click", function(){
                 $("#php").toggle();
@@ -510,6 +980,10 @@
                 $("#cpp").toggle();
             });
 
+            $("#c-btn").on("click", function(){
+                $("#c").toggle();
+            });
+
             $("#python-btn").on("click", function(){
                 $("#python").toggle();
             });
@@ -518,42 +992,191 @@
                 $("#visualbasic").toggle();
             });
 
-            $("#alle").on("click", function(){
+            $("#bash-btn").on("click", function(){
+                $("#bash").toggle();
+            });
 
+            $("#powershell-btn").on("click", function(){
+                $("#powershell").toggle();
+            });
+
+            $("#alle").on("click", function(){
                 if(showAll == 0){
-                    $("#php").hide();
-                    $("#javascript").hide();
-                    $("#csharp").hide();
-                    $("#cpp").hide();
-                    $("#python").hide();
-                    $("#visualbasic").hide();
+                    hideShow(showAll)
                     showAll = 1
                 }
                 else if(showAll == 1){
-                    $("#php").show();
-                    $("#javascript").show();
-                    $("#csharp").show();
-                    $("#cpp").show();
-                    $("#python").show();
-                    $("#visualbasic").show();
+                    hideShow(showAll)
                     showAll = 0;
+                }                
+            });
+
+
+            /* ***** Zeilen anklicken **************************************************************************** */
+
+            $(".variablen").on("click", function(){
+                if(markiert["variablen"] == 0){
+                    $(".variablen").css("background-color", farbe_markiert);
+                    markiert["variablen"] = 1;
+                }
+                else{
+                    $(".variablen").css("background-color", farbe_nicht_markiert);
+                    markiert["variablen"] = 0;
                 }
                 
             });
 
-            $(".variablen").on("click", function(){
-                $(".variablen").toggle($(".variablen").css("background-color", "#efefef"));
-            });
-/*
-            $(".variablen").on("mouseenter", function(){
-                $(".variablen").css("background-color", "#efefef");
+            $(".kommentare").on("click", function(){
+                if(markiert["kommentare"] == 0){
+                    $(".kommentare").css("background-color", farbe_markiert);
+                    markiert["kommentare"] = 1;
+                }
+                else{
+                    $(".kommentare").css("background-color", farbe_nicht_markiert);
+                    markiert["kommentare"] = 0;
+                }
+                
             });
 
-            $(".variablen").on("mouseout", function(){
-                $(".variablen").css("background-color", "#ffffff");
+            $(".arrays").on("click", function(){
+                if(markiert["arrays"] == 0){
+                    $(".arrays").css("background-color", farbe_markiert);
+                    markiert["arrays"] = 1;
+                }
+                else{
+                    $(".arrays").css("background-color", farbe_nicht_markiert);
+                    markiert["arrays"] = 0;
+                }
+                
             });
-*/
+
+            $(".funktionen").on("click", function(){
+                if(markiert["funktionen"] == 0){
+                    $(".funktionen").css("background-color", farbe_markiert);
+                    markiert["funktionen"] = 1;
+                }
+                else{
+                    $(".funktionen").css("background-color", farbe_nicht_markiert);
+                    markiert["funktionen"] = 0;
+                }
+                
+            });
+
+            $(".klassen").on("click", function(){
+                if(markiert["klassen"] == 0){
+                    $(".klassen").css("background-color", farbe_markiert);
+                    markiert["klassen"] = 1;
+                }
+                else{
+                    $(".klassen").css("background-color", farbe_nicht_markiert);
+                    markiert["klassen"] = 0;
+                }
+                
+            });
+
+            $(".bedingungen").on("click", function(){
+                if(markiert["bedingungen"] == 0){
+                    $(".bedingungen").css("background-color", farbe_markiert);
+                    markiert["bedingungen"] = 1;
+                }
+                else{
+                    $(".bedingungen").css("background-color", farbe_nicht_markiert);
+                    markiert["bedingungen"] = 0;
+                }
+                
+            });
+
+            $(".schleife").on("click", function(){
+                if(markiert["schleifen"] == 0){
+                    $(".schleife").css("background-color", farbe_markiert);
+                    markiert["schleifen"] = 1;
+                }
+                else{
+                    $(".schleife").css("background-color", farbe_nicht_markiert);
+                    markiert["schleife"] = 0;
+                }
+                
+            });
+
+            $(".schleife-kopf").on("click", function(){
+                if(markiert["schleifen_kopf"] == 0){
+                    $(".schleife-kopf").css("background-color", farbe_markiert);
+                    markiert["schleifen_kopf"] = 1;
+                }
+                else{
+                    $(".schleife-kopf").css("background-color", farbe_nicht_markiert);
+                    markiert["schleifen_kopf"] = 0;
+                }
+                
+            });
+
+            $(".schleife-fuss").on("click", function(){
+                if(markiert["schleifen_fuss"] == 0){
+                    $(".schleife-fuss").css("background-color", farbe_markiert);
+                    markiert["schleifen_fuss"] = 1;
+                }
+                else{
+                    $(".schleife-fuss").css("background-color", farbe_nicht_markiert);
+                    markiert["schleifen_fuss"] = 0;
+                }
+                
+            });
         });
+
+        function hideShow(modus)
+        {
+            if(modus == 1){
+                $("#php").show();
+                $("#javascript").show();
+                $("#csharp").show();
+                $("#cpp").show();
+                $("#python").show();
+                $("#visualbasic").show();
+                $("#bash").show();
+                $("#powershell").show();
+                //$("#c").show();
+            }   
+            
+            if(modus == 0){
+                $("#php").hide();
+                $("#javascript").hide();
+                $("#csharp").hide();
+                $("#cpp").hide();
+                $("#python").hide();
+                $("#visualbasic").hide();
+                $("#bash").hide();
+                $("#powershell").hide();
+                //$("#c").hide();
+            }
+
+            // für tests
+            if(modus == 3){
+                $("#php").hide();
+                $("#javascript").hide();
+                //$("#csharp").hide();
+                $("#cpp").hide();
+                $("#python").hide();
+                $("#visualbasic").hide();
+                $("#bash").hide();
+                $("#powershell").hide();
+                //$("#c").hide();
+            }
+
+            if(modus == 4){
+                /*
+                $("#php").hide();
+                $("#javascript").hide();
+                $("#csharp").hide();
+                $("#cpp").hide();
+                $("#python").hide();
+                $("#visualbasic").hide();
+                $("#bash").hide();
+                $("#powershell").hide();
+                */
+                $("#c").hide();
+            }
+            
+        }
 
     </script>
 </body>
