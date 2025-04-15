@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML | Programmierung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>XML - Extensible Markup Language</h2>
+    <p class="text">Eine Auszeichnungssprache, mit der man Daten strukturieren, speichern und übertragen kann, ähnlich wie HTML, die aber nicht zur Darstellung von Webseiten gedacht ist, sondern eher zur Datenbeschreibung.</p>
+    <p class="text">Mit eigenen definierten Tags ist es eine leistungsstarke Methode, um Daten in einem Format zu haben, das gespeichert, durchsucht und geteilt werden kann.</p>
+    
+    <h2><a href="https://www.heise-homepages.de/glossary/xml/" target="_blank">Beispiel</a></h2>
+<p class="code">
+    <label id="deklaration">&#60;?xml version=“1.0″ encoding=“UTF-8″?&#62; <br></label>
+    <label id="verarbeitungsanweisungen">&#60;?xml-stylesheet type=“text/xsl“ href=“style.xsl“?&#62;<br></label>
+    <label id="root">&#60;Buchkatalog&#62; <br></label>
+        <label id="kommentar">&#60;!- Hier ist ein Kommentar -&#62; <br></label>
+        <label id="child">&#60;Buch</label> <label id="attribut">ISBN=“987654321″ Sprache=“Englisch“</label><label id="child">&#62;<br></label>
+            <label id="child">&#60;Autor&#62;<label id="inhalt">John Doe</label>&#60;/Autor&#62;<br></label>
+            <label id="child">&#60;Titel&#62;<label id="inhalt">XML-Grundlagen</label>&#60;/Titel&#62;<br></label>
+        <label id="child">&#60;/Buch&#62;<br></label>
+        <label id="child">&#60;Buch</label> <label id="attribut">ISBN=“987654321″ Sprache=“Englisch“</label><label id="child">&#62;<br></label>
+            <label id="child">&#60;Autor&#62;<label id="inhalt">Jane Smith</label>&#60;/Autor&#62;<br></label>
+            <label id="child">&#60;Titel&#62;<label id="inhalt">XML-Programmierung</label>&#60;/Titel&#62;<br></label>
+        <label id="child">&#60;/Buch&#62;<br></label>
+    <label id="root">&#60;/Buchkatalog&#62;<br></label>
+</p>
+    <table class="mitte">
+        <tr>
+            <th>Element</th>
+            <th>Erklärung</th>
+        </tr>
+        <tr id="dek_tabelle">
+            <td><code>&#60;?xml version=“1.0″ encoding=“UTF-8″?&#62;</code></td>
+            <td>Deklaration (optional)</td>
+        </tr>
+        <tr id="rt_tabelle">
+            <td><code>&#60;Buchkatalog&#62;<br><br>&#60;/Buchkatalog&#62;</td>
+            <td>
+                <p>Wurzelelement / root element</p>
+                <p>Zwischen diesen Tags steht der Inhalt, ähnlich dem hmtl-Tag in HTML</p>
+            </td>
+        </tr>
+        <tr id="chld_tabelle">
+            <td>
+                <code>&#60;Autor&#62;<br><br>&#60;/Autor&#62;</code><br><br>
+                <code>&#60;Titel&#62;<br><br>&#60;/Titel&#62;</code>
+            </td>
+            <td>
+                <p>Kind-Element / elements</p>
+                <p>Besteht aus öffnenden Tags, dem Inhalt, und den schließenden Tags</p>
+            </td>
+        </tr>
+        <tr id="inh_tabelle">
+            <td>
+                <code>
+                    John Doe<br>XML-Grundlagen
+                </code>
+            </td>
+            <td>Inhalt</td>
+        </tr>
+        <tr id="att_tabelle">
+            <td>
+                <code>ISBN=“123456789″ Sprache=“Deutsch“</code>
+            </td>
+            <td>                
+                <p>Attribute</p>
+                <p>Elemente können auch Attribute enthalten, die zusätzliche Informationen über das Element bereitstellen. Attribute sind in einem Starttag enthalten und haben einen Namen und einen Wert.</p>
+            </td>
+        </tr>
+        <tr id="kom_tabelle">
+            <td><code>&lt;!- ... -&gt;</code></td>
+            <td>Kommentar (optional)</td>
+        </tr>
+        <tr id="verar_tabelle">
+            <td><code>&lt;?xml-stylesheet type=“text/xsl“ href=“style.xsl“?&gt;</code></td>
+            <td>
+                <p>Verarbeitungsanweisungen / Processing Instructions (optional)</p>
+                <p>Anweisungen, die spezielle Informationen für die Verarbeitung des Dokuments enthalten können</p>
+            </td>
+        </tr>     
+    </table>
+
+    <h2>Regeln</h2>
+    
+    <p class="text">für Tags</p>
+    <ul class="text">
+        <li>XML-Tag-Namen stehen in spitzen Klammern.</li>
+        <li>XML-Tag-Namen beachten die Groß- und Kleinschreibung (case sensitive).</li>
+        <li>Elemente in einem XML-kompatiblen Dokument werden von öffnenden und schließenden Tags umschlossen.</li>
+        <li>Die Tags müssen korrekt verschachtelt sein.</li>
+        <li>Alle XML-Dokumente müssen ein Wurzelelement (root) haben.</li>
+        <li>Alle anderen Elemente müssen sich innerhalb dieses Wurzelelements befinden.</li>
+    </ul>
+
+    <p class="text">für Elemente</p>
+    <ul class="text">
+        <li>Namen können Buchstaben, Zahlen und andere Zeichen beinhalten.</li>
+        <li>Namen dürfen nicht mit einer Nummer oder einem Interpunktionszeichen beginnen.</li>
+        <li>Namen dürfen nicht mit der Buchstabenkombination xml oder XML beginnen.</li>
+        <li>Namen dürfen keine Leerzeichen enthalten.</li>        
+    </ul>
+
+
+    <h2>Eigene Attribute definieren</h2>
+    <p><a href="https://wiki.selfhtml.org/wiki/XML/DTD/Attribute_und_Wertzuweisungen" target="_blank">Für mehr Details, siehe selfhtml</a></p>
+    <p class="code">
+        &lt;!ELEMENT ressourcen (ressource)*&gt;<br>
+        &lt;!ELEMENT ressource (#PCDATA)&gt;<br>
+        &lt;!ATTLIST ressource<br>
+            url        CDATA #REQUIRED<br>
+            sprache    CDATA #IMPLIED<br>
+            erfasst    CDATA #REQUIRED<br>
+            geaendert  CDATA #IMPLIED<br>
+        &gt;
+    </p>
+
+
+<style>
+    table{
+        width: 800px !important;
+        position:relative;
+        left: calc(50% - 400px) !important;
+    }
+
+    .code{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 10pt;
+        width: 600px;
+        text-align: left;
+        position: relative;
+        left: calc(50% - 300px);
+
+        border: solid 1px lightgrey;
+        border-radius: 10px;
+        padding: 30px 30px;
+
+    }
+
+    .umrandet{
+        border: solid 1px red;
+        border-radius: 3px;
+        margin: 10px 0;
+        /*text-decoration: underline red;*/
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+var markiert = {
+            "deklaration": 0,
+            "root": 0,
+            "arrays": 0,
+            "child": 0,
+            "inhalt": 0,
+            "attribut": 0,
+            "kommentar": 0,
+        };
+var farbe_markiert = "lightgrey";
+var farbe_nicht_markiert = "#ffffff";
+
+$(document).ready(function(){
+
+    // DEKLARATION ///////////////////////////////////////////////////
+    $("#deklaration").on("mouseenter", function(){        
+        $('*[id*=deklaration]').each(function() {
+            $(this).css("background-color", farbe_markiert);
+        });
+        $("#dek_tabelle").css("background-color", farbe_markiert);
+    })
+
+    $("#deklaration").on("mouseleave", function(){        
+        $('*[id*=deklaration]').each(function() {
+            $(this).css("background-color", farbe_nicht_markiert);
+        });
+        $("#dek_tabelle").css("background-color", farbe_nicht_markiert);
+    })
+
+    $("#dek_tabelle").on("click", function(){     
+        if(markiert['deklaration'] == 0){
+            $('*[id*=deklaration]').each(function() {
+                $(this).addClass("umrandet");
+            });
+            markiert['deklaration'] = 1;
+        }
+        else{
+            $('*[id*=deklaration]').each(function() {
+                $(this).removeClass("umrandet")
+            });
+            markiert['deklaration'] = 0;
+        }        
+    })
+
+
+    // root ///////////////////////////////////////////////////
+    $("#root").on("mouseenter", function(){        
+        $('*[id*=root]').each(function() {
+            $(this).css("background-color", farbe_markiert);
+        });
+        $("#rt_tabelle").css("background-color", farbe_markiert);
+    })
+
+    $("#root").on("mouseleave", function(){        
+        $('*[id*=root]').each(function() {
+            $(this).css("background-color", farbe_nicht_markiert);
+        });
+        $("#rt_tabelle").css("background-color", farbe_nicht_markiert);
+    })
+
+    $("#rt_tabelle").on("click", function(){     
+        if(markiert['root'] == 0){
+            $('*[id*=root]').each(function() {
+                $(this).addClass("umrandet");
+            });
+            markiert['root'] = 1;
+        }
+        else{
+            $('*[id*=root]').each(function() {
+                $(this).removeClass("umrandet")
+            });
+            markiert['root'] = 0;
+        }       
+    })
+
+
+    // child ///////////////////////////////////////////////////
+    $("#child").on("mouseenter", function(){        
+        $('*[id*=child]').each(function() {
+            $(this).css("background-color", farbe_markiert);
+        });
+        $("#chld_tabelle").css("background-color", farbe_markiert);
+    })
+
+    $("#child").on("mouseleave", function(){        
+        $('*[id*=child]').each(function() {
+            $(this).css("background-color", farbe_nicht_markiert);
+        });
+        $("#chld_tabelle").css("background-color", farbe_nicht_markiert);
+    })
+
+    $("#chld_tabelle").on("click", function(){     
+        if(markiert['child'] == 0){
+            $('*[id*=child]').each(function() {
+                $(this).addClass("umrandet");
+            });
+            markiert['child'] = 1;
+        }
+        else{
+            $('*[id*=child]').each(function() {
+                $(this).removeClass("umrandet")
+            });
+            markiert['child'] = 0;
+        }
+    })
+
+
+    // inhalt ///////////////////////////////////////////////////
+    $("#inhalt").on("mouseenter", function(){        
+        $('*[id*=inhalt]').each(function() {
+            $(this).css("background-color", farbe_markiert);
+        });
+        $("#inh_tabelle").css("background-color", farbe_markiert);
+    })
+
+    $("#inhalt").on("mouseleave", function(){        
+        $('*[id*=inhalt]').each(function() {
+            $(this).css("background-color", farbe_nicht_markiert);
+        });
+        $("#inh_tabelle").css("background-color", farbe_nicht_markiert);
+    })
+
+    $("#inh_tabelle").on("click", function(){     
+        if(markiert['inhalt'] == 0){
+            $('*[id*=inhalt]').each(function() {
+                $(this).addClass("umrandet");
+            });
+            markiert['inhalt'] = 1;
+        }
+        else{
+            $('*[id*=inhalt]').each(function() {
+                $(this).removeClass("umrandet")
+            });
+            markiert['inhalt'] = 0;
+        }        
+    })
+
+
+    // attribut ///////////////////////////////////////////////////
+    $("#attribut").on("mouseenter", function(){        
+        $('*[id*=attribut]').each(function() {
+            $(this).css("background-color", farbe_markiert);
+        });
+        $("#att_tabelle").css("background-color", farbe_markiert);
+    })
+
+    $("#attribut").on("mouseleave", function(){        
+        $('*[id*=attribut]').each(function() {
+            $(this).css("background-color", farbe_nicht_markiert);
+        });
+        $("#att_tabelle").css("background-color", farbe_nicht_markiert);
+    })
+
+    $("#att_tabelle").on("click", function(){     
+        if(markiert['attribut'] == 0){
+            $('*[id*=attribut]').each(function() {
+                $(this).addClass("umrandet");
+            });
+            markiert['attribut'] = 1;
+        }
+        else{
+            $('*[id*=attribut]').each(function() {
+                $(this).removeClass("umrandet")
+            });
+            markiert['attribut'] = 0;
+        }        
+    })
+
+
+    // verarbeitungsanweisungen ///////////////////////////////////////////////////
+    $("#verarbeitungsanweisungen").on("mouseenter", function(){        
+        $('*[id*=verarbeitungsanweisungen]').each(function() {
+            $(this).css("background-color", farbe_markiert);
+        });
+        $("#verar_tabelle").css("background-color", farbe_markiert);
+    })
+
+    $("#verarbeitungsanweisungen").on("mouseleave", function(){        
+        $('*[id*=verarbeitungsanweisungen]').each(function() {
+            $(this).css("background-color", farbe_nicht_markiert);
+        });
+        $("#verar_tabelle").css("background-color", farbe_nicht_markiert);
+    })
+
+    $("#verar_tabelle").on("click", function(){     
+        if(markiert['verarbeitungsanweisungen'] == 0){
+            $('*[id*=verarbeitungsanweisungen]').each(function() {
+                $(this).addClass("umrandet");
+            });
+            markiert['verarbeitungsanweisungen'] = 1;
+        }
+        else{
+            $('*[id*=verarbeitungsanweisungen]').each(function() {
+                $(this).removeClass("umrandet")
+            });
+            markiert['verarbeitungsanweisungen'] = 0;
+        }        
+    })
+
+
+    // kommentar ///////////////////////////////////////////////////
+    $("#kommentar").on("mouseenter", function(){        
+        $('*[id*=kommentar]').each(function() {
+            $(this).css("background-color", farbe_markiert);
+        });
+        $("#kom_tabelle").css("background-color", farbe_markiert);
+    })
+
+    $("#kommentar").on("mouseleave", function(){        
+        $('*[id*=kommentar]').each(function() {
+            $(this).css("background-color", farbe_nicht_markiert);
+        });
+        $("#kom_tabelle").css("background-color", farbe_nicht_markiert);
+    })
+
+    $("#kom_tabelle").on("click", function(){     
+        if(markiert['kommentar'] == 0){
+            $('*[id*=kommentar]').each(function() {
+                $(this).addClass("umrandet");
+            });
+            markiert['kommentar'] = 1;
+        }
+        else{
+            $('*[id*=kommentar]').each(function() {
+                $(this).removeClass("umrandet")
+            });
+            markiert['kommentar'] = 0;
+        }        
+    })
+
+})
+
+   
+
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenbanktypen | Datenbanken</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>Geläufige Datenbanktypen</h1>
+    <p><a href="https://db-engines.com/de/" target="_blank">Übersicht über ganz viele DB-Engines</a></p>
+    <table>
+        <tr>
+            <th>Typ</th>
+            <th>Erklärung</th>
+            <th>Beispiele</th>
+        </tr>
+        <tr>
+            <td><a href="https://de.wikipedia.org/wiki/Relationale_Datenbank" target="_blank">Relationale Datenbanken</a></td>
+            <td>Eine relationale Datenbank (RDB) ist eine Möglichkeit, Informationen strukturiert in Tabellen, Zeilen und Spalten zu speichern. Eine RDB bietet die Möglichkeit, durch das Zusammenführen von Tabellen Verknüpfungen zwischen Informationen herzustellen, sodass die Beziehungen zwischen verschiedenen Datenpunkten erkennbar werden und daraus Erkenntnisse gewonnen werden können.</td>
+            <td>MariaDB, MySQL, PostgreSQL, Microsoft SQL Server, Oracle Database</td>
+        </tr>
+        <tr>
+            <td><a href="https://de.wikipedia.org/wiki/Objektdatenbank" target="_blank">Objektorientierte Datenbanken</a></td>
+            <td>
+                <p>Eine Datenbank, die auf dem Objektdatenbankmodell basiert. Im Unterschied zur relationalen Datenbank werden Daten hier als Objekte im Sinne der Objektorientierung verwaltet.</p>
+                <p>Ein Objekt modelliert normalerweise einen Gegenstand oder Begriff und enthält insbesondere dazugehörige Attribute; so gehört zum Beispiel die Farbe und das Gewicht eines Autos zu dem Objekt Auto. Attribute beschreiben ein Objekt näher. Daten und Methoden (die Funktionen zum Zugriff auf die Daten) werden in den Objekten zusammen abgelegt.</p>
+            </td>
+            <td>InterSystems IRIS, GridGain, Actian NoSQL Database, ObjectStore, Db4o</td>
+        </tr>
+        <tr>
+            <td><a href="https://de.wikipedia.org/wiki/Dokumentenorientierte_Datenbank" target="_blank">Dokumentenorientierte Datenbanken</a></td>
+            <td>Eine Datenbank, bei der Dokumente die Grundeinheit zur Speicherung der Daten bilden.</td>
+            <td>Couchbase, MongoDB. BaseX, Elasticsearch, eXist, MarkLogic Server, RavenDB, SimpleDB, NoSQL</td>
+        </tr>
+        <tr>
+            <td><a href="https://de.wikipedia.org/wiki/Zeitreihendatenbank" target="_blank">Zeitreihen-Datenbanken</a></td>
+            <td>Eine Datenbank, die für das Speichern und die Analyse von Zeitreihen wie Sensordaten oder Aktienkursen optimiert ist. Anwendungsdomänen sind zum Beispiel das Internet der Dinge, der Kapitalmarkt, das Monitoring von IT-Systemen oder die Forschung auf physiologischen Signalen.</td>
+            <td>InfluxDB, Prometheus, Graphite</td>
+        </tr>        
+    </table>
+
+    <style>
+        table{
+            width: 800px;
+            position: relative;
+            left: calc(50% - 400px);
+        }
+    </style>
+</body>
+</html>

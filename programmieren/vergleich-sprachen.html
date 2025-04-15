@@ -8,22 +8,22 @@
     <link rel="icon" href="../assets/icon.png">
 </head>
 <body>
-
-    <h1>Programmiersprachenvergleich (die Basics)</h1>
-    <p id="text">        
-        <button id="php-btn">PHP</button>
-        <button id="javascript-btn">JavaScript</button>
-        <button id="csharp-btn">C#</button>
-        <button id="cpp-btn">C++</button>
-        <!-- <button id="c-btn">C</button> -->
-        <button id="python-btn">Python</button>
-        <button id="visualbasic-btn">VB .NET</button>
-        <button id="bash-btn">bash</button>
-        <button id="powershell-btn">PowerShell</button>
-              
-        <button id="alle"><label class="allezeigen">I  O</label></button>
-    </p>
-
+    <header>
+        <h1>Programmiersprachenvergleich (die Basics)</h1>
+        <p id="text">        
+            <button id="php-btn">PHP</button>
+            <button id="javascript-btn">JavaScript</button>
+            <button id="csharp-btn">C#</button>
+            <button id="cpp-btn">C++</button>
+            <button id="c-btn">C</button>
+            <button id="python-btn">Python</button>
+            <button id="visualbasic-btn">VB .NET</button>
+            <button id="bash-btn">bash</button>
+            <button id="powershell-btn">PowerShell</button>
+                  
+            <button id="alle"><label class="allezeigen">I  O</label></button>
+        </p>
+    </header>
     
     <div class="vergleich">
         <div class="code-abschnitt" id="erklaerung">
@@ -114,7 +114,10 @@
                 function meine_function($zahl, $text)<br>
                 {<br>
                     // auszuführender Code<br>
-                }
+                }<br><br>
+
+                <label class="kommentar">// Aufruf</label><br>
+                meine_funktion(3, "Hallo Welt");
             </div>
             <div class="sektion klassen code">
                 class MeineKlasse<br>
@@ -205,7 +208,10 @@
                 function meine_function(zahl, text)<br>
                 {<br>
                     // auszuführender Code<br>
-                }
+                }<br><br>
+
+                <label class="kommentar">// Aufruf</label><br>
+                meine_funktion(3, "Hallo Welt");
             </div>
             <div class="sektion klassen code">
                 class MeineKlasse<br>
@@ -300,7 +306,10 @@
                 public void meine_funktion(int zahl, string text)<br>
                 {<br>
                     // auszuführender Code<br>
-                }
+                }<br><br>
+
+                <label class="kommentar">// Aufruf</label><br>
+                meine_funktion(3, "Hallo Welt");
             </div>
             <div class="sektion klassen code">
                 class MeineKlasse<br>
@@ -398,9 +407,13 @@
                 std::cout &lt;&lt; "Person: " &lt;&lt; mein_array3["vorname"] &lt;&lt; " " &lt;&lt; mein_array3["nachname"] &lt;&lt; " - " &lt;&lt; mein_array3["email"] &lt;&lt; "\n";
             </div>
             <div class="sektion funktionen code">
-                void test() {<br>
+                void test() <br>
+                {<br>
                     // auszuführender Code<br>
-                }
+                }<br><br>
+
+                <label class="kommentar">// Aufruf</label><br>
+                meine_funktion(3, "Hallo Welt");
             </div>
             <div class="sektion klassen code">
                 class Testklasse {<br>
@@ -445,7 +458,17 @@
                 C
             </div>
             <div class="sektion variablen code">
-                
+                <b>int</b> zahl1 = 5;<br>
+                <b>float</b> zahl2 = 3.1415;<br>
+                <b>double</b> zahl3 = 0.000002;<br>
+                <b>char</b> zeichen = 'A';<br>
+                <b>char</b> text[] = "Hallo Welt";<br><br>
+
+                printf("%i\n", zahl1);<br>
+                printf("%f\n", zahl2);<br>
+                printf("%f\n", zahl3);<br>
+                printf("%c\n", zeichen);<br>
+                printf("%s\n", text);<br>
             </div>
             <div class="sektion kommentare code">
                 // Einzeiliger Kommentar<br><br>
@@ -456,32 +479,80 @@
             </div>
             <div class="sektion arrays code">                
                 <b>// Eindimensionales Array</b><br><br>
-
+                int zahl1[4] = {0, 1, 2 , 3};<br>
+                <label class="kommentar">// oder:</label><br>
+                zahl1[0] = 1;<br>
+                zahl1[1] = 2;<br>
+                zahl1[2] = 3;<br>
+                zahl1[3] = 4;<br><br><br>
                 
                 <b>// Zweidimensionales Array</b><br><br>
+                int zahl1[2][3] = { {1, 2 , 3}, {4, 5, 6} };<br>
+                <label class="kommentar">// oder;</label><br>
+                zahl1[0][0] = 1;<br>
+                zahl1[0][1] = 2;<br>
+                zahl1[0][2] = 3;<br>
+                zahl1[1][0] = 4;<br>
+                zahl1[1][1] = 5;<br>
+                zahl1[1][2] = 6;<br><br>
 
+                printf("%d\n", zahl1[0][0]);<br>
+                printf("%d\n", zahl1[0][1]);<br>
+                printf("%d\n", zahl1[0][2]);<br>
+                printf("%d\n", zahl1[1][0]);<br>
+                printf("%d\n", zahl1[1][1]);<br>
+                printf("%d\n", zahl1[1][2]);<br><br><br>
 
-                <b>// Assoziatives Array</b><br>
+                <b>// Assoziatives Array</b><br><br>
+                <label class="kommentar">// gibt es nicht von Haus aus</label>
 
 
             </div>
             <div class="sektion funktionen code">
-                
+                void meine_funktion(int zahl, char text[])<br>
+                {<br>
+                    // auszuführender Code<br>
+                }<br><br>
+
+                <label class="kommentar">// Aufruf</label><br>
+                meine_funktion(3, "Hallo Welt");
             </div>
             <div class="sektion klassen code">
-               
+               C hat von Haus aus <b>keine (!)</b> Klassen 
             </div>
             <div class="sektion bedingungen code">
-               
+                int i = 5;<br><br>
+    
+                if(i > 0)<br>
+                {<br>
+                    printf("i ist größer als 0\n");<br>
+                }
             </div>
             <div class="sektion schleife code">
-               
+                int i;<br><br>
+    
+                for (i = 0; i &lt; 5; i++) <br>
+                {<br>
+                    printf("%d\n", i);<br>
+                }<br>
             </div>
             <div class="sektion schleife-kopf code">
-                
+                int i = 0;<br><br>
+    
+                while (i &lt; 5) {<br>
+                    printf("%d\n", i);<br>
+                    i++;<br>
+                }
             </div>
             <div class="sektion schleife-fuss code">
-                
+                int i = 0;<br><br>
+    
+                do <br>
+                {<br>
+                    printf("%d\n", i);<br>
+                    i++;<br>
+                }<br>
+                while (i &lt; 5);
             </div>
         </div>
 
@@ -533,7 +604,10 @@
                     # auszuführender Code...<br>
                     # Python nutzt keine Klammern,<br>
                     # sondern rückt Code ein<br><br>
-                # Das hier gehört nicht mehr zur Funktion
+                # Das hier gehört nicht mehr zur Funktion<br><br>
+
+                <label class="kommentar">// Aufruf</label><br>
+                meine_funktion(3, "Hallo Welt")
             </div>
             <div class="sektion klassen code">
                 class MeineKlasse:<br>
@@ -617,7 +691,10 @@
             <div class="sektion funktionen code">
                 Function meine_funktion(ByVal zahl As Integer, ByVal text As String) As Integer<br>
                     ' auszuführender Code<br>
-                End Function
+                End Function<br><br>
+
+                <label class="kommentar">' Aufruf<br></label>
+                meine_funktion()
             </div>
             <div class="sektion klassen code">
                 Class MeineKlasse<br>
@@ -679,7 +756,12 @@
             <div class="sektion funktionen code">
                 meine_funktion() {<br>
                     # auszuführender Code<br>
-                }
+                    echo "Zahl $1"<br>
+                    echo "Wort $2"<br>
+                }<br><br>
+
+                <label class="kommentar">// Aufruf</label><br>
+                meine_funktion 3 'Hallo'               
             </div>
             <div class="sektion klassen code">
                 
@@ -762,7 +844,10 @@
                 FUNCTION meine_funktion($zahl, $text)<br>
                 {<br>
                     # auszuführender Code<br>
-                }
+                }<br><br>
+
+                <label class="kommentar">// Aufruf</label><br>
+                meine_funktion(3, "Hallo")
             </div>
             <div class="sektion klassen code">
                 class MeineKlasse {<br>
@@ -804,11 +889,23 @@
        
     </div>
 
-    <style> 
+    <style>
+
+        body{
+            width: 6000px;
+        }
+
+        header{
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            text-align: left;
+        }
 
         .vergleich{
             display: flex;
-            overflow-x: auto;
+            margin-top: 150px;
+            width: 100%;
         }
 
         .code-abschnitt{
@@ -842,7 +939,7 @@
         .tabelle{
             text-align: center;
             font-weight: 600;
-            align-content: center;
+            align-content: center;            
         }
 
         .code{
@@ -856,7 +953,7 @@
         }
 
         .variablen{
-            height: 160px;            
+            height: 200px;            
         }
 
         .kommentare{
@@ -869,7 +966,7 @@
         }
 
         .funktionen{
-            height: 100px;
+            height: 150px;
         }
 
         .klassen{
@@ -912,6 +1009,10 @@
         }
 
         #cpp{
+            min-width: 600px;
+        }
+
+        #c{
             min-width: 600px;
         }
 
@@ -958,7 +1059,7 @@
         var farbe_markiert = "#efffef";
         var farbe_nicht_markiert = "#ffffff";
         // Für Tests: Spalten verstecken
-        hideShow(4);
+        //hideShow(3);
 
         $(document).ready(function(){
 
@@ -1134,7 +1235,7 @@
                 $("#visualbasic").show();
                 $("#bash").show();
                 $("#powershell").show();
-                //$("#c").show();
+                $("#c").show();
             }   
             
             if(modus == 0){
@@ -1146,7 +1247,7 @@
                 $("#visualbasic").hide();
                 $("#bash").hide();
                 $("#powershell").hide();
-                //$("#c").hide();
+                $("#c").hide();
             }
 
             // für tests

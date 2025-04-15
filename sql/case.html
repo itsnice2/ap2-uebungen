@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CASE | SQL</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    
+    <h1>Die CASE-Anweisungen</h1>
+    <p class="text">Die CASE-Anweisung ist quasi eine if-else-Abfrage oder ein Switch-Statement: Wenn etwas gültig ist, dann tue dies, sonst das.</p>
+    
+<pre class="text code">
+UPDATE test
+SET email = (
+CASE
+    WHEN nachname = 'Mustermann' THEN 'max.musterm@webseite.de'
+    WHEN nachname = 'Musterfrau' THEN 'martina.musterf@webseite.de'
+    ELSE 'musterfamilie@webseite.de'
+END);
+</pre>
+<p><a href="https://www.w3schools.com/sql/sql_case.asp" target="_blank">Mehr Beispiele in w3schools.com</a></p>
+
+    <style>
+        table{
+            width: 600px
+        }
+    </style>
+    
+</body>
+</html>

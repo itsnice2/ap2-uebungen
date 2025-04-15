@@ -1,6 +1,6 @@
 body{
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;    
+    font-family: Arial, Helvetica, sans-serif;       
 }
 
 .inhalt{
@@ -24,6 +24,10 @@ body{
 a{
     text-decoration: none;
     color: rgb(51, 124, 51);
+}
+
+a:hover{
+    color: rgb(182, 6, 0);
 }
 
 .code{
@@ -76,4 +80,10 @@ tr:hover{
 
 .kommentar{
     color: #acacac;
+}
+
+.einruecken-zitat{    
+    padding-left: 20px ;
+    font-style: italic;
+    border-left: solid 3px black;
 }

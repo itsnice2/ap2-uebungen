@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON | Programmierung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>JSON - JavaScript Object Notation </h2>
+    <p class="text">JSON ist eine Textstruktur, die Daten in einem Schlüssel-Wert-Paar-Format (key value pair) organisiert. Es sieht ein bisschen aus wie ein JavaScript-Objekt, funktioniert aber auch in vielen anderen Programmiersprachen.</p>
+    <p>
+        <a href="https://wiki.selfhtml.org/wiki/JSON" target="_blank">Für einen detaillierteren Einblick mit Praxisbeispielen: selfhtml.org</a>
+    </p>    
+    <h2></h2>
+<pre>
+<label class="kommentar">// Grund-Syntax</label>
+{
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+}
+
+
+<label class="kommentar">// Beispiel</label>
+{
+    "name": "Anna",
+    "alter": 28,
+    "verheiratet": false,
+    "hobbys": ["Lesen", "Reisen", "Musik"],
+    "adresse": {
+        "straße": "Musterstraße 123",
+        "stadt": "Berlin",
+        "plz": "10115"
+    }
+}
+</pre>    
+    
+
+    <h2><a href="https://www.assecor.de/glossar/json" target="_blank">Grundlegende Eigenschaften von JSON</a></h2>
+    <h3>Datenstruktur</h3>
+    <p class="text">JSON repräsentiert Daten in einer hierarchischen Struktur, die aus Objekten und Arrays besteht. Ein JSON-Objekt ist eine ungeordnete Sammlung von Name-Wert-Paaren, während ein JSON-Array eine geordnete Liste von Werten abbildet.</p>
+    <h3>Schlüssel-Wert-Paare</h3>
+    <p class="text">Daten in einem JSON-Objekt werden durch Schlüssel-Wert-Paare dargestellt. Der Schlüssel ist immer eine Zeichenkette (String), und der Wert kann ein String, eine Zahl, ein Boolean, ein Objekt, ein Array oder "null" sein.</p>
+    <h3>Unterstützung durch verschiedene Sprachen</h3>
+    <p class="text">Obwohl der Name JavaScript Object Notation auf JavaScript hinweist, wird JSON heute von vielen Programmiersprachen unterstützt, darunter Python, Java, C#, PHP und weiteren Alternativen.</p>
+    <h3>Anwendungsbereiche</h3>
+    <p class="text">JSON wird häufig für den Datenaustausch zwischen Servern und Webbrowsern verwendet. Es ist auch das bevorzugte Format für die Konfiguration von Webanwendungen und wird in vielen APIs (Application Programming Interfaces) als Datenformat für Anfragen und Antworten verwendet.</p>
+    <h3>Lesbarkeit und Einfachheit</h3>
+    <p class="text">JSON ist leicht lesbar für Menschen und einfach zu parsen und zu generieren für Maschinen. Die Lesbarkeit erleichtert auch das Debuggen von Daten und das manuelle Bearbeiten von Konfigurationsdateien.</p>
+
+
+
+<style>
+    pre{
+        width: 600px;
+        text-align: left;
+        position: relative;
+        left: calc(50% - 300px);
+
+        border: solid 1px lightgrey;
+        border-radius: 10px;
+        padding: 30px 30px;
+
+    }
+</style>
+</body>
+</html>

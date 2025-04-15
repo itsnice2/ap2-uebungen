@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST | Softwareentwicklung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>REST - Representational State Transfer</h1>
+    <p class="text"><small>Frage an ChatGPT: Erkläre mir die Rest Architektur in der Software Entwicklung.</small></p>
+    <p class="text">REST ist ein Architekturstil, kein Protokoll. Nicht jede REST-API erfüllt alle 6 Anforderungen vollständig.</p>
+
+    <ol class="text">
+        <b><li>Client-Server-Architektur</li></b>
+        <ul>
+            <li>Client (z.B. Web-App) und Server (Backend) sind getrennt.</li>
+            <li>Der Client stellt Anfragen, der Server gibt Antworten zurück.</li>
+        </ul>
+        <b><li>Statelessness - Zustandslosigkeit</li></b>
+        <ul>
+            <li>Jede Anfrage muss alle notwendigen Informationen enthalten.</li>
+            <li>Der Server speichert keine Informationen über frühere Anfragen (keine Sitzung).</li>
+        </ul>
+        <b><li>Cacheability</li></b>
+        <ul>
+            <li>Antworten sollten angeben, ob sie vom Client zwischengespeichert werden dürfen.</li>
+            <li>Das erhöht die Leistung und reduziert unnötige Anfragen.</li>
+        </ul>
+        <b><li>Uniform Interface - Einheitliche Schnittstelle</li></b>
+        <ul>
+            <li>Einheitliche und konsistente Kommunikation mit Ressourcen.</li>
+            <li>Dazu gehören:</li>
+            <ul>
+                <li>Ressourcen mit URIs (z.B. <code>/users/123</code>)</li>
+                <li>Standard-HTTP-Methoden wie <code>GET, POST, PUT, DELETE</code></li>
+                <li>Repräsentationen von Daten (z.B. <code>JSON, XML</code>)</li>
+                <li>Hypermedia (HATEOAS) (optional): Links in Antworten zur Navigation</li>
+            </ul>
+        </ul>
+        <b><li>Layered System - Schichtenarchitektur</li></b>
+        <ul>
+            <li>Das System kann aus mehreren Schichten bestehen (z.B. Load Balancer, Proxies).</li>
+            <li>Der Client erkennt nicht, ob er direkt mit dem Endserver kommuniziert.</li>
+        </ul>
+        <b><li>Code on Demand (optional)</li></b>
+        <ul>
+            <li>Der Server kann Code (z.B. JavaScript) an den Client senden, der dort ausgeführt wird.</li>
+        </ul>
+    </ol>
+    
+    <style>
+        table{
+            width: 1000px;
+            position: relative;
+            left: calc(50% - 500px);
+        }
+    </style>
+    
+</body>
+</html>

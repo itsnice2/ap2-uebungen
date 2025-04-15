@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNION | SQL</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    
+    <h1>Die UNION-Anweisungen</h1>
+    <p class="text">UNION wird benutzt um den Inhalt von zwei Tabellen die die gleiche Struktur haben anzuzeigen.</p>
+    <ul class="text">
+        <li>Jede SELECT-Abfrage muss die gleiche Spaltenanzahl haben</li>
+        <li>Jede Spalte muss den selben Datentypen haben</li>
+        <li>Die Spaltenreihenfolge muss identisch sein!</li>
+    </ul>
+<pre class="text code">
+SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City;    
+</pre>
+
+    <style>
+        table{
+            width: 600px
+        }
+    </style>
+    
+</body>
+</html>
