@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black-Box-Tests | Softwareentwicklung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1><a href="https://aqua-cloud.io/de/what-is-black-box-testing/" target="_blank">Black-Box-Tests</a></h1>
+    <p class="text">Black-Box-Testing ist eine Methode, bei der die Funktionalität eines Systems ausschließlich anhand der Eingaben und der erwarteten Ausgaben bewertet wird, ohne dass das interne Code-Design oder die Systemarchitektur bekannt oder sichtbar ist.</p> 
+    <p class="text">Mit anderen Worten: Man testet die Software aus der Perspektive eines Nutzers und stellt sicher, dass sie sich gemäß den Anforderungen verhält.</p>
+    <p class="text">Beim Black-Box-Testing geht es nicht darum, den Code zu prüfen, interne Abläufe zu analysieren oder die Logik zu debuggen. Es spielt keine Rolle, wie das System seine Ergebnisse erzielt, sondern nur, dass es dies von außen betrachtet korrekt und konsistent tut.</p>
+
+    <h2>Arten von Black-Box-Tests</h2>
+    <table>
+        <tr>
+            <th>Functional Testing</th>
+            <td>
+                <p>Die erste Testart auf unserer Liste ist das funktionale Testen. Es überprüft, ob die Software gemäß ihren Anforderungen funktioniert. Sie geben Daten ein und überprüfen, ob die Ausgabe den Erwartungen entspricht. Es geht darum, sicherzustellen, dass jede Funktion wie vorgesehen arbeitet.</p>
+                <p><b>Warum es Black Box ist:</b> Hier konzentrieren Sie sich nur darauf, ob die Software das richtige Ergebnis basierend auf der Eingabe liefert. Sie müssen nicht verstehen, wie sie diese Eingabe im Hintergrund verarbeitet.</p>
+            </td>
+        </tr>
+        <tr>
+            <th>Non-Functional Testing</th>
+            <td>
+                <ul>
+                    <li>Performance testing</li>
+                    <li>Load testing</li>
+                    <li>Security testing</li>
+                    <li>Usability testing</li>
+                </ul>
+                <p><b>Warum es Black Box ist:</b> Sie testen das Verhalten des Systems (wie Geschwindigkeit oder Sicherheit), ohne seine inneren Abläufe zu betrachten. Sie beobachten das Ergebnis, nicht den Prozess, der es erzeugt.</p>
+            </td>
+        </tr>
+        <tr>
+            <th>Regressionstests</th>
+            <td>
+                <p>Dabei werden Tests erneut durchgeführt, um sicherzustellen, dass kürzliche Änderungen nichts beschädigt haben. Sie überprüfen, ob nach Updates oder Fehlerbehebungen alles weiterhin korrekt funktioniert.</p>
+                <p><b>Warum es Black Box ist:</b> Obwohl Sie nach Änderungen testen, analysieren Sie nicht die Modifikationen selbst. Sie konzentrieren sich ausschließlich darauf, ob die Ausgabe des Systems mit den vorherigen Ergebnissen übereinstimmt.</p>
+            </td>
+        </tr>
+        <tr>
+            <th>Smoke Testing</th>
+            <td>
+                <p>Es handelt sich um einen Test auf hoher Ebene, um zu überprüfen, ob die kritischen Funktionen eines Software-Builds funktionieren. Oft ist es Ihre erste Testrunde, nachdem eine neue Version bereitgestellt wurde.</p>
+                <p><b>Warum es Black Box ist:</b> Beim Smoke Testing bestätigen Sie einfach, dass die Hauptfunktionen wie erwartet arbeiten. Auch hier tauchen Sie nicht in den Code oder die Implementierungsdetails ein.</p>
+            </td>
+        </tr>
+        <tr>
+            <th>User Acceptance Testing (UAT)</th>
+            <td>
+                <p>In dieser Phase testen echte Benutzer die Software, um sicherzustellen, dass sie ihren Bedürfnissen und Anforderungen entspricht. Oft ist es die letzte Phase, bevor ein Produkt live geschaltet wird.</p>
+                <p><b>Warum es Black Box ist:</b> Die Benutzer konzentrieren sich darauf, ob das System in realen Szenarien für sie funktioniert, ohne sich darum zu kümmern, wie das System diese Ergebnisse intern erzielt. Es geht rein um die Funktionalität aus der Sicht des Benutzers.</p>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Techniken</h2>
+    <h3>Äquivalenzpartitionierung (Equivalence Partitioning)</h3>
+    <p class="text">Die Äquivalenzpartitionierung ermöglicht es, Eingabedaten in verschiedene Gruppen zu unterteilen, die als Äquivalenzklassen bekannt sind. Jede Klasse repräsentiert Eingaben, die beim Verarbeiten durch die Software ein ähnliches Verhalten zeigen sollten. Das Hauptziel hierbei ist es, die Anzahl der Testfälle zu reduzieren und gleichzeitig eine umfassende Abdeckung zu gewährleisten.</p>
+    <p class="text">Um dies zu erreichen, identifizieren Sie gültige und ungültige Eingabebereiche und erstellen Klassen basierend auf dem erwarteten Verhalten. Zum Beispiel, wenn Sie ein Altersfeld mit gültigen Eingaben von 18 bis 65 testen, könnten Sie Klassen für folgende Bereiche erstellen:</p>
+    <ul class="text">
+        <li>Gültige Altersangaben (18-65)</li>
+        <li>Ungültige Altersangaben unter 18</li>
+        <li>Ungültige Altersangaben über 65</li>
+    </ul>
+    <p class="text">Durch die Auswahl von Werten aus jeder Klasse können Sie die notwendigen Test-Szenarien effektiv abdecken.</p>
+
+    <h3>Grenzwertanalyse (Boundary Value Analysis)</h3>
+    <p class="text">Die Grenzwertanalyse ist entscheidend, um sich auf die Grenzen von Eingabewerten zu konzentrieren, da Fehler oft an diesen kritischen Kanten auftreten. Ihr Hauptziel bei dieser Technik ist es, Defekte zu identifizieren, die an Grenzbedingungen auftreten können.</p>
+    <p class="text">Sie können dies erreichen, indem Sie Werte genau an den Grenzen testen und solche einbeziehen, die knapp unter und über den minimalen und maximalen Werten liegen. Fortfahrend mit dem Altersbeispiel würden Sie Werte testen wie:</p>
+    <ul class="text">
+        <li>17 (knapp unter dem Minimum)</li>
+        <li>18 (das gültige Minimum)</li>
+        <li>65 (das gültige Maximum)</li>
+        <li>66 (knapp über dem Maximum).</li>
+    </ul>
+    <p class="text">Mit dieser Methode lassen sich Edgecase-Fehler erkennen, die das Benutzererlebnis beeinträchtigen könnten.</p>
+
+    <h3>Entscheidungstabellentests (Decision Table Testing)</h3>
+    <p class="text">Entscheidungstabellentests sind besonders nützlich, wenn man es mit Software zu tun hat, die mehrere Bedingungen und Regeln enthält. Sie helfen dabei, die verschiedenen Eingaben und deren mögliche Ergebnisse zu strukturieren. Das Hauptziel dieser Methode ist sicherzustellen, dass alle möglichen Kombinationen von Eingaben abgedeckt sind.</p>
+    <p class="text">Dies erreicht man durch das Erstellen einer Entscheidungstabelle, in der die Bedingungen und die entsprechenden erwarteten Ergebnisse aufgeführt sind. </p>
+    <p class="text">Nehmen wir zum Beispiel ein Rabattsystem, bei dem der Kundentyp (neu oder wiederkehrend) und der Kaufbetrag (niedrig oder hoch) die Rabattstufe bestimmen. Mit einer solchen Tabelle lässt sich jede Kombination überprüfen, um sicherzustellen, dass keine Szenarien übersehen werden, die die Logik der Software beeinflussen könnten.</p>
+
+    <h3>Zustandsübergangstests (State Transition Testing)</h3>
+    <p class="text">Der Zustandsübergangstest bewertet, wie sich Ihr System verhält, wenn es von einem Zustand in einen anderen übergeht. Das Hauptziel besteht darin, Probleme im Zusammenhang mit Zustandsänderungen aufzudecken. Sie können dies erreichen, indem Sie verschiedene Zustände identifizieren, wie z. B.:</p>
+    <ul class="text">
+        <li>active</li>
+        <li>suspended</li>
+        <li>deactivated</li>
+    </ul>
+
+    <h3>Error Guessing</h3>
+    <p class="text">Error Guessing basiert auf Ihrem Bauchgefühl und ihrer Erfahrung als QA-Profi. Das Hauptziel besteht darin, Fehler zu identifizieren, indem sie Bereiche der Software anvisieren, die wahrscheinlich Fehler enthalten.</p>
+    <p class="text">Sie können dies erreichen, indem sie ihr Wissen über häufige Probleme der Vergangenheit nutzen, um Testfälle für risikobehaftete Bereiche zu erstellen. Wenn sie beispielsweise wissen, dass eine bestimmte Funktion bei Sonderzeichen häufig nicht richtig funktioniert, könnten sie sie mit Eingaben wie @, # oder Leerzeichen testen.</p>
+
+    <h2>Black-Box-Tests durchführen</h2>
+    <table>
+        <tr>
+            <th>1. Spezifikationen überprüfen</th>
+            <td>Beginnen sie damit, die Softwareanforderungen und Spezifikationen im Detail zu prüfen. Verstehen sie die Funktionalität und die erwarteten Benutzerinteraktionen, um eine klare Testausrichtung festzulegen.</td>
+        </tr>
+        <tr>
+            <th>2. Eingabe- und Ausgabeszenarien identifizieren</th>
+            <td>Konzentrieren sie sich darauf, verschiedene Eingabeszenarien basierend auf den Spezifikationen zu identifizieren. Dies umfasst sowohl gültige als auch ungültige Eingaben. Ihr Ziel ist es, alle möglichen Benutzerinteraktionen abzudecken, um das Verhalten der Software zu bewerten.</td>
+        </tr>
+        <tr>
+            <th>3. Testfälle erstellen</th>
+            <td>Entwickeln sie Testfälle, die Eingaben, Aktionen und erwartete Ausgaben spezifizieren. Stellen sie sicher, dass jeder Testfall mit der in den Anforderungen beschriebenen Funktionalität übereinstimmt. Gruppieren sie ähnliche Testfälle in Äquivalenzklassen, um ihren Testprozess zu optimieren.</td>
+        </tr>
+        <tr>
+            <th>4. Grenzwerte priorisieren</th>
+            <td>Achten sie besonders auf Grenzwerte, da viele Defekte an den Grenzen der Eingabewerte auftreten. Erstellen sie zusätzliche Testfälle, die speziell diese Grenzbedingungen ansprechen.</td>
+        </tr>
+        <tr>
+            <th>5. Tests ohne Codekenntnisse durchführen</th>
+            <td>Führen sie Tests basierend auf den definierten Testfällen durch, ohne in den internen Code oder die Architektur einzutauchen. Dies betont die Black-Box-Natur des Tests und konzentriert sich ausschließlich auf das Verhalten des Systems aus der Sicht des Benutzers.</td>
+        </tr>
+        <tr>
+            <th>6. Ergebnisse protokollieren und dokumentieren</th>
+            <td>Dokumentieren sie sorgfältig die Ergebnisse jedes Testfalls und notieren sie alle Abweichungen zwischen erwarteten und tatsächlichen Ergebnissen. Diese Dokumentation ist entscheidend für die Nachverfolgung von Defekten und das Verständnis des Softwareverhaltens.</td>
+        </tr>
+        <tr>
+            <th>7. Nach Korrekturen erneut testen</th>
+            <td>Sobald Defekte behoben sind, testen sie die betroffenen Bereiche erneut, um zu validieren, dass die Probleme gelöst wurden und die Software wie erwartet funktioniert.</td>
+        </tr>
+    </table>
+
+    <style>
+        table{
+            width: 500px;
+            position: relative;
+            left: calc(50% - 250px);
+        }
+
+        .table2{
+            width: 800px;
+            position: relative;
+            left: calc(50% - 400px);
+        }
+    </style>
+
+</body>
+</html>

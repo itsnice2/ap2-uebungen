@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiteboxtests | Softwareentwicklung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1><a href="https://aqua-cloud.io/de/what-is-white-box-testing/" target="_blank">Whiteboxtests</a></h1>    
+    <p class="text">White-Box-Tests in der Softwareentwicklung werden normalerweise von Entwicklern durchgeführt, aber auch QS-Tester können sie durchführen, wenn sie die oben genannten Anforderungen erfüllen. Die Durchführung von White-Box-Tests hilft ihnen, die Eingabe- und Ausgabeflüsse durch die gesamte Anwendung oder ein bestimmtes Softwarepaket zu überprüfen. Bei diesem Ansatz zur Evaluierung von Software werden die interne Struktur, die Codierung, die innere Funktionsweise der Software und sogar das Design untersucht.</p>
+    <ul class="text">
+        <li>Prüfung jeder spezifischen Funktion, jedes Objekts und jeder Anweisung;</li>
+        <li>Interne Sicherheitslücken und unnötige Codepfade;</li>
+        <li>Umgang mit bestimmten Eingaben und erwarteten Resultaten;</li>
+        <li>Die korrekte Funktionsweise von bedingten Schleifen.</li>
+    </ul>
+
+    <h2>Vor- und Nachteile</h2>
+    <table>
+        <tr>
+            <th>Vorteile</th>
+            <th>Nachteile</th>
+        </tr>
+        <tr>
+            <td>Vorbeugend</td>
+            <td>Zeitaufwendig</td>
+        </tr>
+        <tr>
+            <td>Keine Einschränkungen bei der Fehlererkennung</td>
+            <td>kleinere Bugs (menschliche Fehler) können übersehen werden</td>
+        </tr>
+        <tr>
+            <td>Umfassend</td>
+            <td>Hohe Kosten</td>
+        </tr>        
+    </table>
+
+    <h2>Arten von Tests</h2>
+    <table>
+        <tr>
+            <th>Unit-Tests</th>
+            <td>Unit-Tests stellen sicher, dass der Quellcode die Qualitätskriterien erfüllt, bevor er veröffentlicht wird, und schaffen so eine zuverlässige Softwareentwicklungsumgebung für alle Entwickler. Das Ergebnis sind mehr Effizienz und Optimierung, besserer Code und weniger verschwendete Zeit und Geld.</td>
+        </tr>
+        <tr>
+            <th>Integrationstests</th>
+            <td>
+                <p>Diese Art von Test wird in der Regel nach den Unit-Tests durchgeführt. Integrationstests dienen dazu, Fehler zu finden, die bei der Verbindung der verschiedenen Schnittstellen miteinander auftreten können.</p>
+                <p>Um diesen Testtyp auszuführen, sollten Sie die Quellcode-Komponenten der Anwendung als Ganzes testen.</p>
+            </td>
+        </tr>
+        <tr>
+            <th>Regressionstests</th>
+            <td>
+                <p>Bei Regressionstests muss überprüft werden, ob die jüngsten Änderungen im Quellcode der Anwendung keine Nebenwirkungen auf die während der Entwicklungsphase geänderten Funktionen haben. Damit soll sichergestellt werden, dass der alte Code mit den neu implementierten Funktionen und den behobenen Fehlern noch einwandfrei funktioniert.</p>
+                <p>Zu diesem Zweck sollten Sie den bereits abgeschlossenen Test erneut durchführen und vergleichen, wie die Anwendung funktioniert.</p>
+            </td>
+        </tr>
+        <tr>
+            <th>Mutationstests</th>
+            <td>
+                <p>Mutationstests verdienen besondere Aufmerksamkeit. Dieser Ansatz wird in der Regel als letzter Schritt betrachtet, um festzustellen, ob der gesamte Test erfolgreich durchgeführt wurde.</p>
+                <p>Tester ändern bestimmte Komponenten des Quellcodes einer Anwendung, um zu überprüfen, ob alle Bedingungen erfüllt sind, und Softwaretests können alle durchgeführten Änderungen erkennen. Diese in der Software implementierten Änderungen sollen Fehler im Programm hervorrufen</p>
+            </td>
+        </tr>
+    </table>
+
+    <h2>Prüftechniken</h2>
+    <h3>Erfassungsbereich</h3>
+    <p class="text">Das Hauptziel dieser Technik ist es, sicherzustellen, dass alle Zeilen des Codes getestet wurden, und eventuelle Fehler oder versteckte Fehler im gesamten Code zu entdecken.</p>
+    <p>
+        <table class="table2">
+            <tr>
+                <td>Verzweigungsabdeckung=</td>
+                <td>(Anzahl der getesteten Entscheidungsergebnisse / Gesamtzahl der Entscheidungsergebnisse) x 100 %</td>
+            </tr>
+        </table>
+    </p>
+
+    <h3>Funktion Abdeckung</h3>
+    <p class="text">Zusammen mit der Anweisungsabdeckung hilft sie, die Anzahl der implementierten Funktionen zu bestimmen.</p>
+    <p>
+        <table class="table2">
+            <tr>
+                <td>Funktionsabdeckung =</td>
+                <td>(Anzahl der ausgeführten Funktionen / Gesamtzahl der Funktionen) * 100</td>
+            </tr>
+        </table>
+    </p>
+
+    <h3>Pfadabdeckung</h3>
+    <p class="text">Die Pfadabdeckung prüft alle Pfade, unabhängig davon, ob sie gekreuzt werden oder nicht, und es ist wichtiger, die Abdeckung von Pfaden als von Zweigen zu prüfen.</p>    
+
+    <style>
+        table{
+            width: 500px;
+            position: relative;
+            left: calc(50% - 250px);
+        }
+
+        .table2{
+            width: 800px;
+            position: relative;
+            left: calc(50% - 400px);
+        }
+    </style>
+</body>
+</html>

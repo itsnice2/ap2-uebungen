@@ -10,15 +10,84 @@
 <body>
 
     <h1>MDSD - Model-Driven Software Development</h1>
-    <p class="text"></p>
+    <p><small>Frage an ChatGPT: Erkläre mir Model-Driven Software Development</small></p>
+    <p class="text">MDSD ist eine Methode, bei der man Modelle erstellt, die die Struktur, das Verhalten und andere Aspekte einer Software formal beschreiben. Aus diesen Modellen kann dann automatisch Code generiert werden – zumindest ein großer Teil davon.</p>
+    
+    <h2>Wichtige Begriffe</h2>
+    <table>
+        <tr>
+            <th>Modell</th>
+            <td>Eine abstrakte Repräsentation eines Systems oder Teils davon (z. B. ein Klassendiagramm, ein Zustandsdiagramm etc.)</td>
+        </tr>
+        <tr>
+            <th>Metamodell</th>
+            <td>Definiert die "Sprache", in der ein Modell geschrieben ist. Ein Modell muss konform zu seinem Metamodell sein.</td>
+        </tr>
+        <tr>
+            <th>Codegenerierung</th>
+            <td>Aus den Modellen wird automatisch Programmcode erzeugt, oft mit Hilfe von Templates oder Generatoren.</td>
+        </tr>
+        <tr>
+            <th>Plattformunabhängiges Modell (PIM)</th>
+            <td>Ein Modell, das unabhängig von einer bestimmten Technologie ist.</td>
+        </tr>
+        <tr>
+            <th>Plattformspezifisches Modell (PSM)</th>
+            <td>Ein Modell, das an eine bestimmte Technologie oder Plattform (z. B. Java EE, .NET) angepasst ist.</td>
+        </tr>
+    </table>
+
+    <h2>Beispielprozess in MDSD</h2>
+    <table>
+        <tr>
+            <th>Modellierung</th>
+            <td>Du modellierst z. B. die Geschäftslogik in einem UML-Tool.</td>
+        </tr>
+        <tr>
+            <th>Transformation</th>
+            <td>Das Tool transformiert dein abstraktes Modell in ein konkretes Modell für eine Plattform.</td>
+        </tr>
+        <tr>
+            <th>Codegenerierung</th>
+            <td>Automatischer Code wird aus dem Modell generiert.</td>
+        </tr>
+        <tr>
+            <th>Feinjustierung</th>
+            <td>Entwickler ergänzen den generierten Code, wenn nötig.</td>
+        </tr>
+    </table>
+
+    <h2>Vor- und Nachteile</h2>
+    <table>
+        <tr>
+            <th>Vorteile</th>
+            <th>Nachteile</th>
+        </tr>
+        <tr>
+            <td>Höhere Abstraktionsebene: Man denkt in Modellen, nicht in Code.</td>
+            <td>Anfangs hoher Einrichtungsaufwand (Tools, Schulung, Infrastruktur).</td>
+        </tr>
+        <tr>
+            <td>Wiederverwendbarkeit: Modelle können mehrfach verwendet werden.</td>
+            <td>Komplexität von Metamodellen und Transformationen.</td>
+        </tr>
+        <tr>
+            <td>Automatisierung: Weniger manuelles Coden.</td>
+            <td>Gefahr der Übergeneralisierung - nicht alles lässt sich sinnvoll modellieren.</td>
+        </tr>
+        <tr>
+            <td>Konsistenz & Qualität: Generierter Code ist oft fehlerärmer.</td>
+            <td></td>
+        </tr>
+    </table>
 
 
     
     <style>
         table{
-            width: 1000px;
+            width: 500px;
             position: relative;
-            left: calc(50% - 500px);
+            left: calc(50% - 250px);
         }
     </style>
     
