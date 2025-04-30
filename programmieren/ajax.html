@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX | Programmierung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1>AJAX - Asynchronous JavaScript and XML</h1>
+    <p class="text">Bei AJAX handelt es sich um eine Technik, mit der man auf Webseiten im Hintergrund Daten austauschen kann, ohne dass die  Seite neu geladen werden muss.</p>
+    <p class="text">Im Prinzip kann man Funktion und Datenbankabfragen ausführen lassen, ohne die Seite neu laden zu müssen.</p>
+
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>Erklärung</th>
+        </tr>
+        <tr>
+            <td>
+                <code>let xhr = new XMLHttpRequest();</code>
+            </td>
+            <td>XMLHttpRequest-Objekt erstellen</td>
+        </tr>
+        <tr>
+            <td>
+                <code>
+                    <label class="kommentar">// true = asynchron<br></label>
+                    xhr.open("GET", "daten.json", true);
+                </code>
+            </td>
+            <td>
+                Anfrage konfigurieren
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>
+                    xhr.onload = function() {<br>
+                        if (xhr.status == 200) {<br>
+                            <label class="kommentar">// Serverantwort (z. B. JSON)<br></label>
+                            console.log(xhr.responseText);<br>                    
+                        }<br>
+                    };
+                </code>
+            </td>
+            <td>Event-Handler definieren</td>
+        </tr>
+        <tr>
+            <td>
+                <code>
+                    xhr.send();
+                </code>
+            </td>
+            <td>Anfrage senden</td>
+        </tr>        
+    </table>
+    <br><br>
+
+    <h2>Beispiel 1: AJAX, klassisch mit XMLHttpRequest</h2>
+    <p class="text"></p>
+<pre>
+    let xhr = new XMLHttpRequest();                 <label class="kommentar">// Objekt erstellen</label>
+
+    xhr.open("GET", "daten.json", true);            <label class="kommentar">// Konfigurieren</label>
+
+    xhr.onload = function() {                       <label class="kommentar">// Antwort verarbeiten</label>
+      if (xhr.status == 200) {
+        let daten = JSON.parse(xhr.responseText);   <label class="kommentar">// JSON parsen</label>
+        console.log(daten);                         <label class="kommentar">// Ausgabe der Daten</label>
+      }
+    };
+
+    xhr.send();                                     <label class="kommentar">// Anfrage an Server senden</label>
+</pre>
+
+    <h2>Beispiel 2: AJAX mit der Fetch API</h2>
+    <p class="text"></p>
+<pre>
+    fetch("daten.json")
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Netzwerkfehler: " + response.status);
+            }
+        return response.json();         <label class="kommentar">// oder .text(), je nach Inhalt</label>
+    })
+    .then(data => {
+        console.log(data);              <label class="kommentar">// Erfolgreiche Antwort</label>
+    })
+    .catch(error => {
+        console.error("Fehler:", error); <label class="kommentar">// Fehlerbehandlung</label>
+    });
+</pre>
+
+    <h2>Beispiel 3: AJAX mit jQuery</h2>
+    <p class="text"></p>
+<pre>
+    &#60;script src="https://code.jquery.com/jquery-3.6.0.min.js"&#62;&#60;/script&#62;
+    
+    &#60;script&#62;
+        $.ajax({
+            url: "daten.json",          <label class="kommentar">// Ziel-URL</label>
+            method: "GET",              <label class="kommentar">// Methode (GET oder POST)</label>
+            dataType: "json",           <label class="kommentar">// Rückgabeformat</label>
+            success: function(data) {
+                console.log(data);      <label class="kommentar">// Erfolgreiche Antwort</label>
+            },
+            error: function(xhr, status, error) {
+            c   onsole.error("Fehler: " + error);
+            }
+        });
+    &#60;/script&#62;
+</pre>    
+
+<style>
+    pre{
+        width: 600px;
+        text-align: left;
+        position: relative;
+        left: calc(50% - 300px);
+
+        border: solid 1px lightgrey;
+        border-radius: 10px;
+        padding: 30px 30px;
+
+    }
+
+    table{
+        width: 600px;
+        position: relative;
+        left: calc(50% - 300px);
+    }
+</style>
+</body>
+</html>
