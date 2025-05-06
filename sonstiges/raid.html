@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAID | Sonstiges</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+    
+    <h1><a href="https://de.wikipedia.org/wiki/RAID" target="_blank">RAID - Redundant Array of Independent Disks</a></h1>
+    <p class="text"></p>
+
+    <table>
+        <tr>
+            <th>RAID</th>
+            <th>Kurzerklärung</th>
+            <th>min. HDD</th>
+            <th>nutzbarer Platz</th>
+            <th>Bild</th>            
+        </tr>
+        <tr>
+            <th>RAID 0</th>
+            <td class="mitte">Striping - verteiltes Schreiben</td>
+            <td class="mitte">2</td>
+            <td class="mitte">100%</td>
+            <td class="mitte"><button onclick="zeigeRAID(0)">+</button></td>
+        </tr>
+        <tr>
+            <th>RAID 1</th>
+            <td class="mitte">Mirror - Spiegelung</td>
+            <td class="mitte">2</td>
+            <td class="mitte">50%</td>
+            <td class="mitte"><button onclick="zeigeRAID(1)">+</button></td>
+        </tr>
+        <tr>
+            <th>RAID 5</th>
+            <td class="mitte">Striping mit verteilter Paritätsinformation</td>
+            <td class="mitte">4</td>
+            <td class="mitte">75%</td>
+            <td class="mitte"><button onclick="zeigeRAID(5)">+</button></td>
+        </tr>
+        <tr>
+            <th>RAID 10</th>
+            <td class="mitte">Mix aus 1 und 0</td>
+            <td class="mitte">4</td>
+            <td class="mitte">50%</td>
+            <td class="mitte"><button onclick="zeigeRAID(10)">+</button></td>
+        </tr>
+        <tr>
+            <th>RAID 50</th>
+            <td class="mitte">Mix aus 5 und 0</td>
+            <td class="mitte">6</td>
+            <td class="mitte">66%</td>
+            <td class="mitte"><button onclick="zeigeRAID(50)">+</button></td>
+        </tr>
+        <tr>
+            <th>RAID 60</th>
+            <td class="mitte">Mix aus 6 und 0</td>
+            <td class="mitte">8</td>
+            <td class="mitte">50%</td>
+            <td class="mitte"><button onclick="zeigeRAID(60)">+</button></td>
+        </tr>
+    </table>
+
+    <p id="bild-input">
+
+    </p>
+
+    <!--
+        <a href="https://de.wikipedia.org/wiki/RAID#RAID_0:_Striping_%E2%80%93_Beschleunigung_ohne_Redundanz" target="_blank"><img src="RAID_0.png"></a>
+        <a href="https://de.wikipedia.org/wiki/RAID#RAID_1:_Mirroring_%E2%80%93_Spiegelung" target="_blank"><img src="RAID_1.png"></a>
+        <a href="https://de.wikipedia.org/wiki/RAID#RAID_5:_Leistung_+_Parit%C3%A4t,_Block-Level_Striping_mit_verteilter_Parit%C3%A4tsinformation" target="_blank"><img src="RAID_5.png"></a>
+        <a href="https://de.wikipedia.org/wiki/RAID#RAID_10" target="_blank"><img src="RAID_10.png"></a>
+        <a href="https://commons.wikimedia.org/wiki/File:RAID_50_scheme.svg" target="_blank"><img src="RAID_50.png"></a>
+        <a href="https://commons.wikimedia.org/wiki/File:RAID_60.png" target="_blank"><img src="RAID_60.png"></a>
+    -->
+
+    <style>
+        table{
+            width: 400px;
+            position: relative;
+            left: calc(50% - 200px);
+        }
+        
+        img{
+            max-width: 100%;
+        }
+    </style>
+
+    <script>
+        var raid = {
+            "0"     : "<a href='https://de.wikipedia.org/wiki/RAID#RAID_0:_Striping_%E2%80%93_Beschleunigung_ohne_Redundanz' target='_blank'><img src='RAID_0.png'></a>",
+            "1"     : "<a href='https://de.wikipedia.org/wiki/RAID#RAID_1:_Mirroring_%E2%80%93_Spiegelung' target='_blank'><img src='RAID_1.png'></a>",
+            "5"     : "<a href='https://de.wikipedia.org/wiki/RAID#RAID_5:_Leistung_+_Parit%C3%A4t,_Block-Level_Striping_mit_verteilter_Parit%C3%A4tsinformation' target='_blank'><img src='RAID_5.svg'></a>",
+            "10"    : "<a href='https://de.wikipedia.org/wiki/RAID#RAID_10' target='_blank'><img src='RAID_10.svg'></a>",
+            "50"    : "<a href='https://commons.wikimedia.org/wiki/File:RAID_50_scheme.svg' target='_blank'><img src='RAID_50.png'></a>",
+            "60"    : "<a href='https://commons.wikimedia.org/wiki/File:RAID_60.png' target='_blank'><img src='RAID_60.png'></a>"
+        }        
+
+        function zeigeRAID(nr){
+            document.getElementById("bild-input").innerHTML = raid[nr];
+        }
+    </script>
+
+</body>
+</html>

@@ -21,8 +21,8 @@ body{
     background-color: #f3f3f3;
 }
 
-.softwareentwicklung{
-    max-height: 400px;;
+.scroll-me{
+    max-height: 240px;;
     overflow-y: auto;
 }
 

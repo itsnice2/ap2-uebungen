@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACID | Softwareentwicklung</title>
+    <link href="../assets/ap2.css" rel="stylesheet">
+    <link rel="icon" href="../assets/icon.png">
+</head>
+<body>
+
+    <h1><a href="https://de.wikipedia.org/wiki/ACID" target="_blank">ACID</a></h1>
+    <p class="text"></p>
+
+    <table>
+        <tr>
+            <th>Element</th>
+            <th>englisch</th>
+            <th>deutsch</th>
+            <th>Erklärung</th>
+        </tr>
+        <tr>
+            <th class="mitte">A</th>
+            <td class="mitte">atomicity</td>
+            <td class="mitte">Atomarität</td>
+            <td>Atomarität stellt sicher, dass Transaktionen entweder ganz oder gar nicht ausgeführt werden.</td>
+        </tr>
+        <tr>
+            <th class="mitte">C</th>
+            <td class="mitte">consistency</td>
+            <td class="mitte">Konsistenz</td>
+            <td>Eine Transaktion soll nach Beendigung einen konsistenten Datenbankzustand hinterlassen.</td>
+        </tr>
+        <tr>
+            <th class="mitte">I</th>
+            <td class="mitte">isolation </td>
+            <td class="mitte">Isolation </td>
+            <td>Verhindert, dass gleichzeitig ablaufende Transaktionen sich gegenseitig behindern, in dem z.B. betroffene Daten während einer Transaktion gesperrt werden.</td>
+        </tr>
+        <tr>
+            <th class="mitte">D</th>
+            <td class="mitte">durability</td>
+            <td class="mitte">Dauerhaftigkeit</td>
+            <td>Daten sollen nach dem erfolgreichen Abschluss einer Transaktion garantiert dauerhaft gespeichert werden.</td>
+        </tr>
+    </table>    
+    
+    <style>
+        table{
+            width: 500px;
+            position: relative;
+            left: calc(50% - 250px);
+        }
+        
+    </style>
+</body>
+</html>
