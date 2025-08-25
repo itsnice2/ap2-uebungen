@@ -222,7 +222,7 @@
                 console.log( mein_array[0][0] + " " +  mein_array[0][1] + " - " +  mein_array[0][2]);<br>
                 console.log( mein_array[1][0] + " " +  mein_array[1][1] + " - " +  mein_array[1][2]);<br><br><br>
 
-                <b>// Zweidimensionales Array</b><br><br>
+                <b>// Assoziatives Array</b><br><br>
 
                 var mein_array = {<br>
                     "vorname": "Max",<br>
@@ -256,7 +256,7 @@
                 }
             </div>
             <div class="sektion schleife code">
-                for(int i = 0; i &lt; 6; i++)<br>
+                for(let i = 0; i &lt; 6; i++)<br>
                 {<br>
                     console.log(i);<br>
                 }
@@ -425,6 +425,8 @@
 
                 <b>// Assoziatives Array</b><br>
                 <i>// mit Hilfe einer Map: #include &lt;map&gt;</i><br><br>
+                #include <map>
+                #include <string>
 
                 std::map<std::string, std::string> mein_array3;<br><br>
 
@@ -532,7 +534,7 @@
                 printf("%d\n", zahl1[1][2]);<br><br><br>
 
                 <b>// Assoziatives Array</b><br><br>
-                <label class="kommentar">// gibt es nicht von Haus aus</label>
+                <label class="kommentar">// C kennt keine assoziativen Arrays; man müsste stattdessen über Datenstrukturen wie Hash-Tabellen oder selbst implementierte Strukturen arbeiten.</label>
 
 
             </div>
@@ -649,7 +651,7 @@
             <div class="sektion schleife code">
                 <label class="kommentar"># Gibt einzelne Einträge aus</label><br>
                 text = ["Max", "Mustermann"]<br>
-                for x in variable4:<br>
+                for x in text:<br>
                     print(x)<br><br>
 
                 <label class="kommentar"># Gibt 0-5 aus</label><br>
@@ -722,7 +724,7 @@
                 End Function<br><br>
 
                 <label class="kommentar">' Aufruf<br></label>
-                meine_funktion()
+                meine_funktion(3, "Hallo Welt")
             </div>
             <div class="sektion klassen code">
                 Class MeineKlasse<br>
